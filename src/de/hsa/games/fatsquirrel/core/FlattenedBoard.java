@@ -62,6 +62,14 @@ public class FlattenedBoard implements BoardView, EntityContext {
 					return;
 				}
 			}
+			if(flatBoard[y][x] instanceof MiniSquirrel){
+				MiniSquirrel temp = (MiniSquirrel) flatBoard[y][x];
+				if(mini.getParentId() != temp.getParentId()){
+					kill(mini);
+					kill(flatBoard[y][x]);
+					return;
+				}
+			}
 			if(flatBoard[y][x] instanceof BadBeast){
 				mini.updateEnergy(deltaEnergy);
 				BadBeast temp = (BadBeast) flatBoard[y][x];
