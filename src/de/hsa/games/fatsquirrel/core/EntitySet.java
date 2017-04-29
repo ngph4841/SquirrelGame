@@ -11,10 +11,6 @@ public class EntitySet {
 	public EntitySet(int cap) {
 		set = new Entity[cap];
 	}
-	
-	public Entity[] getSet(){
-		return set;
-	}
 
 	public Entity getEntity(int index) {
 		return set[index];
@@ -40,12 +36,12 @@ public class EntitySet {
 	}
 	
 	public void plus(Entity o){
-		EntitySet temp = new EntitySet(set.length +1);
-		for(int i = 0; i < set.length; i++){
-			temp.add(set[i]);
+		Entity[] temp = new Entity[set.length + 1];
+		for(int i = 0; i < set.length; i++) {
+			temp[i] = set[i];
 		}
-		temp.add(o);
-		setEntitySet(temp.getSet());
+		temp[++counter] = o;
+		set = temp;
 	}
 
 	public void remove(Entity o) {
