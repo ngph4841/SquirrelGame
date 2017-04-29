@@ -56,6 +56,10 @@ public class FlattenedBoard implements BoardView, EntityContext {
 					flatBoard[y][x].updateEnergy(mini.getEnergy());
 					kill(mini);
 					return;
+				}else{
+					flatBoard[y][x].updateEnergy(mini.getEnergy());
+					kill(mini);
+					return;
 				}
 			}
 			if(flatBoard[y][x] instanceof BadBeast){
@@ -71,46 +75,31 @@ public class FlattenedBoard implements BoardView, EntityContext {
 				mini.updateEnergy(deltaEnergy);
 		}
 			mini.updateEnergy(-1);	//loses 1energy
-			mini.setPosition(new XY(y,x));
+			mini.setPosition(new XY(x,y));
 	}
 	
 	public void tryMove(GoodBeast good, XY moveDirection)throws Exception{
-		MasterSquirrel player = (MasterSquirrel) nearestPlayer(good.position);
-		
-		int x = good.getPosition().getX()+moveDirection.getX();
-		int y = good.getPosition().getY()+moveDirection.getY();
+        int x = good.getPosition().getX() + moveDirection.getX();
+        int y = good.getPosition().getY() + moveDirection.getY();
 		if(flatBoard[y][x] != null){
-			if(flatBoard[y][x] instanceof Wall){
-				return;
-			}
-			if(flatBoard[y][x] instanceof BadBeast){
-				good.updateEnergy(flatBoard[y][x].getEnergy());
-				BadBeast temp = (BadBeast) flatBoard[y][x];
-				temp.bite();
-				flatBoard[y][x] = temp;
-				if(good.getEnergy() <= 0){
-					kill(good);
-				}
-			}
+			return;
 		}
-		good.setPosition(new XY(y,x));
+		good.setPosition(new XY(x,y));
 	}
 	
 	public void tryMove(BadBeast bad, XY moveDirection){
-		MasterSquirrel player = (MasterSquirrel) nearestPlayer(bad.position);
-		
-		int x = bad.getPosition().getX()+moveDirection.getX();
-		int y = bad.getPosition().getY()+moveDirection.getY();
+		int x = bad.getPosition().getX() + moveDirection.getX();
+		int y = bad.getPosition().getY() + moveDirection.getY();
 		if(flatBoard[y][x] != null){
-			if(flatBoard[y][x] instanceof Wall){
+			if(!(flatBoard[y][x] instanceof Squirrel)){
 				return;
-			}
-			if(flatBoard[y][x] instanceof Squirrel){
+			}else{
 				bad.bite();
 				flatBoard[y][x].updateEnergy(bad.getEnergy());
 			}
+			return;
 		}
-		bad.setPosition(new XY(y,x));
+		bad.setPosition(new XY(x,y));
 	}
 	
 	public void tryMove(MasterSquirrel master, XY moveDirection)throws Exception{
@@ -132,25 +121,29 @@ public class FlattenedBoard implements BoardView, EntityContext {
 					}
 					kill(flatBoard[y][x]);
 				}
-					master.updateEnergy(deltaEnergy);
+					master.updateEnergy(deltaEnergy);		//plants gb
 					killAndReplace(flatBoard[y][x]);		//kill&replace
 			}else{
+				//BadBeast
 				master.updateEnergy(deltaEnergy);
 				BadBeast temp = (BadBeast) flatBoard[y][x];	//bite
 				temp.bite();
 				flatBoard[y][x] = temp;
 			}
 		}
-		master.setPosition(new XY(y,x));
+		if(master.getEnergy() < 0){
+			master.updateEnergy(Math.abs(master.getEnergy()));
+		}
+		master.setPosition(new XY(x,y));
 	}
 	
 	public Squirrel nearestPlayer(XY position){
 		Entity[] squirrelPosition = new Entity[50];
 		int counter = 0; //for squirrels
 		for(int i = 0; i < settings.getSize().getY();i++){ //find all squirrels
-			for(int j = 0; j < settings.getSize().getY(); j++){
+			for(int j = 0; j < settings.getSize().getX(); j++){
 				if(flatBoard[i][j] instanceof Squirrel){
-					squirrelPosition[counter] = flatBoard[i][j];
+					squirrelPosition[counter++] = flatBoard[i][j];
 				}
 			}
 		}

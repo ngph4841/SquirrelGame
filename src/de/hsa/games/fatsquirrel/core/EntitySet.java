@@ -11,6 +11,10 @@ public class EntitySet {
 	public EntitySet(int cap) {
 		set = new Entity[cap];
 	}
+	
+	public Entity[] getSet(){
+		return set;
+	}
 
 	public Entity getEntity(int index) {
 		return set[index];
@@ -41,7 +45,7 @@ public class EntitySet {
 			temp.add(set[i]);
 		}
 		temp.add(o);
-		setEntitySet(temp.set);
+		setEntitySet(temp.getSet());
 	}
 
 	public void remove(Entity o) {
@@ -73,27 +77,9 @@ public class EntitySet {
 
 	public void moveAll(EntityContext context) throws Exception {
 		for (int i = 0; i < counter; i++) { // all elements in the []list
-			set[i].nextStep(context);
-
-//			if (set[i].instanceOf(new MasterSquirrel(0, 0, new XY(0, 0)))) {// check
-//																			// if
-//																			// Mastersquirrel
-//				for (int j = 0; j < set.length; j++) {
-//					if (set[i].getPosition().equals(set[j])) { // check if same
-//																// position as
-//																// anything
-//						if (set[j].instanceOf(new GoodPlant(0, new XY(0, 0)))) { // check
-//																					// for
-//																					// plant
-//							set[i].updateEnergy(set[j].getEnergy()); // take the
-//																		// energy
-//																		// of
-//																		// plant
-//							remove(set[j]); // delete the plant
-//						}
-//					}
-//				}
-//			}
+			if(set[i] instanceof Character){
+				set[i].nextStep(context);
+			}
 		}
 	}
 }
