@@ -52,6 +52,7 @@ public class EntitySet {
 			if (set[i].equals(o)) {
 				set[i] = null;
 				counter--;
+				break;
 			}
 		}
 		int a = 0;

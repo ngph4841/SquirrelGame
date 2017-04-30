@@ -44,15 +44,6 @@ public class GameImpl extends Game{
 	}
 
 	public void update()throws Exception {//ver�ndert akt. Spielzustand
-//		if(charTurnCounter == 0){
-//		state.update();
-//		charTurnCounter++;
-//		}else{
-//			charTurnCounter++;
-//		}
-//		if(charTurnCounter == 3){
-//			charTurnCounter = 0;
-//		}
 		state.update();
 	}
 
