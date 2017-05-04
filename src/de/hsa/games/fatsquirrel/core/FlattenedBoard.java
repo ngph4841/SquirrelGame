@@ -5,12 +5,12 @@ public class FlattenedBoard implements BoardView, EntityContext {
 	private Board board;
 	private Entity[][] flatBoard;
 	private BoardConfig settings;
-	
-	public FlattenedBoard(Board board)throws Exception{ //2dim.array 
+
+	public FlattenedBoard(Board board)throws Exception{ //2dim.array
 		this.board = board;
 		settings = board.getConfig();
 		this.flatBoard = new Entity [settings.getSize().getY()][settings.getSize().getX()];
-		
+
 		EntitySet list = board.getEntitySet();
 		int x; int y;
 		for(int i = 0; i < list.length(); i++){			//check all entities in the EntitySet
@@ -22,19 +22,19 @@ public class FlattenedBoard implements BoardView, EntityContext {
 			flatBoard[y][x] = list.getEntity(i);	//add Entities from EntitySet to flatBoard
 		}
 	}
-	
+
 	public Entity[][] getFlattenedBoard(){
 		return flatBoard;
 	}
-	
+
 	public Entity getEntityType(int x, int y){
 		return flatBoard[y][x];
 	}
-	
+
 	public XY getSize(){
 		return new XY(flatBoard[0].length, flatBoard.length);
 	}
-	
+
 	public Entity getEntityType(XY xy){
 		return flatBoard[xy.getY()][xy.getX()] ;
 	}
@@ -57,7 +57,7 @@ public class FlattenedBoard implements BoardView, EntityContext {
 					kill(mini);
 					return;
 				}else{
-					flatBoard[y][x].updateEnergy(mini.getEnergy());
+					flatBoard[y][x].updateEnergy(150);
 					kill(mini);
 					return;
 				}
@@ -85,7 +85,7 @@ public class FlattenedBoard implements BoardView, EntityContext {
 			mini.updateEnergy(-1);	//loses 1energy
 			mini.setPosition(new XY(x,y));
 	}
-	
+
 	public void tryMove(GoodBeast good, XY moveDirection)throws Exception{
         int x = good.getPosition().getX() + moveDirection.getX();
         int y = good.getPosition().getY() + moveDirection.getY();
@@ -94,14 +94,12 @@ public class FlattenedBoard implements BoardView, EntityContext {
 		}
 		good.setPosition(new XY(x,y));
 	}
-	
+
 	public void tryMove(BadBeast bad, XY moveDirection){
 		int x = bad.getPosition().getX() + moveDirection.getX();
 		int y = bad.getPosition().getY() + moveDirection.getY();
 		if(flatBoard[y][x] != null){
-			if(!(flatBoard[y][x] instanceof Squirrel)){
-				return;
-			}else{
+			if(flatBoard[y][x] instanceof Squirrel){
 				bad.bite();
 				flatBoard[y][x].updateEnergy(bad.getEnergy());
 			}
@@ -109,7 +107,7 @@ public class FlattenedBoard implements BoardView, EntityContext {
 		}
 		bad.setPosition(new XY(x,y));
 	}
-	
+
 	public void tryMove(MasterSquirrel master, XY moveDirection)throws Exception{
 		int x = master.getPosition().getX()+moveDirection.getX();
 		int y = master.getPosition().getY()+moveDirection.getY();
@@ -120,7 +118,10 @@ public class FlattenedBoard implements BoardView, EntityContext {
 				master.updateEnergy(deltaEnergy);
 				return;
 			}
-			if(!(flatBoard[y][x] instanceof BadBeast)){	
+			if(!(flatBoard[y][x] instanceof BadBeast)){
+				if (flatBoard[y][x] instanceof MasterSquirrel){
+					return;
+				}
 				if(flatBoard[y][x] instanceof MiniSquirrel){
 					if(master.checkIfChild(flatBoard[y][x])){
 						master.updateEnergy(deltaEnergy);	//child gives mama gift
@@ -134,9 +135,8 @@ public class FlattenedBoard implements BoardView, EntityContext {
 			}else{
 				//BadBeast
 				master.updateEnergy(deltaEnergy);
-				BadBeast temp = (BadBeast) flatBoard[y][x];	//bite
-				temp.bite();
-				flatBoard[y][x] = temp;
+				tryMove((BadBeast)flatBoard[y][x], new XY(moveDirection.getX()*-1,moveDirection.getY()*-1));
+				return;
 			}
 		}
 		if(master.getEnergy() < 0){
@@ -144,7 +144,7 @@ public class FlattenedBoard implements BoardView, EntityContext {
 		}
 		master.setPosition(new XY(x,y));
 	}
-	
+
 	public Squirrel nearestPlayer(XY position){
 		Entity[] squirrelPosition = new Entity[50];
 		int counter = 0; //for squirrels
@@ -162,7 +162,7 @@ public class FlattenedBoard implements BoardView, EntityContext {
 		for(int i = 1; i < counter; i++){
 		    int distanceX2 = Math.abs(squirrelPosition[i].getPosition().getX() - position.getX());
 		    int distanceY2 = Math.abs(squirrelPosition[i].getPosition().getY() - position.getY());
-		    
+
 		    if(distanceX2 <= distanceX && distanceY2 <= distanceY){
 		        idx = i;
 		        distanceX = distanceX2;
@@ -171,10 +171,10 @@ public class FlattenedBoard implements BoardView, EntityContext {
 		}
 		return (Squirrel) squirrelPosition[idx];
 	}
-	
-	public void killAndReplace(Entity entity)throws Exception{
-		if(!(entity instanceof Wall)){
-			kill(entity);
+
+    public void killAndReplace(Entity entity) throws Exception {
+
+        if(!(entity instanceof Wall)){
 			int randomX = 0;
 			int randomY = 0;
 			while(!(flatBoard[randomY][randomX] == null)){ //as long as the field isnt null
@@ -183,22 +183,23 @@ public class FlattenedBoard implements BoardView, EntityContext {
 			}
 			XY temp = new XY(randomX, randomY);
 			entity.setPosition(temp);				//new Pos for entity
+            board.getEntitySet().plus(entity);
 			flatBoard[randomX][randomY] = entity;	//add entity in flatBoard&set
-			board.getEntitySet().plus(entity);
+            kill(entity);
 		}
 	}
-	
+
 	public void kill(Entity entity)throws Exception{
 		if(!(entity instanceof Wall)){
 			board.getEntitySet().remove(entity);
-			
+
 			EntitySet list = board.getEntitySet();
 			int x; int y;
 			for(int i = 0; i < list.length(); i++){			//refresh the flatboard
 				if(list.getEntity(i) == null){				//w/o del entity
 					break;
 				}
-				x = list.getEntity(i).getPosition().getX();	
+				x = list.getEntity(i).getPosition().getX();
 				y = list.getEntity(i).getPosition().getY();
 				flatBoard[y][x] = list.getEntity(i);
 			}

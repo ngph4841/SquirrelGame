@@ -5,8 +5,8 @@ import de.hsa.games.fatsquirrel.core.XY;
 
 public interface UI {
 
-	public XY getCommand() throws Exception;
+    public XY getCommand() throws Exception;
 
-	public void render(BoardView view);
+    public void render(BoardView view);
 
 }
