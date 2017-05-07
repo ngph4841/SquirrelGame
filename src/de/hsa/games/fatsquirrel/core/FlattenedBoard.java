@@ -48,6 +48,7 @@ public class FlattenedBoard implements BoardView, EntityContext {
 			if(flatBoard[y][x] instanceof Wall){
 				mini.updateEnergy(deltaEnergy);
 				mini.stun();
+				System.out.println("You just got stunned!");
 				return;
 			}
 			if(flatBoard[y][x] instanceof MasterSquirrel){
@@ -105,6 +106,7 @@ public class FlattenedBoard implements BoardView, EntityContext {
 				flatBoard[y][x].updateEnergy(bad.getEnergy());
 				if(bad.getBite() == 0){
 				killAndReplace(bad);
+				return;
 				}
 			}
 			return;
