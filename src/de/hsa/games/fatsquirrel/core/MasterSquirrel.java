@@ -51,6 +51,7 @@ public class MasterSquirrel extends Squirrel {
         temp[childrenCounter - 1] = child.getId();                        // save id of this new child
         childrenId = temp;
         updateEnergy(-energy);
+        System.out.println("Congratulations, you just gave birth!");
         return child;
     }
 
