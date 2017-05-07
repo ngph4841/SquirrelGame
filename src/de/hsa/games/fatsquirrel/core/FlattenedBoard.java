@@ -101,6 +101,7 @@ public class FlattenedBoard implements BoardView, EntityContext {
 		if(flatBoard[y][x] != null){
 			if(flatBoard[y][x] instanceof Squirrel){
 				bad.bite();
+				System.out.println("A BadBeast just attacked!");
 				flatBoard[y][x].updateEnergy(bad.getEnergy());
 				if(bad.getBite() == 0){
 				killAndReplace(bad);
