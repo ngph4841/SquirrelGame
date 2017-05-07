@@ -195,11 +195,13 @@ public class FlattenedBoard implements BoardView, EntityContext {
 				flatBoard[randomX][randomY] = bad;
 			}
             kill(entity);
+			System.out.println("a new " + entity.getClass() + " has just appeared");
 		}
 	}
 
 	public void kill(Entity entity)throws Exception{
 		if(!(entity instanceof Wall)){
+			System.out.println("a " + entity.getClass() + " has just been killed");
 			board.getEntitySet().remove(entity);
 
 			EntitySet list = board.getEntitySet();
