@@ -1,5 +1,7 @@
 package de.hsa.games.fatsquirrel.core;
 
+import de.hsa.games.fatsquirrel.console.NotEnoughEnergyException;
+
 public class MasterSquirrel extends Squirrel {
 
     private static int startEnergy = 1000;
@@ -35,8 +37,10 @@ public class MasterSquirrel extends Squirrel {
         return position;
     }
 
-    public void spawnChild(int energy) { // save id in array
-
+    public MiniSquirrel spawnChild(int energy) throws NotEnoughEnergyException { // save id in array
+    	if(this.energy <= energy){
+    		throw new NotEnoughEnergyException();
+    	}
         XY childStartPos = new XY(position.getX() + 1, position.getY()); // spawn next to mother
         childrenCounter++;                            // new child & id of child is mothersId + child#
         MiniSquirrel child = new MiniSquirrel(this.id + childrenCounter, energy, childStartPos, this.id);
@@ -47,6 +51,7 @@ public class MasterSquirrel extends Squirrel {
         temp[childrenCounter - 1] = child.getId();                        // save id of this new child
         childrenId = temp;
         updateEnergy(-energy);
+        return child;
     }
 
 }
