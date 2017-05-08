@@ -40,7 +40,7 @@ public class EntitySet {
         for (int i = 0; i < set.length; i++) {
             temp[i] = set[i];
         }
-        temp[counter-1] = o;
+        temp[counter - 1] = o;
         set = temp;
     }
 
@@ -74,7 +74,7 @@ public class EntitySet {
 
     public void moveAll(EntityContext context) throws Exception {
         for (int i = 0; i < counter; i++) { // all elements in the []list
-            if (set[i] instanceof Character) {
+            if (set[i] instanceof Character || set[i] instanceof MiniSquirrel) {
                 set[i].nextStep(context);
             }
         }
