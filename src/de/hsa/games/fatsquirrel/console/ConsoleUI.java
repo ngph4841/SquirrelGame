@@ -18,9 +18,15 @@ import de.hsa.games.fatsquirrel.core.Wall;
 public class ConsoleUI implements UI {
 
 	public Command getCommand() throws Exception {
+
 		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 		CommandScanner scanner = new CommandScanner(GameCommandType.values(), input);
 		Command command = scanner.next();
+//		GameImpl foo = new GameImpl();
+//		String methodName = command.getCommandType().getMethodName();
+//		Object[] params = command.getParams();
+//		java.lang.reflect.Method method = foo.getClass().getMethod(methodName);
+//		method.invoke(foo, params);
 
 		return command;
 	}
