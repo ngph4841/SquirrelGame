@@ -27,7 +27,7 @@ public enum MyFavouriteCommandType implements CommandTypeInfo {
         this.info = info;
     }
 
-    MyFavouriteCommandType(String name, String info, Class<?> a, Class<?> b) {
+    private MyFavouriteCommandType(String name, String info, Class<?> a, Class<?> b) {
         this.name = name;
         this.info = info;
         this.paramsClasses = new Class<?>[]{a, b};
