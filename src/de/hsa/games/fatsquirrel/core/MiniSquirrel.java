@@ -6,13 +6,11 @@ public class MiniSquirrel extends Squirrel { // extends squirrel like
     // mastersquirrel
     private int parentId;
     private int tempo;
-    private int stunCounter;
 
     MiniSquirrel(int id, int energy, XY position, int parentId) {
         super(id, energy, position);
         this.parentId = parentId;
         this.tempo = 0;
-        this.stunCounter = 0;
     }
 
     public int getParentId() {
@@ -34,7 +32,7 @@ public class MiniSquirrel extends Squirrel { // extends squirrel like
                 context.tryMove(this, direction);
             } else {
                 stunCounter++;
-                if (stunCounter == 3) {
+                if (stunCounter >= 3) {
                     stunCounter = 0;
                     cleanse();
                 }
