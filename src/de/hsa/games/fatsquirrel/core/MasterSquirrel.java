@@ -20,6 +20,12 @@ public class MasterSquirrel extends Squirrel {
     public void nextStep(EntityContext context) throws Exception {
         if (!stun) {
             context.tryMove(this, new XY(0, 0));
+        } else {
+            stunCounter++;
+            if (stunCounter >= 3) {
+                stunCounter = 0;
+                cleanse();
+            }
         }
     }
 
@@ -38,9 +44,9 @@ public class MasterSquirrel extends Squirrel {
     }
 
     public MiniSquirrel spawnChild(int energy) throws NotEnoughEnergyException { // save id in array
-    	if(this.energy <= energy){
-    		throw new NotEnoughEnergyException();
-    	}
+        if (this.energy <= energy) {
+            throw new NotEnoughEnergyException();
+        }
         XY childStartPos = new XY(position.getX() + 1, position.getY()); // spawn next to mother
         childrenCounter++;                            // new child & id of child is mothersId + child#
         MiniSquirrel child = new MiniSquirrel(this.id + childrenCounter, energy, childStartPos, this.id);
