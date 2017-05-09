@@ -15,12 +15,14 @@ public class GameImpl extends Game {
     private int charTurnCounter;
     private int stunTurnCounter;
     private MasterSquirrel player;
+    private FlattenedBoard context;
 
     public GameImpl(State state) throws Exception {
         this.state = state;
         this.charTurnCounter = 0;
         this.stunTurnCounter = 0;
         this.player = (MasterSquirrel) state.getBoard().getEntitySet().getEntity(0);
+        this.context = (FlattenedBoard) state.getBoardView();
     }
 
     @Override
@@ -32,10 +34,8 @@ public class GameImpl extends Game {
     @Override
     public void processInput() throws Exception {// verarbeitet Benutzereingaben
         UI input = new ConsoleUI();
-        FlattenedBoard context = (FlattenedBoard) state.getBoardView();
         try {
             Command command = input.getCommand();
-//            String methodName = command.getCommandType().getMethodName();
             XY direction = new XY(0, 0);
 
             switch ((GameCommandType) command.getCommandType()) {
@@ -61,22 +61,13 @@ public class GameImpl extends Game {
                     direction = (XY) command.getParams()[0];
                     break;
                 case MASTER_ENERGY:
-                    player.getEnergy();
+                    System.out.println("HP: " + player.getEnergy());
                     break;
                 case SPAWN_MINI:
                     state.getBoard().getEntitySet().plus(player.spawnChild((int) command.getParam(0)));
                     break;
             }
-
-            if (stunTurnCounter == 0) {
-                context.tryMove(player, direction);
-            } else {
-                stunTurnCounter++;
-            }
-            if (stunTurnCounter == 3) {
-                stunTurnCounter = 0;
-                player.cleanse();
-            }
+            context.tryMove(player, direction);
         } catch (ScanException e) {
             System.out.println("wrong input");
             // command = new Command(GameCommandType.HELP, new Object[1]);
@@ -91,7 +82,29 @@ public class GameImpl extends Game {
     }
 
     public void spawn(int energy) throws Exception {
-        state.getBoard().getEntitySet().plus(player.spawnChild(energy));
+        try {
+            state.getBoard().getEntitySet().plus(player.spawnChild(energy));
+        } catch (NotEnoughEnergyException e) {
+            System.out.println("Not enough Energy");
+        }
+    }
+
+    public void exit() {
+        System.exit(1);
+    }
+
+    public void help() {
+        for (GameCommandType e : GameCommandType.values()) {
+            System.out.println("write: " + e.getName() + " for " + e.getHelpText());
+        }
+    }
+
+    public void move(XY moveDirection) throws Exception {
+        context.tryMove(player, moveDirection);
+    }
+
+    public void masterMethod(){
+        System.out.println("HP :" + player.getEnergy());
     }
 
     public void run() throws Exception {
