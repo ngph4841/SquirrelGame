@@ -44,4 +44,8 @@ public enum MyFavouriteCommandType implements CommandTypeInfo {
     public Class<?>[] getParamTypes() {
         return paramsClasses;
     }
+
+    public String getMethodName() {
+        return "";
+    }
 }
