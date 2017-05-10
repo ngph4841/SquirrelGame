@@ -186,7 +186,6 @@ public class FlattenedBoard implements BoardView, EntityContext {
     }
 
     public void killAndReplace(Entity entity) throws Exception {
-
         if (!(entity instanceof Wall)) {
             int randomX = 0;
             int randomY = 0;
