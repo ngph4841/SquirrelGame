@@ -11,9 +11,7 @@ public abstract class Game {
 
     protected abstract void processInput() throws Exception;//verarbeitet Benutzereingaben
 
-    protected void update() throws Exception {//ver�ndert akt. Spielzustand
-
-    }
+    protected abstract void update() throws Exception;//ver�ndert akt. Spielzustand
 
     public void run() throws Exception {
         while (true) {
