@@ -22,15 +22,7 @@ public class ConsoleUI implements UI {
         BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
         CommandScanner scanner = new CommandScanner(GameCommandType.values(), input);
         Command command = scanner.next();
-
-        //reflection
-        //TODO: state for gameIMPL ?
-        GameImpl foo = new GameImpl();
-        String methodName = command.getCommandType().getMethodName();
-        Object[] params = command.getParams();
-        java.lang.reflect.Method method = foo.getClass().getMethod(methodName);
-        method.invoke(foo, params);
-
+        
         return command;
     }
 
