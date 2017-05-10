@@ -16,6 +16,7 @@ public class GameImpl extends Game {
     private int stunTurnCounter;
     private MasterSquirrel player;
     private FlattenedBoard context;
+    private UI ui;
 
     public GameImpl(State state) throws Exception {
         this.state = state;
@@ -23,51 +24,56 @@ public class GameImpl extends Game {
         this.stunTurnCounter = 0;
         this.player = (MasterSquirrel) state.getBoard().getEntitySet().getEntity(0);
         this.context = (FlattenedBoard) state.getBoardView();
+        this.ui = new ConsoleUI();
     }
 
     @Override
     public void render() {// Spielzustand auf ausgabemedium
-        UI output = new ConsoleUI();
-        output.render(state.getBoardView());
+        ui.render(state.getBoardView());
     }
 
     @Override
-    public void processInput() throws Exception {// verarbeitet Benutzereingaben
-        UI input = new ConsoleUI();
+    public void processInput() throws Exception {// verarbeitet Benutzereingabe
         try {
-            Command command = input.getCommand();
+            Command command = ui.getCommand();
             XY direction = new XY(0, 0);
 
-            switch ((GameCommandType) command.getCommandType()) {
-                case HELP:
-                    for (GameCommandType e : GameCommandType.values()) {
-                        System.out.println("write: " + e.getName() + " for " + e.getHelpText());
-                    }
-                    break;
-                case EXIT:
-                    System.exit(1);
-                case ALL:
-                    break;
-                case LEFT:
-                    direction = (XY) command.getParams()[0];
-                    break;
-                case UP:
-                    direction = (XY) command.getParams()[0];
-                    break;
-                case DOWN:
-                    direction = (XY) command.getParams()[0];
-                    break;
-                case RIGHT:
-                    direction = (XY) command.getParams()[0];
-                    break;
-                case MASTER_ENERGY:
-                    System.out.println("HP: " + player.getEnergy());
-                    break;
-                case SPAWN_MINI:
-                    state.getBoard().getEntitySet().plus(player.spawnChild((int) command.getParam(0)));
-                    break;
-            }
-            context.tryMove(player, direction);
+            String methodName = command.getCommandType().getMethodName();
+            Object[] params = command.getParams();
+            java.lang.reflect.Method method = this.getClass().getMethod(methodName, command.getCommandType().getParamTypes());
+            method.invoke(this, params);
+
+
+//            switch ((GameCommandType) command.getCommandType()) {
+//                case HELP:
+//                    for (GameCommandType e : GameCommandType.values()) {
+//                        System.out.println("write: " + e.getName() + " for " + e.getHelpText());
+//                    }
+//                    break;
+//                case EXIT:
+//                    System.exit(1);
+//                case ALL:
+//                    break;
+//                case LEFT:
+//                    direction = (XY) command.getParams()[0];
+//                    break;
+//                case UP:
+//                    direction = (XY) command.getParams()[0];
+//                    break;
+//                case DOWN:
+//                    direction = (XY) command.getParams()[0];
+//                    break;
+//                case RIGHT:
+//                    direction = (XY) command.getParams()[0];
+//                    break;
+//                case MASTER_ENERGY:
+//                    System.out.println("HP: " + player.getEnergy());
+//                    break;
+//                case SPAWN_MINI:
+//                    state.getBoard().getEntitySet().plus(player.spawnChild((int) command.getParam(0)));
+//                    break;
+//            }
+//            context.tryMove(player, direction);
         } catch (ScanException e) {
             System.out.println("wrong input");
             // command = new Command(GameCommandType.HELP, new Object[1]);
