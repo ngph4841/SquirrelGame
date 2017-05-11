@@ -123,39 +123,47 @@ public class FlattenedBoard implements BoardView, EntityContext {
     }
 
     public void tryMove(MasterSquirrel master, XY moveDirection) throws Exception {
-        int x = master.getPosition().getX() + moveDirection.getX();
-        int y = master.getPosition().getY() + moveDirection.getY();
-        if (flatBoard[y][x] != null) {
-            int deltaEnergy = flatBoard[y][x].getEnergy();
-            if (flatBoard[y][x] instanceof Wall) {    //wall stun
-                master.stun();
-                master.updateEnergy(deltaEnergy);
-                return;
-            } else if (!(flatBoard[y][x] instanceof BadBeast)) {
-                if (flatBoard[y][x] instanceof MasterSquirrel) {
+        if (!master.getStun()){
+            int x = master.getPosition().getX() + moveDirection.getX();
+            int y = master.getPosition().getY() + moveDirection.getY();
+            if (flatBoard[y][x] != null) {
+                int deltaEnergy = flatBoard[y][x].getEnergy();
+                if (flatBoard[y][x] instanceof Wall) {    //wall stun
+                    master.stun();
+                    master.updateEnergy(deltaEnergy);
                     return;
-                } else if (flatBoard[y][x] instanceof MiniSquirrel) {
-                    if (master.checkIfChild(flatBoard[y][x])) {
-                        master.updateEnergy(deltaEnergy);    //child gives mama gift
+                } else if (!(flatBoard[y][x] instanceof BadBeast)) {
+                    if (flatBoard[y][x] instanceof MasterSquirrel) {
+                        return;
+                    } else if (flatBoard[y][x] instanceof MiniSquirrel) {
+                        if (master.checkIfChild(flatBoard[y][x])) {
+                            master.updateEnergy(deltaEnergy);    //child gives mama gift
+                        } else {
+                            master.updateEnergy(150);    //takes other child
+                        }
+                        kill(flatBoard[y][x]);
                     } else {
-                        master.updateEnergy(150);    //takes other child
+                        master.updateEnergy(deltaEnergy);        //plants gb
+                        killAndReplace(flatBoard[y][x]);        //kill&replace
                     }
-                    kill(flatBoard[y][x]);
                 } else {
-                    master.updateEnergy(deltaEnergy);        //plants gb
-                    killAndReplace(flatBoard[y][x]);        //kill&replace
+                    //BadBeast
+                    master.updateEnergy(deltaEnergy);
+                    tryMove((BadBeast) flatBoard[y][x], new XY(moveDirection.getX() * -1, moveDirection.getY() * -1));
+                    return;
                 }
-            } else {
-                //BadBeast
-                master.updateEnergy(deltaEnergy);
-                tryMove((BadBeast) flatBoard[y][x], new XY(moveDirection.getX() * -1, moveDirection.getY() * -1));
-                return;
+            }
+            if (master.getEnergy() < 0) {
+                master.updateEnergy(Math.abs(master.getEnergy()));
+            }
+            master.setPosition(new XY(x, y));
+        } else {
+            master.increaseStunCounter();
+            if (master.getStunCounter() >= 3) {
+                master.resetStunCounter();
+                master.cleanse();
             }
         }
-        if (master.getEnergy() < 0) {
-            master.updateEnergy(Math.abs(master.getEnergy()));
-        }
-        master.setPosition(new XY(x, y));
     }
 
     public Squirrel nearestPlayer(XY position) {
