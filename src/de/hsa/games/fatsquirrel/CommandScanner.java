@@ -67,8 +67,6 @@ public class CommandScanner {
                                     params[j] = new XY(-1,0);
                                     break;
                             }
-                        } else{
-                            //TODO: not supported class expected
                         }
                     }
                 }
