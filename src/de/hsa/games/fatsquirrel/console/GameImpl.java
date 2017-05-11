@@ -17,6 +17,7 @@ public class GameImpl extends Game {
     private MasterSquirrel player;
     private FlattenedBoard context;
     private UI ui;
+    private int FPS = 10;
 
     public GameImpl(State state) throws Exception {
         this.state = state;
@@ -87,6 +88,24 @@ public class GameImpl extends Game {
             render();
             processInput();
             update();
+        }
+    }
+
+    public void runLive() throws Exception {
+        render();
+        processInput();
+        update();
+        Thread.sleep(FPS);
+
+    }
+
+    public void bufferInput() throws Exception {
+        while (true) {
+            try {
+                ui.commandBuffer();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
