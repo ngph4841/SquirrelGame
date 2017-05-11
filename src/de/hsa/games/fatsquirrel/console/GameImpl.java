@@ -36,13 +36,16 @@ public class GameImpl extends Game {
     @Override
     public void processInput() throws Exception {// verarbeitet Benutzereingabe
         try {
-            Command command = ui.getCommand();
-            XY direction = new XY(0, 0);
 
-            String methodName = command.getCommandType().getMethodName();
-            Object[] params = command.getParams();
-            java.lang.reflect.Method method = this.getClass().getMethod(methodName, command.getCommandType().getParamTypes());
-            method.invoke(this, params);
+            Command command = ui.getCommand();
+            if (command != null) {
+                XY direction = new XY(0, 0);
+
+                String methodName = command.getCommandType().getMethodName();
+                Object[] params = command.getParams();
+                java.lang.reflect.Method method = this.getClass().getMethod(methodName, command.getCommandType().getParamTypes());
+                method.invoke(this, params);
+            }
 
         } catch (ScanException e) {
             System.out.println("wrong input");
@@ -96,15 +99,16 @@ public class GameImpl extends Game {
         processInput();
         update();
         Thread.sleep(FPS);
-
     }
 
     public void bufferInput() throws Exception {
         while (true) {
             try {
                 ui.commandBuffer();
-            } catch (Exception e) {
-                e.printStackTrace();
+            } catch (ScanException e) {
+                System.out.println("wrong input");
+            } catch (NotEnoughEnergyException f) {
+                System.out.println("Not enough Energy");
             }
         }
     }
