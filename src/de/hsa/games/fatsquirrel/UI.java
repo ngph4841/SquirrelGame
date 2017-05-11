@@ -9,4 +9,6 @@ public interface UI {
 
     public void render(BoardView view);
 
+    public void commandBuffer()throws Exception;
+
 }
