@@ -20,4 +20,8 @@ public abstract class Game {
             update();
         }
     }
+
+    public void runLive() throws  Exception{}
+
+    public void bufferInput() throws Exception{}
 }
