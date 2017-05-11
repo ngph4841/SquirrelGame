@@ -89,6 +89,7 @@ public class GameImpl extends Game {
     public void run() throws Exception {
         while (true) {
             render();
+            ui.commandBuffer();
             processInput();
             update();
         }
