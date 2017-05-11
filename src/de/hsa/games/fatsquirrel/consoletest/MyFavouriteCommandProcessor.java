@@ -20,7 +20,7 @@ public class MyFavouriteCommandProcessor {
         while (true) {
             command = commandScanner.next();
 
-            Object[] params = command.getParams();		  //??????????????????????????? NullPointer
+            Object[] params = command.getParams();
             MyFavouriteCommandType commandType = (MyFavouriteCommandType) command.getCommandType();
 
             switch (commandType) {

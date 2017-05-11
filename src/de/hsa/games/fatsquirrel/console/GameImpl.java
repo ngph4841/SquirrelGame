@@ -43,37 +43,6 @@ public class GameImpl extends Game {
             java.lang.reflect.Method method = this.getClass().getMethod(methodName, command.getCommandType().getParamTypes());
             method.invoke(this, params);
 
-
-//            switch ((GameCommandType) command.getCommandType()) {
-//                case HELP:
-//                    for (GameCommandType e : GameCommandType.values()) {
-//                        System.out.println("write: " + e.getName() + " for " + e.getHelpText());
-//                    }
-//                    break;
-//                case EXIT:
-//                    System.exit(1);
-//                case ALL:
-//                    break;
-//                case LEFT:
-//                    direction = (XY) command.getParams()[0];
-//                    break;
-//                case UP:
-//                    direction = (XY) command.getParams()[0];
-//                    break;
-//                case DOWN:
-//                    direction = (XY) command.getParams()[0];
-//                    break;
-//                case RIGHT:
-//                    direction = (XY) command.getParams()[0];
-//                    break;
-//                case MASTER_ENERGY:
-//                    System.out.println("HP: " + player.getEnergy());
-//                    break;
-//                case SPAWN_MINI:
-//                    state.getBoard().getEntitySet().plus(player.spawnChild((int) command.getParam(0)));
-//                    break;
-//            }
-//            context.tryMove(player, direction);
         } catch (ScanException e) {
             System.out.println("wrong input");
             // command = new Command(GameCommandType.HELP, new Object[1]);
@@ -109,7 +78,7 @@ public class GameImpl extends Game {
         context.tryMove(player, moveDirection);
     }
 
-    public void masterMethod(){
+    public void masterMethod() {
         System.out.println("HP :" + player.getEnergy());
     }
 
