@@ -18,15 +18,7 @@ public class MasterSquirrel extends Squirrel {
     }
 
     public void nextStep(EntityContext context) throws Exception {
-        if (!stun) {
             context.tryMove(this, new XY(0, 0));
-        } else {
-            stunCounter++;
-            if (stunCounter >= 3) {
-                stunCounter = 0;
-                cleanse();
-            }
-        }
     }
 
     public boolean checkIfChild(Entity o) { // checks in childrenId array for
