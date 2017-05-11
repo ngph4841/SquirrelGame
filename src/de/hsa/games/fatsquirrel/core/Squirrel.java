@@ -19,6 +19,20 @@ public abstract class Squirrel extends Entity { // class Squirrel so Master&Mini
         stun = false;
     }
 
+    public boolean getStun(){
+        return stun;
+    }
+
+    public int getStunCounter(){
+        return stunCounter;
+    }
+
+    public void increaseStunCounter(){
+        stunCounter++;
+    }
+
+    public void resetStunCounter(){stunCounter = 0;}
+
     public void nextStep(EntityContext context) throws Exception {
     }
 }
