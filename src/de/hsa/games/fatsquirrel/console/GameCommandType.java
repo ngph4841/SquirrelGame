@@ -14,6 +14,7 @@ public enum GameCommandType implements CommandTypeInfo {
     DOWN("2", "  * move down", XY.class, "move"),
     LEFT("1", "  * move left", XY.class, "move"),
     RIGHT("3", "  * move right", XY.class, "move");
+//    STOP("stop","stop","stop");
 
 
     private String name;
