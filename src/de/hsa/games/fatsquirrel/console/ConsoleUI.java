@@ -16,14 +16,22 @@ import de.hsa.games.fatsquirrel.core.MiniSquirrel;
 import de.hsa.games.fatsquirrel.core.Wall;
 
 public class ConsoleUI implements UI {
+    private BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+    private Command buffer;
+
+    public void commandBuffer() throws Exception{
+        CommandScanner scanner = new CommandScanner(GameCommandType.values(), input);
+        buffer = scanner.next();
+    }
 
     public Command getCommand() throws Exception {
+//       CommandScanner scanner = new CommandScanner(GameCommandType.values(), input);
+//       Command command = scanner.next();
 
-        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-        CommandScanner scanner = new CommandScanner(GameCommandType.values(), input);
-        Command command = scanner.next();
-        
-        return command;
+//        return command;
+        Command temp = buffer;
+//        buffer = new Command();
+        return buffer;
     }
 
     public void render(BoardView view) {
