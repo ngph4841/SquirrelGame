@@ -32,7 +32,7 @@ public class MiniSquirrel extends Squirrel { // extends squirrel like
                 context.tryMove(this, direction);
             } else {
                 increaseStunCounter();
-                if (getStunCounter() >= 3) {
+                if (stunCounter >= 3) {
                     resetStunCounter();
                     cleanse();
                 }
