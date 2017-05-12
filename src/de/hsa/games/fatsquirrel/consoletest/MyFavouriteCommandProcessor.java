@@ -3,8 +3,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintStream;
 
-import de.hsa.games.fatsquirrel.Command;
-import de.hsa.games.fatsquirrel.CommandScanner;
+import de.hsa.games.fatsquirrel.util.Command;
+import de.hsa.games.fatsquirrel.util.CommandScanner;
 import de.hsa.games.fatsquirrel.console.ScanException;
 
 import java.io.InputStreamReader;
