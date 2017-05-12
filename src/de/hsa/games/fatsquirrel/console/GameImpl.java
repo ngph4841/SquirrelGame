@@ -1,10 +1,9 @@
 package de.hsa.games.fatsquirrel.console;
 
-import de.hsa.games.fatsquirrel.Command;
+import de.hsa.games.fatsquirrel.util.Command;
 import de.hsa.games.fatsquirrel.Game;
 import de.hsa.games.fatsquirrel.State;
 import de.hsa.games.fatsquirrel.UI;
-import de.hsa.games.fatsquirrel.consoletest.MyFavouriteCommandType;
 import de.hsa.games.fatsquirrel.core.FlattenedBoard;
 import de.hsa.games.fatsquirrel.core.MasterSquirrel;
 import de.hsa.games.fatsquirrel.core.XY;

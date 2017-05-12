@@ -3,8 +3,8 @@ package de.hsa.games.fatsquirrel.console;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-import de.hsa.games.fatsquirrel.Command;
-import de.hsa.games.fatsquirrel.CommandScanner;
+import de.hsa.games.fatsquirrel.util.Command;
+import de.hsa.games.fatsquirrel.util.CommandScanner;
 import de.hsa.games.fatsquirrel.UI;
 import de.hsa.games.fatsquirrel.core.BadBeast;
 import de.hsa.games.fatsquirrel.core.BadPlant;
