@@ -1,17 +1,12 @@
-package de.hsa.games.fatsquirrel;
+package de.hsa.games.fatsquirrel.util;
 
-import de.hsa.games.fatsquirrel.Command;
 import de.hsa.games.fatsquirrel.console.CommandTypeInfo;
-import de.hsa.games.fatsquirrel.console.GameCommandType;
 import de.hsa.games.fatsquirrel.console.ScanException;
 import de.hsa.games.fatsquirrel.core.XY;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.PrintStream;
-import java.io.Reader;
-import java.util.Scanner;
 
 public class CommandScanner {
     CommandTypeInfo[] commandTypeInfos;

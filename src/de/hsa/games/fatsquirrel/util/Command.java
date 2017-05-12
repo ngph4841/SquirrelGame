@@ -1,4 +1,4 @@
-package de.hsa.games.fatsquirrel;
+package de.hsa.games.fatsquirrel.util;
 
 import de.hsa.games.fatsquirrel.console.CommandTypeInfo;
 
