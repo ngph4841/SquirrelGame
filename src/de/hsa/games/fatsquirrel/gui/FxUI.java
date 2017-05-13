@@ -1,8 +1,7 @@
 package de.hsa.games.fatsquirrel.gui;
 
 import de.hsa.games.fatsquirrel.UI;
-import de.hsa.games.fatsquirrel.core.BoardView;
-import de.hsa.games.fatsquirrel.core.XY;
+import de.hsa.games.fatsquirrel.core.*;
 import de.hsa.games.fatsquirrel.util.Command;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
@@ -43,10 +42,14 @@ public class FxUI extends Scene implements UI {
                     @Override
                     public void handle(KeyEvent keyEvent) {
                         System.out.println("Es wurde folgende Taste gedrückt: " + keyEvent.getCode() + " bitte behandeln!");
-                        if (keyEvent.equals(KeyCode.W)) {
-                        } else if (keyEvent.equals(KeyCode.A)) {
-                        } else if (keyEvent.equals(KeyCode.S)) {
-                        } else if (keyEvent.equals(KeyCode.D)) {
+                        if (keyEvent.getCode() == KeyCode.W) {
+                            System.out.println("moved up!");
+                        } else if (keyEvent.getCode() == KeyCode.A) {
+                            System.out.println("moved left");
+                        } else if (keyEvent.getCode() == KeyCode.S) {
+                            System.out.println("moved down!");
+                        } else if (keyEvent.getCode() == KeyCode.D) {
+                            System.out.println("moved right!");
                         }
                     }
                 }
@@ -70,11 +73,30 @@ public class FxUI extends Scene implements UI {
         gc.clearRect(0, 0, boardCanvas.getWidth(), boardCanvas.getHeight());
         XY viewSize = view.getSize();
 
-        // dummy for rendering a board snapshot, TODO: change it!
-        gc.fillText("Where are the beasts?", 100, 100);
-        gc.setFill(Color.RED);
-        gc.fillOval(150, 150, 50, 50);
-        //...
+        for(int i = 0; i < view.getSize().getX();i++){
+            for(int j = 0; j < view.getSize().getY(); j++){
+                if(view.getEntityType(j,i) instanceof Wall){
+                    gc.setFill(Color.BLACK);
+                    gc.fillRect(i*10,j*10,10,10);
+                }else if(view.getEntityType(j,i) instanceof BadBeast){
+                    gc.setFill(Color.RED);
+                    gc.fillOval(i*10,j*10,10,10);
+                }else if(view.getEntityType(j,i) instanceof GoodBeast){
+                    gc.setFill(Color.BLUE);
+                    gc.fillOval(i*10,j*10,10,10);
+                } else if(view.getEntityType(j,i) instanceof BadPlant){
+                    gc.setFill(Color.YELLOW);
+                    gc.fillOval(i*10,j*10,10,10);
+                } else if(view.getEntityType(j,i) instanceof GoodPlant){
+                    gc.setFill(Color.GREEN);
+                    gc.fillOval(i*10,j*10,10,10);
+                } else if(view.getEntityType(j,i) instanceof MasterSquirrel){
+                    gc.setFill(Color.BROWN);
+                    gc.fillRect(i*10,j*10,10,10);
+                }
+
+            }
+        }
     }
 
 

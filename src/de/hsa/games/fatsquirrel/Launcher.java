@@ -52,6 +52,7 @@ public class Launcher extends Application {
         primaryStage.show();
 
 //        startGame(game);
+        fxUI.render(state.getBoardView());
     }
 
     public static void startGame(Game game1) throws Exception {
@@ -75,7 +76,6 @@ public class Launcher extends Application {
                 e.printStackTrace();
             }
         }
-
     }
 
 }
