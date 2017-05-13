@@ -58,7 +58,7 @@ public class Launcher extends Application {
     public static void startGame(Game game1) throws Exception {
         Timer timer = new Timer();
         Task t = new Task(game1);
-        timer.schedule(t, 0, 10);
+        timer.schedule(t, 10);
     }
 
     static class Task extends TimerTask {
