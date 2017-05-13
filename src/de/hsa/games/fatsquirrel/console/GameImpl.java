@@ -35,7 +35,6 @@ public class GameImpl extends Game {
     @Override
     public void processInput() throws Exception {// verarbeitet Benutzereingabe
         try {
-
             Command command = ui.getCommand();
             if (command != null) {
                 XY direction = new XY(0, 0);
@@ -95,10 +94,12 @@ public class GameImpl extends Game {
     }
 
     public void runLive() throws Exception {
-        render();
-        processInput();
-        update();
-        Thread.sleep(FPS);
+        while(true) {
+            render();
+            processInput();
+            update();
+            Thread.sleep(FPS);
+        }
     }
 
     public void bufferInput() throws Exception {
