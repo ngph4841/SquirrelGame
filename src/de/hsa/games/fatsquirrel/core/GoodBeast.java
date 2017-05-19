@@ -32,11 +32,11 @@ public class GoodBeast extends Character {
                     }
                 }
                 moveDirection = new XY(x, y);
-                context.tryMove(this, moveDirection); // check if vector
                 // viable&move
             } else {
                 moveDirection = moveBeast(); //rng
             }
+            context.tryMove(this, moveDirection); // check if vector
         }
         turnCounter++;
         if (turnCounter == 4) {
