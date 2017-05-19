@@ -23,45 +23,86 @@ import javafx.scene.paint.Color;
  */
 public class FxUI extends Scene implements UI {
     private static final int CELL_SIZE = 10;
+    private static final CommandTypeInfo[] commandTypeInfos = GameCommandType.values();
+    private static Command inputBuffer = null;
     private Canvas boardCanvas;
     private Label msgLabel;
-    private CommandTypeInfo[] commandTypeInfos;
-    private String[] str;
-    private Command inputBuffer;
+
 
     public FxUI(Parent parent, Canvas boardCanvas, Label msgLabel) {
         super(parent);
         this.boardCanvas = boardCanvas;
         this.msgLabel = msgLabel;
-        this.commandTypeInfos = GameCommandType.values();
-        this.str = new String[2];
     }
 
+    private void inputBuffer(KeyCode keyCode) {
+        CommandTypeInfo cmdType = null;
+        int MiniSquirrelBirthEnergy = 50;
+
+        if(keyCode == KeyCode.M){
+            msgLabel.setText("MasterSquirrel HP:");
+            return;
+        } else if (keyCode == KeyCode.W) {
+            cmdType = GameCommandType.UP;
+        } else if (keyCode == KeyCode.A) {
+            cmdType = GameCommandType.LEFT;
+        } else if (keyCode == KeyCode.S) {
+            cmdType = GameCommandType.DOWN;
+        } else if (keyCode == KeyCode.D) {
+            cmdType = GameCommandType.RIGHT;
+        } else if (keyCode == KeyCode.J) {
+            cmdType = GameCommandType.SPAWN_MINI;
+            msgLabel.setText("Congratulations, you just gave birth!");
+        }
+
+        if (cmdType != null) {
+            Class<?>[] paramsClass = cmdType.getParamTypes();
+            Object[] params = new Object[paramsClass.length];
+
+            if (paramsClass.length > 0) {
+                for (int j = 0; j < paramsClass.length; j++) {
+                    Class<?> c = paramsClass[j];
+
+                    if (c.equals(int.class)) {
+                        params[j] = new Integer(MiniSquirrelBirthEnergy);
+                    } else if (c.equals(XY.class)) {
+                        switch (cmdType.getName()) {
+                            case "1":
+                                params[j] = new XY(-1, 0);
+                                break;
+                            case "2":
+                                params[j] = new XY(0, 1);
+                                break;
+                            case "3":
+                                params[j] = new XY(1, 0);
+                                break;
+                            case "5":
+                                params[j] = new XY(0, -1);
+                                break;
+                        }
+                    }
+                }
+            }
+            inputBuffer = new Command(cmdType, params);
+        }
+    }
+
+
     public static FxUI createInstance(XY boardSize) {
-        Canvas boardCanvas = new Canvas(boardSize.getX() * CELL_SIZE, boardSize.getY() * CELL_SIZE);
+        Canvas boardCanvas = new Canvas(boardSize.getX()*CELL_SIZE, boardSize.getY()*CELL_SIZE);
         Label statusLabel = new Label();
         VBox top = new VBox();
         top.getChildren().add(boardCanvas);
         top.getChildren().add(statusLabel);
         statusLabel.setText("Hallo Welt");
         final FxUI fxUI = new FxUI(top, boardCanvas, statusLabel);
-//        fxUI.setOnKeyPressed(
-//                new EventHandler<KeyEvent>() {
-//                    @Override
-//                    public void handle(KeyEvent keyEvent) {
-//                        System.out.println("Es wurde folgende Taste gedrückt: " + keyEvent.getCode() + " bitte behandeln!");
-//                        if (keyEvent.getCode() == KeyCode.W) {
-//                            System.out.println("moved up!");
-//                        } else if (keyEvent.getCode() == KeyCode.A) {
-//                            System.out.println("moved left");
-//                        } else if (keyEvent.getCode() == KeyCode.S) {
-//                            System.out.println("moved down!");
-//                        } else if (keyEvent.getCode() == KeyCode.D) {
-//                            System.out.println("moved right!");
-//                        }
-//                    }
-//                }
-//        );
+        fxUI.setOnKeyPressed(
+                new EventHandler<KeyEvent>() {
+                    @Override
+                    public void handle(KeyEvent keyEvent) {
+                        fxUI.inputBuffer(keyEvent.getCode());
+                    }
+                });
         return fxUI;
     }
 
@@ -79,36 +120,36 @@ public class FxUI extends Scene implements UI {
     private void repaintBoardCanvas(BoardView view) {
         GraphicsContext gc = boardCanvas.getGraphicsContext2D();
         gc.clearRect(0, 0, boardCanvas.getWidth(), boardCanvas.getHeight());
-        XY viewSize = view.getSize();
+        int boardWidth = view.getSize().getX();
+        int boardHeight = view.getSize().getY();
 
-        for (int i = 0; i < view.getSize().getX(); i++) {
-            for (int j = 0; j < view.getSize().getY(); j++) {
-                if (view.getEntityType(j, i) instanceof Wall) {
+        for (int j = 0; j < boardHeight; j++) {
+            for (int i = 0; i < boardWidth; i++) {
+                if (view.getEntityType(i, j) instanceof Wall) {
                     gc.setFill(Color.BLACK);
-                    gc.fillRect(i * 10, j * 10, 10, 10);
-                } else if (view.getEntityType(j, i) instanceof BadBeast) {
+                    gc.fillRect(i * CELL_SIZE, j * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+                } else if (view.getEntityType(i, j) instanceof BadBeast) {
                     gc.setFill(Color.RED);
-                    gc.fillOval(i * 10, j * 10, 10, 10);
-                } else if (view.getEntityType(j, i) instanceof GoodBeast) {
+                    gc.fillOval(i * CELL_SIZE, j * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+                } else if (view.getEntityType(i, j) instanceof GoodBeast) {
                     gc.setFill(Color.BLUE);
-                    gc.fillOval(i * 10, j * 10, 10, 10);
-                } else if (view.getEntityType(j, i) instanceof BadPlant) {
+                    gc.fillOval(i * CELL_SIZE, j * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+                } else if (view.getEntityType(i, j) instanceof BadPlant) {
                     gc.setFill(Color.YELLOW);
-                    gc.fillOval(i * 10, j * 10, 10, 10);
-                } else if (view.getEntityType(j, i) instanceof GoodPlant) {
+                    gc.fillRect(i * CELL_SIZE, j * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+                } else if (view.getEntityType(i, j) instanceof GoodPlant) {
                     gc.setFill(Color.GREEN);
-                    gc.fillOval(i * 10, j * 10, 10, 10);
-                } else if (view.getEntityType(j, i) instanceof MasterSquirrel) {
+                    gc.fillRect(i * CELL_SIZE, j * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+                } else if (view.getEntityType(i, j) instanceof MasterSquirrel) {
                     gc.setFill(Color.BROWN);
-                    gc.fillRect(i * 10, j * 10, 10, 10);
-                } else if (view.getEntityType(j, i) instanceof MiniSquirrel) {
+                    gc.fillRect(i * CELL_SIZE, j * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+                } else if (view.getEntityType(i, j) instanceof MiniSquirrel) {
                     gc.setFill(Color.FIREBRICK);
-                    gc.fillRect(i * 10, j * 10, 10, 10);
+                    gc.fillRect(i * CELL_SIZE, j * CELL_SIZE, CELL_SIZE, CELL_SIZE);
                 }
             }
         }
     }
-
 
     //    @Override
     public void message(final String msg) {
@@ -121,58 +162,6 @@ public class FxUI extends Scene implements UI {
     }
 
     public void commandBuffer() {
-        this.setOnKeyPressed(
-                new EventHandler<KeyEvent>() {
-                    @Override
-                    public void handle(KeyEvent keyEvent) {
-                        if (keyEvent.getCode() == KeyCode.W) {
-                            str[0] = "5";
-                        } else if (keyEvent.getCode() == KeyCode.A) {
-                            str[0] = "1";
-                        } else if (keyEvent.getCode() == KeyCode.S) {
-                            str[0] = "2";
-                        } else if (keyEvent.getCode() == KeyCode.D) {
-                            str[0] = "3";
-                        } else if (keyEvent.getCode() == KeyCode.J){
-                            str[0] = "mini";
-                            str[1] = "100";
-                        }
-                    }
-                }
-        );
-        for (int i = 0; i < commandTypeInfos.length; i++) {
-            if (str.equals(commandTypeInfos[i].getName())) {
-
-                Class<?>[] paramsClass = commandTypeInfos[i].getParamTypes();
-                Object[] params = new Object[paramsClass.length];
-
-                if (paramsClass.length > 0) {
-                    for (int j = 0; j < paramsClass.length; j++) {
-                        Class<?> c = paramsClass[j];
-
-                        if (c.equals(int.class)) {
-                            params[j] = new Integer(str[j + 1]);
-                        } else if (c.equals(XY.class)) {
-                            switch (commandTypeInfos[i].getName()) {
-                                case "1":
-                                    params[j] = new XY(0, -1);
-                                    break;
-                                case "2":
-                                    params[j] = new XY(1, 0);
-                                    break;
-                                case "3":
-                                    params[j] = new XY(0, 1);
-                                    break;
-                                case "5":
-                                    params[j] = new XY(-1, 0);
-                                    break;
-                            }
-                        }
-                    }
-                }
-                inputBuffer = new Command(commandTypeInfos[i], params);
-            }
-        }
     }
 
     public Command getCommand() {
