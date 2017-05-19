@@ -1,5 +1,6 @@
 package de.hsa.games.fatsquirrel.console;
 
+import de.hsa.games.fatsquirrel.gui.FxUI;
 import de.hsa.games.fatsquirrel.util.Command;
 import de.hsa.games.fatsquirrel.Game;
 import de.hsa.games.fatsquirrel.State;
@@ -9,7 +10,6 @@ import de.hsa.games.fatsquirrel.core.MasterSquirrel;
 import de.hsa.games.fatsquirrel.core.XY;
 
 public class GameImpl extends Game {
-
     private State state;
     private int charTurnCounter;
     private int stunTurnCounter;
@@ -17,45 +17,37 @@ public class GameImpl extends Game {
     private FlattenedBoard context;
     private UI ui;
     private int FPS = 10;
+    private String msg = "";
 
-    public GameImpl(State state) throws Exception {
+    public GameImpl(State state, UI ui) throws Exception {
         this.state = state;
         this.charTurnCounter = 0;
         this.stunTurnCounter = 0;
         this.player = (MasterSquirrel) state.getBoard().getEntitySet().getEntity(0);
         this.context = (FlattenedBoard) state.getBoardView();
-        this.ui = new ConsoleUI();
+        this.ui = ui;
     }
 
     @Override
     public void render() {// Spielzustand auf ausgabemedium
         ui.render(state.getBoardView());
+        System.out.println(msg);
+        msg = "";
     }
 
     @Override
     public void processInput() throws Exception {// verarbeitet Benutzereingabe
-        try {
-            Command command = ui.getCommand();
-            if (command != null) {
-                XY direction = new XY(0, 0);
-
-                String methodName = command.getCommandType().getMethodName();
-                Object[] params = command.getParams();
-                java.lang.reflect.Method method = this.getClass().getMethod(methodName, command.getCommandType().getParamTypes());
-                method.invoke(this, params);
-            }
-
-        } catch (ScanException e) {
-            System.out.println("wrong input");
-            // command = new Command(GameCommandType.HELP, new Object[1]);
-        } catch (NotEnoughEnergyException f) {
-            System.out.println("Not enough Energy");
+        Command command = ui.getCommand();
+        if (command != null) {
+            String methodName = command.getCommandType().getMethodName();
+            Object[] params = command.getParams();
+            java.lang.reflect.Method method = this.getClass().getMethod(methodName, command.getCommandType().getParamTypes());
+            method.invoke(this, params);
         }
     }
 
     public void update() throws Exception {// ver�ndert akt. Spielzustand
         state.update();
-        player = (MasterSquirrel) state.getBoard().getEntitySet().getEntity(0);
     }
 
     public void spawn(int energy) throws Exception {
@@ -72,7 +64,7 @@ public class GameImpl extends Game {
 
     public void help() {
         for (GameCommandType e : GameCommandType.values()) {
-            System.out.println("write: " + e.getName() + " for " + e.getHelpText());
+            System.out.println("enter: " + e.getName() + " for " + e.getHelpText());
         }
     }
 
@@ -85,33 +77,44 @@ public class GameImpl extends Game {
     }
 
     public void run() throws Exception {
+        render();
         while (true) {
-            render();
-            ui.commandBuffer();
-            processInput();
+            try {
+                ui.commandBuffer();
+                processInput();
+            } catch (ScanException e) {
+                msg = "wrong input, please try again";
+            } catch (NotEnoughEnergyException f) {
+                msg = "Not enough energy to spawn a child";
+            }
             update();
+            render();
         }
     }
 
     public void runLive() throws Exception {
-        while(true) {
+        while (true) {
             render();
-            processInput();
+            try {
+                ui.commandBuffer();
+                processInput();
+            } catch (ScanException e) {
+                msg = "wrong input, please try again";
+            } catch (NotEnoughEnergyException f) {
+                msg = "Not enough energy to spawn a child";
+            }
             update();
-            Thread.sleep(FPS);
+            Thread.sleep(FPS * 10);
         }
     }
 
     public void bufferInput() throws Exception {
         while (true) {
-            try {
-                ui.commandBuffer();
-            } catch (ScanException e) {
-                System.out.println("wrong input");
-            } catch (NotEnoughEnergyException f) {
-                System.out.println("Not enough Energy");
-            }
+            ui.commandBuffer();
         }
     }
 
+    public State getState() {
+        return state;
+    }
 }
