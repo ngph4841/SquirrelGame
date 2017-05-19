@@ -21,8 +21,8 @@ public class BadBeast extends Character {
 
     public void nextStep(EntityContext context) throws Exception {
         if (turnCounter == 0) {
-            XY playerPosition = context.nearestPlayer(this.position).getPosition();
-            XY moveDirection = new XY(playerPosition.getX() - position.getX(), playerPosition.getY() - position.getY());
+            XY squirrelPosition = context.nearestPlayer(this.position).getPosition();
+            XY moveDirection = new XY(squirrelPosition.getX() - position.getX(), squirrelPosition.getY() - position.getY());
             if (Math.abs(moveDirection.getX()) <= 6 && Math.abs(moveDirection.getY()) <= 6) {
                 int x = moveDirection.getX();
                 int y = moveDirection.getY();
@@ -48,7 +48,7 @@ public class BadBeast extends Character {
             context.tryMove(this, moveDirection); // check if vector viable&move
         }
         turnCounter++;
-        if (turnCounter == 4) {
+        if (turnCounter >= 4) {
             turnCounter = 0;
         }
     }
