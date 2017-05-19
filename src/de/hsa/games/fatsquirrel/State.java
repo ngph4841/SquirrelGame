@@ -26,8 +26,8 @@ public class State {
 
     public void update() throws Exception {
         EntityContext context = (EntityContext) flattenedBoard;
-        board.getEntitySet().moveAll(context);        //call nextStep in all entities
-        flattenedBoard = (FlattenedBoard) board.flatten();    //update Boardview
+        this.board.getEntitySet().moveAll(context);        //call nextStep in all entities
+        this.flattenedBoard = (FlattenedBoard) board.flatten();    //update Boardview
     }
 
 }
