@@ -24,4 +24,6 @@ public abstract class Game {
     public void runLive() throws  Exception{}
 
     public void bufferInput() throws Exception{}
+
+    public State getState(){return state;}
 }
