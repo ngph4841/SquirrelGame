@@ -21,7 +21,7 @@ public class Launcher extends Application {
     public static void main(String[] args) throws Exception {
         Board board1 = new Board(settings);
         State state1 = new State(board1);
-        int mode = 0;
+        int mode = 2;
         Game game;
         switch(mode){
             case 0:
