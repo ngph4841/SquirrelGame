@@ -164,6 +164,11 @@ public class FxUI extends Scene implements UI {
     public void commandBuffer() {
     }
 
+    @Override
+    public void setMsg(String msg) {
+        this.msgLabel.setText(msg);
+    }
+
     public Command getCommand() {
         Command temp = inputBuffer;
         inputBuffer = null;
