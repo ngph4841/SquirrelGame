@@ -10,9 +10,7 @@ import de.hsa.games.fatsquirrel.core.MasterSquirrel;
 import de.hsa.games.fatsquirrel.core.XY;
 
 public class GameImpl extends Game {
-    private State state;
-    private int charTurnCounter;
-    private int stunTurnCounter;
+    private State state;;
     private MasterSquirrel player;
     private FlattenedBoard context;
     private UI ui;
@@ -21,18 +19,16 @@ public class GameImpl extends Game {
 
     public GameImpl(State state, UI ui) throws Exception {
         this.state = state;
-        this.charTurnCounter = 0;
-        this.stunTurnCounter = 0;
         this.player = (MasterSquirrel) state.getBoard().getEntitySet().getEntity(0);
         this.context = (FlattenedBoard) state.getBoardView();
         this.ui = ui;
     }
 
     @Override
-    public void render() {// Spielzustand auf ausgabemedium
-        ui.render(state.getBoardView());
-        System.out.println(msg);
+    public void render() throws Exception{// Spielzustand auf ausgabemedium
+        ui.setMsg(msg);
         msg = "";
+        ui.render(state.getBoardView());
     }
 
     @Override
@@ -51,11 +47,7 @@ public class GameImpl extends Game {
     }
 
     public void spawn(int energy) throws Exception {
-        try {
             state.getBoard().getEntitySet().plus(player.spawnChild(energy));
-        } catch (NotEnoughEnergyException e) {
-            System.out.println("Not enough Energy");
-        }
     }
 
     public void exit() {
