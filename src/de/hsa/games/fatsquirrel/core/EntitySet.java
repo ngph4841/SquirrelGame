@@ -35,21 +35,21 @@ public class EntitySet {
         }
     }
 
-    public void plus(Entity o) {
+    public void plus(Entity entity) {
         Entity[] temp = new Entity[++counter];
         for (int i = 0; i < set.length; i++) {
             temp[i] = set[i];
         }
-        temp[counter - 1] = o;
+        temp[counter - 1] = entity;
         set = temp;
     }
 
-    public void remove(Entity o) {
+    public void remove(Entity entity) {
         if (counter == 0) {
             return;
         }
         for (int i = 0; i < counter; i++) {
-            if (set[i].equals(o)) {
+            if (set[i].equals(entity)) {
                 set[i] = null;
                 counter--;
                 break;
