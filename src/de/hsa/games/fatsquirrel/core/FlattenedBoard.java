@@ -13,8 +13,7 @@ public class FlattenedBoard implements BoardView, EntityContext {
         this.flatBoard = new Entity[settings.getSize().getX()][settings.getSize().getY()];
 
         EntitySet list = board.getEntitySet();
-        int x;
-        int y;
+        int x; int y;
         for (int i = 0; i < list.length(); i++) {            //check all entities in the EntitySet
             if (list.getEntity(i) == null) {
                 break;
@@ -22,15 +21,13 @@ public class FlattenedBoard implements BoardView, EntityContext {
             x = list.getEntity(i).getPosition().getX();    //get coordinates from the entity
             y = list.getEntity(i).getPosition().getY();
             flatBoard[x][y] = list.getEntity(i);    //add Entities from EntitySet to flatBoard
-
-
             //DBG
-            if(flatBoard[x][y] instanceof Character) {
-                System.out.println("flatboard constructor");
-                System.out.println(list.getEntity(i).getClass());
-                System.out.println("flatboard" + x + "/" + y);
-                System.out.println("entity" + list.getEntity(i).getPosition().getX() + "/" + list.getEntity(i).getPosition().getY());
-            }
+//            if(flatBoard[x][y] instanceof Character) {
+//                System.out.println("flatboard constructor");
+//                System.out.println(list.getEntity(i).getClass());
+//                System.out.println("flatboard" + x + "/" + y);
+//                System.out.println("entity" + list.getEntity(i).getPosition().getX() + "/" + list.getEntity(i).getPosition().getY());
+//            }
         }
     }
 
@@ -43,7 +40,7 @@ public class FlattenedBoard implements BoardView, EntityContext {
     }
 
     public XY getSize() {
-        return new XY(settings.getSize().getX(), settings.getSize().getY());
+        return settings.getSize();
     }
 
     public Entity getEntityType(XY xy) {
@@ -59,7 +56,7 @@ public class FlattenedBoard implements BoardView, EntityContext {
             if (flatBoard[x][y] instanceof Wall) {
                 mini.updateEnergy(deltaEnergy);
                 mini.stun();
-                System.out.println("Minisquirrel just got stunned!");
+                System.out.println("MiniSquirrel just got stunned!");
                 return;
             } else if (flatBoard[x][y] instanceof MasterSquirrel) {
                 MasterSquirrel temp = (MasterSquirrel) flatBoard[x][y];
@@ -83,7 +80,9 @@ public class FlattenedBoard implements BoardView, EntityContext {
                 mini.updateEnergy(deltaEnergy);
                 BadBeast temp = (BadBeast) flatBoard[x][y];
                 temp.bite();
-                flatBoard[x][y] = temp;
+                if(temp.getBite() <= 0){
+                    killAndReplace(temp);
+                }
                 if (mini.getEnergy() <= 0) {
                     kill(mini);
                     return;
@@ -134,13 +133,13 @@ public class FlattenedBoard implements BoardView, EntityContext {
     }
 
     public void tryMove(MasterSquirrel master, XY moveDirection) throws Exception {
+
         if (!master.getStun()) {
             int x = master.getPosition().getX() + moveDirection.getX();
             int y = master.getPosition().getY() + moveDirection.getY();
             if (flatBoard[x][y] == null) {
-                master.setPosition(new XY(x, y));
+                move(master, new XY(x,y));
             } else {
-
                 //DBG
                 System.out.println("DBG:" + flatBoard[x][y].getClass());
                 System.out.println("entitypos:" + flatBoard[x][y].getPosition().getX() + "/" + flatBoard[x][y].getPosition().getY());
@@ -161,7 +160,11 @@ public class FlattenedBoard implements BoardView, EntityContext {
                     kill(flatBoard[x][y]); //child dies :(
                 } else if (flatBoard[x][y] instanceof BadBeast) {
                     master.updateEnergy(deltaEnergy);
-                    tryMove((BadBeast) flatBoard[x][y], new XY(moveDirection.getX() * -1, moveDirection.getY() * -1));
+                    BadBeast temp = (BadBeast) flatBoard[x][y];
+                    temp.bite();
+                    if(temp.getBite() <= 0){
+                        killAndReplace(temp);
+                    }
                 } else if (flatBoard[x][y] instanceof GoodBeast | flatBoard[x][y] instanceof GoodPlant | flatBoard[x][y] instanceof BadPlant){
                     master.updateEnergy(deltaEnergy);        //plants&goodbeast
                     killAndReplace(flatBoard[x][y]);
@@ -240,36 +243,28 @@ public class FlattenedBoard implements BoardView, EntityContext {
         if (!(entity instanceof Wall)) {
             System.out.println("a " + entity.getClass() + " has just been killed");
             board.getEntitySet().remove(entity);
-
-            EntitySet list = board.getEntitySet();
-            int x;
-            int y;
-            for (int i = 0; i < list.length(); i++) {            //refresh the flatboard
-                if (list.getEntity(i) == null) {                //w/o del entity
-                    break;
-                }
-                x = list.getEntity(i).getPosition().getX();
-                y = list.getEntity(i).getPosition().getY();
-                flatBoard[x][y] = list.getEntity(i);
-            }
+            refresh();
         }
     }
 
-    public void  move(Entity entity, XY position){
-        int oldX = entity.getPosition().getX();
-        int oldY = entity.getPosition().getY();
-
-        //DBG
-        System.out.println(entity.getClass());
-        System.out.println("old position:" + oldX + "/" + oldY);
-        System.out.println("new position:" + position.getX() + "/" + position.getY());
-
-        flatBoard[oldX][oldY] = null;
+    public void  move(Entity entity, XY position) throws Exception {
         entity.setPosition(position);
-        flatBoard[entity.getPosition().getX()][entity.getPosition().getY()] = entity;
-
-        //DBG
-        System.out.println(flatBoard[position.getX()][position.getY()].getClass());
-        System.out.println(flatBoard[oldX][oldY]);
+        refresh();
     }
+
+    public void refresh() throws Exception {
+        EntitySet list = board.getEntitySet();
+        Entity[][] temp = new Entity[settings.getSize().getX()][settings.getSize().getY()];
+        int x; int y;
+        for (int i = 0; i < list.length(); i++) {            //refresh the flatboard
+            if (list.getEntity(i) == null) {
+                break;
+            }
+            x = list.getEntity(i).getPosition().getX();
+            y = list.getEntity(i).getPosition().getY();
+            temp[x][y] = list.getEntity(i);
+        }
+        this.flatBoard = temp;
+   }
+
 }
