@@ -8,26 +8,23 @@ import de.hsa.games.fatsquirrel.core.FlattenedBoard;
 public class State {
     private int highscore;
     private Board board;
-    private FlattenedBoard flattenedBoard;
 
-    public State(Board board1) throws Exception {
+    public State(Board board) throws Exception {
         this.highscore = 10000;
-        this.board = board1;
-        this.flattenedBoard = new FlattenedBoard(board);
+        this.board = board;
     }
 
     public Board getBoard() {
         return board;
     }
 
-    public BoardView getBoardView() {
-        return flattenedBoard;
+    public BoardView getBoardView()throws Exception {
+        return board.flatten();
     }
 
     public void update() throws Exception {
-        EntityContext context = (EntityContext) flattenedBoard;
+        EntityContext context = board.flatten();
         this.board.getEntitySet().moveAll(context);        //call nextStep in all entities
-        this.flattenedBoard = (FlattenedBoard) board.flatten();    //update Boardview
     }
 
 }
