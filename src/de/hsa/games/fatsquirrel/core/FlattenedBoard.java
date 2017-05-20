@@ -140,11 +140,6 @@ public class FlattenedBoard implements BoardView, EntityContext {
             if (flatBoard[x][y] == null) {
                 move(master, new XY(x,y));
             } else {
-                //DBG
-                System.out.println("DBG:" + flatBoard[x][y].getClass());
-                System.out.println("entitypos:" + flatBoard[x][y].getPosition().getX() + "/" + flatBoard[x][y].getPosition().getY());
-                System.out.println("flatboardpos:" + x + "/" + y);
-
                 int deltaEnergy = flatBoard[x][y].getEnergy(); //how much eng
                 if (flatBoard[x][y] instanceof Wall) {    //wall stun
                     master.stun();
@@ -165,6 +160,7 @@ public class FlattenedBoard implements BoardView, EntityContext {
                     if(temp.getBite() <= 0){
                         killAndReplace(temp);
                     }
+                    return;
                 } else if (flatBoard[x][y] instanceof GoodBeast | flatBoard[x][y] instanceof GoodPlant | flatBoard[x][y] instanceof BadPlant){
                     master.updateEnergy(deltaEnergy);        //plants&goodbeast
                     killAndReplace(flatBoard[x][y]);
