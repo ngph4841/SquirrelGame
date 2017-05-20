@@ -87,7 +87,7 @@ public class GameImpl extends Game {
     public void runLive() throws Exception {
         while (true) {
             render();
-            try {
+            try{
                 ui.commandBuffer();
                 processInput();
             } catch (ScanException e) {
