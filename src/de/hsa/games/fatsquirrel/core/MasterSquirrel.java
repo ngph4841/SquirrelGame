@@ -18,7 +18,7 @@ public class MasterSquirrel extends Squirrel {
     }
 
     public void nextStep(EntityContext context) throws Exception {
-            context.tryMove(this, new XY(0, 0));
+            //context.tryMove(this, new XY(0, 0));
     }
 
     public boolean checkIfChild(Entity o) { // checks in childrenId array for
