@@ -12,4 +12,6 @@ public interface UI {
 
     public void commandBuffer()throws Exception;
 
+    public void setMsg(String msg);
+
 }
