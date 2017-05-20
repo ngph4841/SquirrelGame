@@ -11,6 +11,10 @@ public class GoodBeast extends Character {
 
     public void nextStep(EntityContext context) throws Exception {
         if (turnCounter == 0) {
+            XY squirrelPosition = new XY (99999,99999);
+            if(context.nearestPlayer(this.position) !=null) {
+                squirrelPosition = context.nearestPlayer(this.position).getPosition();
+            }
             XY playerPosition = context.nearestPlayer(this.position).getPosition();
             XY moveDirection = new XY(position.getX() - playerPosition.getX(), position.getY() - playerPosition.getY());
             if (Math.abs(moveDirection.getX()) <= 6 && Math.abs(moveDirection.getY()) <= 6) {
