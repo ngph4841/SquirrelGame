@@ -7,7 +7,7 @@ public abstract class Game {
     protected Game() {
     }
 
-    protected abstract void render();//Spielzustand auf ausgabemedium
+    protected abstract void render() throws Exception;//Spielzustand auf ausgabemedium
 
     protected abstract void processInput() throws Exception;//verarbeitet Benutzereingaben
 
