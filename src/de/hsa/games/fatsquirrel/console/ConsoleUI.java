@@ -11,10 +11,17 @@ import de.hsa.games.fatsquirrel.UI;
 public class ConsoleUI implements UI {
     private BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
     private Command buffer;
+    private String msg;
+
 
     public void commandBuffer() throws Exception{
         CommandScanner scanner = new CommandScanner(GameCommandType.values(), input);
         buffer = scanner.next();
+    }
+
+    @Override
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
     public Command getCommand() throws Exception {
@@ -67,5 +74,6 @@ public class ConsoleUI implements UI {
             }
             System.out.println();
         }
+        System.out.println(msg);
     }
 }
