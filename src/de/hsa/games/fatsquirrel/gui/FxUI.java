@@ -141,10 +141,10 @@ public class FxUI extends Scene implements UI {
                     gc.setFill(Color.GREEN);
                     gc.fillRect(i * CELL_SIZE, j * CELL_SIZE, CELL_SIZE, CELL_SIZE);
                 } else if (view.getEntityType(i, j) instanceof MasterSquirrel) {
-                    gc.setFill(Color.BROWN);
+                    gc.setFill(Color.WHITE);
                     gc.fillRect(i * CELL_SIZE, j * CELL_SIZE, CELL_SIZE, CELL_SIZE);
                 } else if (view.getEntityType(i, j) instanceof MiniSquirrel) {
-                    gc.setFill(Color.FIREBRICK);
+                    gc.setFill(Color.WHEAT);
                     gc.fillRect(i * CELL_SIZE, j * CELL_SIZE, CELL_SIZE, CELL_SIZE);
                 }
             }
@@ -166,7 +166,9 @@ public class FxUI extends Scene implements UI {
 
     @Override
     public void setMsg(String msg) {
-        this.msgLabel.setText(msg);
+        if(!msg.equals("")) {
+            msgLabel.setText(msg);
+        }
     }
 
     public Command getCommand() {
