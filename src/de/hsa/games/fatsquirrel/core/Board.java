@@ -20,7 +20,7 @@ public class Board {
         return settings;
     }
 
-    public BoardView flatten() throws Exception {
+    public FlattenedBoard flatten() throws Exception {
         return new FlattenedBoard(this);
     }
 
@@ -80,13 +80,6 @@ public class Board {
                 XY temp = new XY(randomX, randomY);
 
                 for (int a = settings.getWallCount(); a < list.length(); a++) {
-                    // check
-                    // in
-                    // EntitySet
-                    // for
-                    // Entities
-                    // w/o
-                    // walls
                     if (temp.equals(list.getEntity(a))) { // repeats if there is already an Ent.
                         i--;
                         continue;
