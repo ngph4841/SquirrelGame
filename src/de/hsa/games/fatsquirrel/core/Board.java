@@ -29,7 +29,7 @@ public class Board {
     }
 
     public void fillSet() {
-        list.add(new MasterSquirrel(2000, new XY(settings.getSize().getX() / 2, settings.getSize().getY() / 2)));
+        list.add(new MasterSquirrelBot(2000,2000,new XY(settings.getSize().getX() / 2, settings.getSize().getY() / 2)));
         fillOuterWalls();
         spawnBeastsPlants();
     }
@@ -73,7 +73,7 @@ public class Board {
             if (j == 3) {
                 z = settings.getGoodPlantAmount();
             }
-
+//TODO refactor with switch case maybe ?
             for (int i = 0; i < z; i++) { // for all entities in settings
                 int randomX = 1 + (int) (Math.random() * (settings.getSize().getX() - 2));
                 int randomY = 1 + (int) (Math.random() * (settings.getSize().getY() - 2));
