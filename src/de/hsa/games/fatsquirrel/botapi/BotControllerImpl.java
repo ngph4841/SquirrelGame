@@ -2,6 +2,8 @@ package de.hsa.games.fatsquirrel.botapi;
 
 import de.hsa.games.fatsquirrel.core.Entity;
 import de.hsa.games.fatsquirrel.core.EntityContext;
+import de.hsa.games.fatsquirrel.core.MasterSquirrelBot;
+import de.hsa.games.fatsquirrel.core.XY;
 
 /**
  * Created by Freya on 19.05.2017.
@@ -24,7 +26,62 @@ public class BotControllerImpl implements BotController {
 
 
     @Override
-    public void nextStep(ControllerContext view) {
+    public void nextStep(ControllerContext view) throws Exception {
+        XY viewLowerLeft = controllerContext.getViewLowerLeft();
+        XY viewUpperRight = controllerContext.getViewUpperRight();
+        Entity[] entities = new Entity[999]; //puffer für pawel 1/2
+        int counter = 0;
+        MasterSquirrelBot master = (MasterSquirrelBot) view.getEntity();
+        XY position = master.getPosition();
 
+        for(int i = viewLowerLeft.getX(); i <= viewUpperRight.getX(); i++){
+            for(int j = viewLowerLeft.getY(); j >= viewUpperRight.getY(); j--){
+                if(entityContext.getEntityType(new XY (i,j)) == master ){
+                    continue;
+                }
+                if(entityContext.getEntityType(new XY(i,j)) != null) {
+                    entities[counter++] = entityContext.getEntityType(new XY(i, j));
+                }
+            }
+        }
+
+        int distanceY = Math.abs(entities[0].getPosition().getY() - position.getY());
+        int distanceX = Math.abs(entities[0].getPosition().getX() - position.getX());
+        int index = 0;
+        for (int i = 1; i < counter; i++) {
+            int distanceX2 = Math.abs(entities[i].getPosition().getX() - position.getX());
+            int distanceY2 = Math.abs(entities[i].getPosition().getY() - position.getY());
+            if (distanceX2 <= distanceX && distanceY2 <= distanceY) {
+                index = i;
+                distanceX = distanceX2;
+                distanceY = distanceY2;
+            }
+        }
+        //nearest Entity at entites[index]
+        XY moveDirection = new XY(0,0);
+        // TODO botbrain
+        switch (view.getEntityAt(entities[index].getPosition())){
+            case WALL:
+                System.out.println("WALL");
+                break;
+            case MASTER_SQUIRREL:
+                System.out.println("Squirrel");
+                break;
+            case MINI_SQUIRREL:
+                System.out.println("MINI");
+                break;
+            case NONE:
+                //sollte selten vorkommen aber RNG dann
+                break;
+            case BAD_PLANT:
+            case BAD_BEAST:
+                moveDirection = new XY(master.getPosition().getX() - entities[index].getPosition().getX(), master.getPosition().getY() - entities[index].getPosition().getY());
+                break;
+            case GOOD_PLANT:
+            case GOOD_BEAST:
+                moveDirection = new XY(entities[index].getPosition().getX() - master.getPosition().getX(), entities[index].getPosition().getY() - master.getPosition().getY());
+                break;
+        }
+        view.move(moveDirection);
     }
 }
