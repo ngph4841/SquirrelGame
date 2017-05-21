@@ -25,9 +25,6 @@ public class ConsoleUI implements UI {
     }
 
     public Command getCommand() throws Exception {
-//       CommandScanner scanner = new CommandScanner(GameCommandType.values(), input);
-//       Command command = scanner.next();
-//        return command;
         Command temp = buffer;
         buffer = null;
         return temp;
