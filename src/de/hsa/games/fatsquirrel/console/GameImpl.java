@@ -1,5 +1,6 @@
 package de.hsa.games.fatsquirrel.console;
 
+import de.hsa.games.fatsquirrel.core.MiniSquirrel;
 import de.hsa.games.fatsquirrel.gui.FxUI;
 import de.hsa.games.fatsquirrel.util.Command;
 import de.hsa.games.fatsquirrel.Game;
@@ -8,6 +9,10 @@ import de.hsa.games.fatsquirrel.UI;
 import de.hsa.games.fatsquirrel.core.FlattenedBoard;
 import de.hsa.games.fatsquirrel.core.MasterSquirrel;
 import de.hsa.games.fatsquirrel.core.XY;
+import de.hsa.games.fatsquirrel.util.MainLogger;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class GameImpl extends Game {
     private State state;;
@@ -47,7 +52,14 @@ public class GameImpl extends Game {
     }
 
     public void spawn(int energy) throws Exception {
-            state.getBoard().getEntitySet().plus(player.spawnChild(energy));
+        MiniSquirrel temp = player.spawnChild(energy);
+        int x = temp.getPosition().getX();
+        int y = temp.getPosition().getY();
+        if(state.getBoardView().getEntityType(x,y) != null) {
+            state.getBoard().getEntitySet().plus(temp);
+        }else{
+            msg = "not enough space for birth";
+        }
     }
 
     public void exit() {
@@ -76,8 +88,10 @@ public class GameImpl extends Game {
                 processInput();
             } catch (ScanException e) {
                 msg = "wrong input, please try again";
+                MainLogger.log(Level.WARNING,"wrong user input");
             } catch (NotEnoughEnergyException f) {
                 msg = "Not enough energy to spawn a child";
+                MainLogger.log(Level.WARNING,"wrong user input");
             }
             update();
             render();
@@ -94,6 +108,8 @@ public class GameImpl extends Game {
                 msg = "wrong input, please try again";
             } catch (NotEnoughEnergyException f) {
                 msg = "Not enough energy to spawn a child";
+            } finally {
+                MainLogger.log(Level.WARNING,"wrong user input");
             }
             update();
             Thread.sleep(FPS * 10);
