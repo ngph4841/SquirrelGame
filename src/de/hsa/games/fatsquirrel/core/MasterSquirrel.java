@@ -21,10 +21,10 @@ public class MasterSquirrel extends Squirrel {
             //context.tryMove(this, new XY(0, 0));
     }
 
-    public boolean checkIfChild(Entity o) { // checks in childrenId array for
+    public boolean checkIfChild(Entity entity) { // checks in childrenId array for
         // the correct Id
         for (int i = 0; i < childrenId.length; i++) {
-            if (childrenId[i] == o.getId()) {
+            if (childrenId[i] == entity.getId()) {
                 return true;
             }
         }
@@ -49,7 +49,6 @@ public class MasterSquirrel extends Squirrel {
         temp[childrenCounter - 1] = child.getId();                        // save id of this new child
         childrenId = temp;
         updateEnergy(-energy);
-        System.out.println("Congratulations, you just gave birth!");
         return child;
     }
 
