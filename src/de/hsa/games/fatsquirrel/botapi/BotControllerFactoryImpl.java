@@ -10,7 +10,7 @@ public class BotControllerFactoryImpl implements BotControllerFactory{
     private ControllerContext controllerContext;
     private EntityContext entityContext;
 
-    BotControllerFactoryImpl(ControllerContext controllerContext, EntityContext entityContext){
+    public BotControllerFactoryImpl(ControllerContext controllerContext, EntityContext entityContext){
         this.controllerContext = controllerContext;
         this.entityContext = entityContext;
     }
