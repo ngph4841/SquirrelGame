@@ -20,10 +20,6 @@ public class EntitySet {
         return set.length;
     }
 
-    public void setEntitySet(Entity[] set) {
-        this.set = set;
-    }
-
     public void add(Entity o) {
         if (counter < set.length) {
             for (int i = 0; i < counter; i++) {
@@ -32,6 +28,8 @@ public class EntitySet {
                 }
             }
             set[counter++] = o;
+        }else{
+            plus(o);
         }
     }
 
@@ -45,7 +43,7 @@ public class EntitySet {
     }
 
     public void remove(Entity entity) {
-        if (counter == 0) {
+        if (counter <= 0) {
             return;
         }
         for (int i = 0; i < counter; i++) {
@@ -56,12 +54,14 @@ public class EntitySet {
             }
         }
         int a = 0;
+        Entity[] temp = new Entity[counter];
         for (int i = 0; i < counter; i++) {
             if (set[i] == null) {
                 a++;
             }
-            set[i] = set[a++];
+            temp[i] = set[a++];
         }
+        set = temp;
     }
 
     public String toString() {
