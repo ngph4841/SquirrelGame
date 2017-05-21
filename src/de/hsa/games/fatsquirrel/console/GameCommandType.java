@@ -10,7 +10,6 @@ public enum GameCommandType implements CommandTypeInfo {
     ALL("all", " * all", "all"),
     MASTER_ENERGY("master", " * master energy", "masterMethod"),
     SPAWN_MINI("mini", " * spawn MiniSquirrel", int.class, "spawn"),
-//    MOVE("move", "not an input",XY.class, "move"),
     UP("5", "  * move up", XY.class, "move"),
     DOWN("2", "  * move down", XY.class, "move"),
     LEFT("1", "  * move left", XY.class, "move"),
