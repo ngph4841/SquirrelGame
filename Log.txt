@@ -1,0 +1,1044 @@
+Mai 21, 2017 4:14:42 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:42 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:1/2->2/3
+Mai 21, 2017 4:14:42 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:7/5->6/4
+Mai 21, 2017 4:14:42 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:7/6->8/7
+Mai 21, 2017 4:14:42 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:11/2->11/3
+Mai 21, 2017 4:14:42 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/10->4/10
+Mai 21, 2017 4:14:42 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:6/19->7/18
+Mai 21, 2017 4:14:42 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:22/23->23/23
+Mai 21, 2017 4:14:42 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:13/12->14/12
+Mai 21, 2017 4:14:42 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:42 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:42 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:42 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:42 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:2/3->2/4
+Mai 21, 2017 4:14:42 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:6/4->6/3
+Mai 21, 2017 4:14:42 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:8/7->9/8
+Mai 21, 2017 4:14:42 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:11/3->12/4
+Mai 21, 2017 4:14:42 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:21/3->21/2
+Mai 21, 2017 4:14:42 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:4/10->4/11
+Mai 21, 2017 4:14:42 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:7/18->6/19
+Mai 21, 2017 4:14:42 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:14/12->15/12
+Mai 21, 2017 4:14:42 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:42 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:9/8->10/9
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:12/4->11/5
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:19/5->18/6
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:4/11->5/12
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:6/19->5/18
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:15/12->16/12
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:2/4->2/5
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:6/3->7/3
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:10/9->11/10
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:18/6->19/5
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/12->5/11
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/18->6/18
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:23/23->22/23
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:16/12->17/12
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:2/5->2/4
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:7/3->7/4
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:11/10->12/11
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:11/5->12/6
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:21/2->20/2
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:19/5->19/6
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/11->6/11
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:6/18->5/19
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:22/23->23/22
+Mai 21, 2017 4:14:43 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:17/12->18/12
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:2/4->2/5
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:7/4->6/3
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: BadBeast at: 12/11 attacked a Squirrel at: 12/12
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:12/6->12/7
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:20/2->19/3
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:19/6->20/7
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:6/11->5/10
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/19->6/18
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:23/22->23/23
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:18/12->19/12
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:2/5->1/5
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:6/3->7/4
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: BadBeast at: 12/11 attacked a Squirrel at: 12/12
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:12/7->12/8
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:19/3->19/2
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:20/7->21/8
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/10->6/9
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:6/18->5/19
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:19/12->18/11
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:44 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:7/4->6/3
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: BadBeast at: 12/11 attacked a Squirrel at: 12/12
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:12/8->12/9
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:19/2->18/3
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:21/8->20/7
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:6/9->5/8
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/19->4/20
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:18/11->19/10
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:12/12->12/11
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:12/11->12/10
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:6/3->7/4
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: BadBeast at: 12/11 attacked a Squirrel at: 12/10
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: BadBeast at: 12/9 attacked a Squirrel at: 12/10
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:18/3->17/4
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:20/7->20/6
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/8->6/7
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:4/20->4/19
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:19/10->19/9
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodPlant at: 13/10 has just died
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: a new class de.hsa.games.fatsquirrel.core.GoodPlant at: 9/22 has just appeared
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:12/10->13/10
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:1/5->2/6
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:7/4->8/5
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: BadBeast at: 12/11 attacked a Squirrel at: 13/10
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: BadBeast at: 12/9 attacked a Squirrel at: 13/10
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:17/4->16/5
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:6/7->5/8
+Mai 21, 2017 4:14:45 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:19/9->20/8
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:13/10->14/10
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:14/10->14/11
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:2/6->2/7
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:8/5->9/6
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:12/11->13/11
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:12/9->13/10
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:16/5->15/6
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:20/6->21/5
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/8->5/7
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:4/19->5/19
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:20/8->21/7
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:14/11->14/12
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:14/12->13/12
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:2/7->3/7
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:9/6->10/7
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: BadBeast at: 13/11 attacked a Squirrel at: 13/12
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:15/6->14/7
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:21/5->22/6
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/7->4/7
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/19->5/18
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:23/23->22/23
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:13/12->12/12
+Mai 21, 2017 4:14:46 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:12/12->12/13
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:3/7->3/6
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:10/7->11/8
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:13/11->12/12
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:13/10->12/11
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:14/7->13/8
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:22/6->22/5
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:4/7->5/6
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/18->4/19
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:21/7->20/7
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:12/13->13/13
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:13/13->14/13
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:3/6->4/6
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:11/8->12/9
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:12/12->13/13
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:12/11->13/12
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:13/8->14/9
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:22/5->21/5
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/6->5/7
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:4/19->4/18
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:22/23->22/22
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:20/7->21/6
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:14/13->15/13
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:15/13->15/14
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:15/14->15/15
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:4/6->4/7
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:12/9->13/10
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:13/13->14/14
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:13/12->14/13
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:14/9->15/10
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/7->5/6
+Mai 21, 2017 4:14:47 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:4/18->3/17
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:15/15->15/16
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:15/16->15/17
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:4/7->5/7
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:13/10->12/11
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:14/14->15/15
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:14/13->15/14
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:15/10->15/11
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:21/5->22/5
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/6->4/6
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:3/17->4/16
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:22/22->23/22
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:15/17->16/17
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:16/17->17/17
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:5/7->6/7
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:12/11->13/12
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:15/15->16/16
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:15/14->16/15
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:15/11->16/12
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:4/6->5/6
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:17/17->18/17
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:48 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:18/17->18/18
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:6/7->6/8
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:13/12->14/13
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:16/16->17/17
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:16/15->17/16
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:16/12->17/13
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:4/16->5/15
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:21/6->20/6
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:18/18->18/19
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:18/19->19/19
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:6/8->7/7
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:14/13->15/14
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:17/17->18/18
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:17/16->18/17
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:17/13->18/14
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/6->5/5
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/15->4/14
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:20/6->20/7
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodPlant at: 19/18 has just died
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: a new class de.hsa.games.fatsquirrel.core.GoodPlant at: 18/23 has just appeared
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:19/19->19/18
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:7/7->6/8
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:15/14->16/15
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: BadBeast at: 18/18 attacked a Squirrel at: 19/18
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast at: 18/18 has just died
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: a new class de.hsa.games.fatsquirrel.core.BadBeast at: 19/3 has just appeared
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:18/14->19/15
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:4/14->5/15
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:20/7->21/7
+Mai 21, 2017 4:14:49 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:19/3->19/2
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: BadBeast at: 18/18 attacked a Squirrel at: 19/18
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast at: 18/18 has just died
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: a new class de.hsa.games.fatsquirrel.core.BadBeast at: 10/13 has just appeared
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: BadBeast at: 18/17 attacked a Squirrel at: 19/18
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:10/13->9/13
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:16/15->17/16
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:19/15->19/16
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:22/5->22/4
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/5->6/4
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/15->4/15
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:21/7->20/6
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: BadBeast at: 18/17 attacked a Squirrel at: 19/18
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:9/13->10/12
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:19/18->19/19
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:6/8->6/9
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:19/16->19/17
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:22/4->23/3
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:6/4->6/3
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:4/15->3/14
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:20/6->21/7
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:19/19->19/20
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:18/17->19/18
+Mai 21, 2017 4:14:50 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:19/20->19/21
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:19/21->18/21
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:6/9->6/10
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:17/16->18/17
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:19/17->18/18
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:23/3->23/2
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:6/3->7/2
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:21/7->22/6
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:19/18->18/19
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:10/12->11/12
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:18/21->18/22
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodPlant at: 18/23 has just died
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: a new class de.hsa.games.fatsquirrel.core.GoodPlant at: 4/12 has just appeared
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:18/22->18/23
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:6/10->7/9
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:23/2->22/2
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:7/2->6/1
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:3/14->4/13
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:22/6->23/7
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:18/19->18/20
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:11/12->10/11
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: MasterSquirrel at: 18/23just got stunned!
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:7/9->6/8
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:18/18->18/19
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:4/13->5/14
+Mai 21, 2017 4:14:51 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:23/7->23/6
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:18/20->18/21
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:10/11->11/11
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:18/23->17/23
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:6/8->6/9
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:18/17->17/18
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:18/19->17/20
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:23/6->22/7
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:18/21->17/22
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:11/11->12/10
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:17/23->16/23
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:6/9->5/10
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:17/18->16/19
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:17/20->16/21
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:22/2->22/3
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:6/1->5/1
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/14->4/14
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:22/7->23/7
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:16/23->15/23
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:17/22->16/23
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:12/10->12/11
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:15/23->14/23
+Mai 21, 2017 4:14:52 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:14/23->13/23
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:5/10->6/11
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:16/19->15/20
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:16/21->15/22
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/1->6/2
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:4/14->5/15
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:23/7->23/8
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:16/23->15/23
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:12/11->12/12
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:13/23->12/23
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:12/23->11/23
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:6/11->6/10
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:15/20->14/21
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:15/22->14/23
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:6/2->6/1
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/15->6/15
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:23/22->22/21
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodPlant at: 10/23 has just died
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: a new class de.hsa.games.fatsquirrel.core.GoodPlant at: 8/9 has just appeared
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:11/23->10/23
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:12/12->13/12
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:10/23->9/23
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:9/23->8/23
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:6/10->6/11
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:14/21->13/22
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:14/23->13/23
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:22/3->23/3
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:6/15->5/15
+Mai 21, 2017 4:14:53 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:22/21->23/22
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:15/23->16/22
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:8/23->8/22
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:6/11->5/11
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:13/22->12/22
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:6/1->7/1
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/15->4/16
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:23/22->22/23
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:23/8->22/9
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:8/22->8/21
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:16/22->16/21
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:13/12->14/12
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:8/21->9/21
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:5/11->6/10
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:12/22->11/21
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:13/23->12/22
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:23/3->22/4
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:4/16->3/15
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:22/9->23/9
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:9/21->9/20
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:16/21->15/20
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:14/12->15/11
+Mai 21, 2017 4:14:54 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:9/20->9/19
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:6/10->6/11
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:11/21->10/20
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:12/22->11/21
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:7/1->7/2
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:3/15->2/14
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:9/19->9/18
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:15/20->14/19
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:15/11->15/10
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:9/18->8/18
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:8/18->7/18
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:6/11->7/11
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:10/20->9/19
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:11/21->10/20
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:22/4->23/3
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:7/2->6/3
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:2/14->1/13
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:15/10->14/11
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:7/18->6/18
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:6/18->6/19
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:7/11->6/12
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:6/3->5/4
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:22/23->21/23
+Mai 21, 2017 4:14:55 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:23/9->22/10
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:6/19->7/19
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:14/19->13/20
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:14/11->13/12
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:7/19->7/20
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:6/12->7/11
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:9/19->8/20
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:10/20->9/20
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/4->6/5
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:13/20->12/20
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:13/12->12/13
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:7/20->7/21
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:7/21->7/22
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:8/20->7/21
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:9/20->8/21
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:23/3->22/2
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:6/5->5/6
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:1/13->1/14
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:21/23->20/22
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:22/10->21/10
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:12/20->11/21
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:12/13->13/14
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:7/22->8/22
+Mai 21, 2017 4:14:56 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:57 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:57 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodPlant at: 9/22 has just died
+Mai 21, 2017 4:14:57 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: a new class de.hsa.games.fatsquirrel.core.GoodPlant at: 22/9 has just appeared
+Mai 21, 2017 4:14:57 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:8/22->9/22
+Mai 21, 2017 4:14:57 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:57 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:7/21->8/22
+Mai 21, 2017 4:14:57 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: BadBeast at: 8/21 attacked a Squirrel at: 9/22
+Mai 21, 2017 4:14:57 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:22/2->21/3
+Mai 21, 2017 4:14:57 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:5/6->4/7
+Mai 21, 2017 4:14:57 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:1/14->2/15
+Mai 21, 2017 4:14:57 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:20/22->20/23
+Mai 21, 2017 4:14:57 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.GoodBeast moved:21/10->22/10
+Mai 21, 2017 4:14:57 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:57 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:11/21->10/22
+Mai 21, 2017 4:14:57 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.BadBeast moved:13/14->14/13
+Mai 21, 2017 4:14:57 PM de.hsa.games.fatsquirrel.util.MainLogger log
+INFORMATION: class de.hsa.games.fatsquirrel.core.MasterSquirrel moved:9/22->10/22
+Mai 21, 2017 4:14:57 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:57 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
+Mai 21, 2017 4:14:57 PM de.hsa.games.fatsquirrel.util.MainLogger log
+WARNUNG: wrong user input
