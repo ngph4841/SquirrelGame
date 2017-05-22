@@ -10,10 +10,14 @@ public class MasterSquirrelBot extends MasterSquirrel {
     public MasterSquirrelBot(int id, int energy, XY position) {
         super(id, energy, position);
     }
+    BotControllerFactory botControllerFactory = new BotControllerFactoryImpl();
 
     @Override
     public void nextStep(EntityContext context) throws Exception {
         ControllerContext controllerContext = new ControllerContextImpl(context, this);
+        BotController botController = botControllerFactory.createMasterBotController();
+        botController.nextStep(controllerContext);
+
     }
 
     class ControllerContextImpl implements ControllerContext {
