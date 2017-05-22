@@ -89,6 +89,11 @@ public class MiniSquirrelBot extends MiniSquirrel {
             return mini;
         }
 
+        @Override
+        public EntityContext getEntityContext() {
+            return context;
+        }
+
         public void explode(int impactRadius) throws Exception { //double? & TODO fix this ugly child plz ....
             double impactArea = impactRadius * impactRadius * 3.14;
             int x = mini.getPosition().getX();
