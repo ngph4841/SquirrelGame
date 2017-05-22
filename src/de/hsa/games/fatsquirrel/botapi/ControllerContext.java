@@ -2,6 +2,7 @@ package de.hsa.games.fatsquirrel.botapi;
 
 import de.hsa.games.fatsquirrel.console.NotEnoughEnergyException;
 import de.hsa.games.fatsquirrel.core.Entity;
+import de.hsa.games.fatsquirrel.core.EntityContext;
 import de.hsa.games.fatsquirrel.core.XY;
 
 /**
@@ -15,4 +16,5 @@ public interface ControllerContext {
     public void spawnMiniBot(XY direction, int energy) throws NotEnoughEnergyException;
     public int getEnergy();
     public Entity getEntity();
+    public EntityContext getEntityContext();
 }
