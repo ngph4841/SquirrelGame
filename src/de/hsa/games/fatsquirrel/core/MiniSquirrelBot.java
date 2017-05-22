@@ -1,17 +1,23 @@
 package de.hsa.games.fatsquirrel.core;
 
-import de.hsa.games.fatsquirrel.botapi.BotController;
-import de.hsa.games.fatsquirrel.botapi.ControllerContext;
-import de.hsa.games.fatsquirrel.botapi.EntityType;
+import de.hsa.games.fatsquirrel.botapi.*;
 
 /**
  * Created by Freya on 19.05.2017.
  */
 public class MiniSquirrelBot extends MiniSquirrel {
+    BotControllerFactory botControllerFactory;
     MiniSquirrelBot(int id, int energy, XY position, int parentId) {
         super(id, energy, position, parentId);
+        BotControllerFactory botControllerFactory = new BotControllerFactoryImpl();
     }
 
+    @Override
+    public void nextStep(EntityContext context)throws Exception{
+        ControllerContext controllerContext = new ControllerContextImpl(context, this);
+        BotController botController = botControllerFactory.createMiniBotController();
+        botController.nextStep(controllerContext);
+    }
 
     class ControllerContextImpl implements ControllerContext {
         EntityContext context;
