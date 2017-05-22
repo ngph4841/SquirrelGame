@@ -21,6 +21,8 @@ public class MiniSquirrelBot extends MiniSquirrel {
             this.mini = mini;
             this.context = context;
         }
+        //implode in flattenedboard refactoring
+        //controllercontext abstarct klasse
 
         @Override
         public XY getViewLowerLeft() {
@@ -89,12 +91,18 @@ public class MiniSquirrelBot extends MiniSquirrel {
             return mini;
         }
 
-        public void explode(int impactRadius) { //double? & TODO fix this ugly child plz ....
+        @Override
+        public EntityContext getEntityContext() {
+            return context;
+        }
+
+        public void explode(int impactRadius) throws Exception { //double? & TODO fix this ugly child plz ....
             double impactArea = impactRadius * impactRadius * 3.14;
+            // anders 2 oder 10 bearbeiten
             int x = mini.getPosition().getX();
             int y = mini.getPosition().getY();
             Entity[] entities = new Entity[(int) impactArea];
-            int entitesAmount = 0;
+            int entitiesAmount = 0;
 
             int counter = (impactRadius - 1) * 2;
             for (int i = 1; i <= impactRadius; i++) {
@@ -111,7 +119,7 @@ public class MiniSquirrelBot extends MiniSquirrel {
                         case GOOD_PLANT:
                         case MINI_SQUIRREL:
                         case MASTER_SQUIRREL:
-                            entities[entitesAmount++] = context.getEntityType(temp);
+                            entities[entitiesAmount++] = context.getEntityType(temp);
                     }
                 }
                 counter -= 2;
@@ -129,7 +137,7 @@ public class MiniSquirrelBot extends MiniSquirrel {
                     case GOOD_PLANT:
                     case MINI_SQUIRREL:
                     case MASTER_SQUIRREL:
-                        entities[entitesAmount++] = context.getEntityType(new XY(x + i, y));
+                        entities[entitiesAmount++] = context.getEntityType(new XY(x + i, y));
                 }
             }
 
@@ -145,7 +153,7 @@ public class MiniSquirrelBot extends MiniSquirrel {
                     case GOOD_PLANT:
                     case MINI_SQUIRREL:
                     case MASTER_SQUIRREL:
-                        entities[entitesAmount++] = context.getEntityType(new XY(x + i, y));
+                        entities[entitiesAmount++] = context.getEntityType(new XY(x + i, y));
                 }
             }
 
@@ -164,17 +172,69 @@ public class MiniSquirrelBot extends MiniSquirrel {
                         case GOOD_PLANT:
                         case MINI_SQUIRREL:
                         case MASTER_SQUIRREL:
-                            entities[entitesAmount++] = context.getEntityType(temp);
+                            entities[entitiesAmount++] = context.getEntityType(temp);
                     }
                 }
                 counter -= 2;
             }
 
-            for(int i = 0; i < entitesAmount; i++) {
+            int collectedEnergy = 0;
+            for(int i = 0; i < entitiesAmount; i++) {
                 double distance = Math.sqrt(Math.pow(entities[i].getPosition().getX(),2) + Math.pow(entities[i].getPosition().getY(),2));
                 double energyLoss = 200 * (mini.getEnergy() / impactArea) * (1 - distance / impactRadius);
-
-                entities[i].getEnergy();
+                //id check verwandte
+                int deltaEnergy = entities[i].getEnergy() - (int) energyLoss;
+                switch(getEntityAt(entities[i].getPosition())){
+                    case BAD_BEAST:
+                    case BAD_PLANT:
+                        deltaEnergy = entities[i].getEnergy() + (int) energyLoss;
+                        if (deltaEnergy >= 0){
+                            context.killAndReplace(entities[i]);
+                        }else{
+                            entities[i].updateEnergy((int) energyLoss);
+                        }
+                        break;
+                    case GOOD_PLANT:
+                    case GOOD_BEAST:
+                        if (deltaEnergy >= 0) { //entity mehr energy als energyloss / perfekt
+                            collectedEnergy += (int) energyLoss;
+                        } else { //entity weniger engery als energyloss
+                            collectedEnergy += entities[i].getEnergy();
+                        }
+                        entities[i].updateEnergy((int)(-1*energyLoss));
+                        if(entities[i].getEnergy() <= 0){
+                            context.killAndReplace(entities[i]);
+                        }
+                        break;
+                    case MINI_SQUIRREL:
+                        MiniSquirrel temp = (MiniSquirrel) entities[i];
+                        if(temp.getParentId() != mini.getParentId()){
+                            if (deltaEnergy >= 0) { //entity mehr energy als energyloss / perfekt
+                                collectedEnergy += (int) energyLoss;
+                            } else { //entity weniger engery als energyloss
+                                collectedEnergy += entities[i].getEnergy();
+                            }
+                            entities[i].updateEnergy((int)(-1*energyLoss));
+                            if(temp.getEnergy() <= 0){
+                                context.kill(temp);
+                            }
+                        }
+                        break;
+                    case MASTER_SQUIRREL:
+                        collectedEnergy += energyLoss;
+                        entities[i].updateEnergy((int)(-1*energyLoss));
+                        break;
+                }
+            }
+            //find parent and give him energy
+            for(int i = 0; i < context.getSize().getX(); i++){
+                for( int j = 0; j < context.getSize().getY(); j++){
+                    if(context.getEntityType(new XY(i,j)).getId() == mini.getParentId()){
+                        context.getEntityType(new XY(i,j)).updateEnergy(collectedEnergy);
+                        context.kill(mini);
+                        return;
+                    }
+                }
             }
         }
 
