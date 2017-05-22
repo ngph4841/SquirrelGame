@@ -9,11 +9,11 @@ public class BotControllerFactoryImpl implements BotControllerFactory{ //in die 
 
     @Override
     public BotController createMasterBotController() {
-        return new BotControllerImpl();
+        return new BotControllerMaster();
     }
 
     @Override
     public BotController createMiniBotController() {
-        return new BotControllerImpl();
+        return new BotControllerMini();
     }
 }
