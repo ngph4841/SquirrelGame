@@ -91,13 +91,11 @@ public class MiniSquirrelBot extends MiniSquirrel {
 
         public void explode(int impactRadius) { //double? & TODO fix this ugly child plz ....
             double impactArea = impactRadius * impactRadius * 3.14;
-            int distance = 0;
             int x = mini.getPosition().getX();
             int y = mini.getPosition().getY();
-
             Entity[] entities = new Entity[(int) impactArea];
             int entitesAmount = 0;
-            double energyLoss = 200 * (mini.getEnergy() / impactArea) * (1 - distance / impactRadius);
+
             int counter = (impactRadius - 1) * 2;
             for (int i = 1; i <= impactRadius; i++) {
                 for (int j = counter; j > 0; j--) {
@@ -170,6 +168,13 @@ public class MiniSquirrelBot extends MiniSquirrel {
                     }
                 }
                 counter -= 2;
+            }
+
+            for(int i = 0; i < entitesAmount; i++) {
+                double distance = Math.sqrt(Math.pow(entities[i].getPosition().getX(),2) + Math.pow(entities[i].getPosition().getY(),2));
+                double energyLoss = 200 * (mini.getEnergy() / impactArea) * (1 - distance / impactRadius);
+
+                entities[i].getEnergy();
             }
         }
 
