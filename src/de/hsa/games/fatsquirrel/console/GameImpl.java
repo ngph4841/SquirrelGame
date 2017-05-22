@@ -15,7 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class GameImpl extends Game {
-    private State state;;
+    private State state;
     private MasterSquirrel player;
     private FlattenedBoard context;
     private UI ui;
@@ -88,7 +88,7 @@ public class GameImpl extends Game {
                 processInput();
             } catch (ScanException e) {
                 msg = "wrong input, please try again";
-                MainLogger.log(Level.WARNING,"wrong user input");
+                //MainLogger.log(Level.WARNING,"wrong user input");
             } catch (NotEnoughEnergyException f) {
                 msg = "Not enough energy to spawn a child";
                 MainLogger.log(Level.WARNING,"wrong user input");
