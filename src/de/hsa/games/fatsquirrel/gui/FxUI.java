@@ -27,6 +27,7 @@ public class FxUI extends Scene implements UI {
     private static Command inputBuffer = null;
     private Canvas boardCanvas;
     private Label msgLabel;
+    private int playerEnergy;
 
 
     public FxUI(Parent parent, Canvas boardCanvas, Label msgLabel) {
@@ -40,7 +41,7 @@ public class FxUI extends Scene implements UI {
         int MiniSquirrelBirthEnergy = 50;
 
         if(keyCode == KeyCode.M){
-            msgLabel.setText("MasterSquirrel HP:");
+            msgLabel.setText("MasterSquirrel HP:" + playerEnergy);
             return;
         } else if (keyCode == KeyCode.W) {
             cmdType = GameCommandType.UP;
@@ -141,6 +142,7 @@ public class FxUI extends Scene implements UI {
                     gc.setFill(Color.GREEN);
                     gc.fillRect(i * CELL_SIZE, j * CELL_SIZE, CELL_SIZE, CELL_SIZE);
                 } else if (view.getEntityType(i, j) instanceof MasterSquirrel) {
+                    playerEnergy = view.getEntityType(i,j).getEnergy();
                     gc.setFill(Color.WHITE);
                     gc.fillRect(i * CELL_SIZE, j * CELL_SIZE, CELL_SIZE, CELL_SIZE);
                 } else if (view.getEntityType(i, j) instanceof MiniSquirrel) {
