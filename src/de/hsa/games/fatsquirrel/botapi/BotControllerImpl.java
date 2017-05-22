@@ -56,25 +56,37 @@ public class BotControllerImpl implements BotController {
         switch (view.getEntityAt(entities[index].getPosition())){
             case WALL:
                 System.out.println("WALL");
+                moveDirection = new XY(master.getPosition().getX() - entities[index].getPosition().getX(), master.getPosition().getY() - entities[index].getPosition().getY());
+                for(int t = 0; t < 15; t++){
+                	System.out.println(moveDirection.getX() + "/" +  moveDirection.getY());
+                    }
                 break;
             case MASTER_SQUIRREL:
-                System.out.println("Squirrel");
-                break;
+                
+                //break;
             case MINI_SQUIRREL:
                 System.out.println("MINI");
-                break;
+               // break;
             case NONE:
                 //sollte selten vorkommen aber RNG dann
                 break;
             case BAD_PLANT:
             case BAD_BEAST:
                 moveDirection = new XY(master.getPosition().getX() - entities[index].getPosition().getX(), master.getPosition().getY() - entities[index].getPosition().getY());
+                for(int t = 0; t < 15; t++){
+                	System.out.println(moveDirection.getX() + "/" +  moveDirection.getY());
+                    }
                 break;
             case GOOD_PLANT:
             case GOOD_BEAST:
-                moveDirection = new XY(entities[index].getPosition().getX() - master.getPosition().getX(), entities[index].getPosition().getY() - master.getPosition().getY());
+                moveDirection = new XY(-(master.getPosition().getX() - entities[index].getPosition().getX()), -(master.getPosition().getY() - entities[index].getPosition().getY()));
+                for(int t = 0; t < 15; t++){
+                	System.out.println(moveDirection.getX() + "/" +  moveDirection.getY());
+                    }
                 break;
         }
+        
+        // GB move dir : entities[index].getPosition().getX() - master.getPosition().getX(), entities[index].getPosition().getY() - master.getPosition().getY()
 
         //move normalisieren
         int x = 0;
