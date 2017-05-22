@@ -43,7 +43,7 @@ public class FlattenedBoard implements BoardView, EntityContext {
 	}
 
 	public Entity getEntityType(XY xy) {
-		if (xy.getX() >= settings.getSize().getX() || xy.getY() >= settings.getSize().getY()) {			//  A U F P A S S E N (grose gleich zu groser)
+		if (xy.getX() >= settings.getSize().getX() || xy.getY() >= settings.getSize().getY()) {			//  A U F P A S S E N (gröse gleich zu gröser)
 			return null;
 		}
 		return flatBoard[xy.getX()][xy.getY()];

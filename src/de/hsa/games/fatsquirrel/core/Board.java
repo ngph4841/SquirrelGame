@@ -29,10 +29,11 @@ public class Board {
     }
 
     public void fillSet() {
-        list.add(new MasterSquirrel(2000,new XY(settings.getSize().getX() / 2, settings.getSize().getY() / 2)));
+        list.add(new MasterSquirrelBot(2000,2000,new XY(settings.getSize().getX() / 2, settings.getSize().getY() / 2)));
         fillOuterWalls();
         spawnBeastsPlants();
     }
+
 
     private void fillOuterWalls() { // creats a border of walls on the field
         int wallCounter = -1; //negative ID for walls

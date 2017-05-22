@@ -89,19 +89,13 @@ public class MiniSquirrelBot extends MiniSquirrel {
             return mini;
         }
 
-        @Override
-        public EntityContext getEntityContext() {
-            return context;
-        }
-
-        public void explode(int impactRadius) throws Exception { //double? & TODO fix this ugly child plz ....
+        public void explode(int impactRadius) { //double? & TODO fix this ugly child plz ....
             double impactArea = impactRadius * impactRadius * 3.14;
             int x = mini.getPosition().getX();
             int y = mini.getPosition().getY();
             Entity[] entities = new Entity[(int) impactArea];
             int entitesAmount = 0;
 
-            //calc all entites in the impactarea
             int counter = (impactRadius - 1) * 2;
             for (int i = 1; i <= impactRadius; i++) {
                 for (int j = counter; j > 0; j--) {
@@ -176,67 +170,17 @@ public class MiniSquirrelBot extends MiniSquirrel {
                 counter -= 2;
             }
 
-            int collectedEnergy = 0;
             for(int i = 0; i < entitesAmount; i++) {
                 double distance = Math.sqrt(Math.pow(entities[i].getPosition().getX(),2) + Math.pow(entities[i].getPosition().getY(),2));
                 double energyLoss = 200 * (mini.getEnergy() / impactArea) * (1 - distance / impactRadius);
-                int deltaEnergy = entities[i].getEnergy() - (int) energyLoss;
 
-                switch(getEntityAt(entities[i].getPosition())){
-                    case BAD_BEAST:
-                    case BAD_PLANT:
-                        deltaEnergy = entities[i].getEnergy() + (int) energyLoss;
-                        if (deltaEnergy >= 0){
-                            context.killAndReplace(entities[i]);
-                        }else{
-                            entities[i].updateEnergy((int) energyLoss);
-                        }
-                        break;
-                    case GOOD_PLANT:
-                    case GOOD_BEAST:
-                        if (deltaEnergy >= 0) { //entity mehr energy als energyloss / perfekt
-                            collectedEnergy += (int) energyLoss;
-                        } else { //entity weniger engery als energyloss
-                            collectedEnergy += entities[i].getEnergy();
-                        }
-                        entities[i].updateEnergy((int)(-1*energyLoss));
-                        if(entities[i].getEnergy() <= 0){
-                            context.killAndReplace(entities[i]);
-                        }
-                        break;
-                    case MINI_SQUIRREL:
-                        MiniSquirrel temp = (MiniSquirrel) entities[i];
-                        if(temp.getParentId() != mini.getParentId()){
-                            if (deltaEnergy >= 0) { //entity mehr energy als energyloss / perfekt
-                                collectedEnergy += (int) energyLoss;
-                            } else { //entity weniger engery als energyloss
-                                collectedEnergy += entities[i].getEnergy();
-                            }
-                            entities[i].updateEnergy((int)(-1*energyLoss));
-                            if(temp.getEnergy() <= 0){
-                                context.kill(temp);
-                            }
-                        }
-                        break;
-                    case MASTER_SQUIRREL:
-                        collectedEnergy += energyLoss;
-                        entities[i].updateEnergy((int)(-1*energyLoss));
-                        break;
-                }
-            }
-            //find parent and give him energy
-            for(int i = 0; i < context.getSize().getX(); i++){
-                for( int j = 0; j < context.getSize().getY(); j++){
-                    if(context.getEntityType(new XY(i,j)).getId() == mini.getParentId()){
-                        context.getEntityType(new XY(i,j)).updateEnergy(collectedEnergy);
-                        context.kill(mini);
-                        return;
-                    }
-                }
+                entities[i].getEnergy();
             }
         }
 
+
     }
+
 }
 
 
