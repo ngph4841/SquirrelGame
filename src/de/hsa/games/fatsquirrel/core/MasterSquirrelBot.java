@@ -46,7 +46,6 @@ public class MasterSquirrelBot extends MasterSquirrel {
             return new XY(x, y);
         }
 
-        @Override
         public XY getViewUpperRight() {
             XY size = context.getSize();
             int x = position.getX() + 15;
@@ -105,6 +104,8 @@ public class MasterSquirrelBot extends MasterSquirrel {
         public int getEnergy() {
             return 0;
         }
+
+
     }
 }
 

@@ -72,14 +72,16 @@ public class BotControllerImpl implements BotController {
                 break;
             case BAD_PLANT:
             case BAD_BEAST:
-                moveDirection = new XY(master.getPosition().getX() - entities[index].getPosition().getX(), master.getPosition().getY() - entities[index].getPosition().getY());
+            	System.out.println("BAD B");
+            	moveDirection = new XY(master.getPosition().getX() - entities[index].getPosition().getX(), master.getPosition().getY() - entities[index].getPosition().getY());
                 for(int t = 0; t < 15; t++){
                 	System.out.println(moveDirection.getX() + "/" +  moveDirection.getY());
                     }
                 break;
             case GOOD_PLANT:
             case GOOD_BEAST:
-                moveDirection = new XY(-(master.getPosition().getX() - entities[index].getPosition().getX()), -(master.getPosition().getY() - entities[index].getPosition().getY()));
+            	System.out.println("GOOD B");
+            	moveDirection = new XY(-(master.getPosition().getX() - entities[index].getPosition().getX()), -(master.getPosition().getY() - entities[index].getPosition().getY()));
                 for(int t = 0; t < 15; t++){
                 	System.out.println(moveDirection.getX() + "/" +  moveDirection.getY());
                     }

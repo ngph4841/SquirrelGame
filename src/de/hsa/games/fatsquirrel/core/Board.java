@@ -34,6 +34,7 @@ public class Board {
         spawnBeastsPlants();
     }
 
+
     private void fillOuterWalls() { // creats a border of walls on the field
         int wallCounter = -1; //negative ID for walls
 
