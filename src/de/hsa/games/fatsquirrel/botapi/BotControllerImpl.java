@@ -1,9 +1,6 @@
 package de.hsa.games.fatsquirrel.botapi;
 
-import de.hsa.games.fatsquirrel.core.Entity;
-import de.hsa.games.fatsquirrel.core.EntityContext;
-import de.hsa.games.fatsquirrel.core.MasterSquirrelBot;
-import de.hsa.games.fatsquirrel.core.XY;
+import de.hsa.games.fatsquirrel.core.*;
 
 /**
  * Created by Freya on 19.05.2017.
@@ -11,11 +8,11 @@ import de.hsa.games.fatsquirrel.core.XY;
 public class BotControllerImpl implements BotController {
 
     private ControllerContext controllerContext;
-    private EntityContext entityContext;
+    private MasterSquirrelBot master;
 
-    BotControllerImpl(ControllerContext controllerContext, EntityContext entityContext){
+    BotControllerImpl(ControllerContext controllerContext){
         this.controllerContext = controllerContext;
-        this.entityContext = entityContext;
+        this.master = (MasterSquirrelBot) controllerContext.getEntity();
     }
 
     @Override
@@ -24,7 +21,8 @@ public class BotControllerImpl implements BotController {
         XY viewUpperRight = controllerContext.getViewUpperRight();
         Entity[] entities = new Entity[999]; //puffer für pawel 1/2
         int counter = 0;
-        MasterSquirrelBot master = (MasterSquirrelBot) view.getEntity();
+        EntityContext entityContext = controllerContext.getEntityContext();
+
         XY position = master.getPosition();
 
         for(int i = viewLowerLeft.getX(); i <= viewUpperRight.getX(); i++){
@@ -44,10 +42,12 @@ public class BotControllerImpl implements BotController {
         for (int i = 1; i < counter; i++) {
             int distanceX2 = Math.abs(entities[i].getPosition().getX() - position.getX());
             int distanceY2 = Math.abs(entities[i].getPosition().getY() - position.getY());
-            if (distanceX2 <= distanceX && distanceY2 <= distanceY) {
-                index = i;
-                distanceX = distanceX2;
-                distanceY = distanceY2;
+            if(!(entities[i] instanceof Wall)){
+                if (distanceX2 <= distanceX && distanceY2 <= distanceY) {
+                    index = i;
+                    distanceX = distanceX2;
+                    distanceY = distanceY2;
+                }
             }
         }
         //nearest Entity at entites[index]
@@ -55,17 +55,11 @@ public class BotControllerImpl implements BotController {
         // TODO botbrain
         switch (view.getEntityAt(entities[index].getPosition())){
             case WALL:
-                System.out.println("WALL");
-                moveDirection = new XY(master.getPosition().getX() - entities[index].getPosition().getX(), master.getPosition().getY() - entities[index].getPosition().getY());
-                for(int t = 0; t < 15; t++){
-                	System.out.println(moveDirection.getX() + "/" +  moveDirection.getY());
-                    }
+//                moveDirection = new XY(master.getPosition().getX() - entities[index].getPosition().getX(), master.getPosition().getY() - entities[index].getPosition().getY());
                 break;
             case MASTER_SQUIRREL:
-                
                 //break;
             case MINI_SQUIRREL:
-                System.out.println("MINI");
                // break;
             case NONE:
                 //sollte selten vorkommen aber RNG dann
@@ -73,19 +67,12 @@ public class BotControllerImpl implements BotController {
             case BAD_PLANT:
             case BAD_BEAST:
                 moveDirection = new XY(master.getPosition().getX() - entities[index].getPosition().getX(), master.getPosition().getY() - entities[index].getPosition().getY());
-                for(int t = 0; t < 15; t++){
-                	System.out.println(moveDirection.getX() + "/" +  moveDirection.getY());
-                    }
                 break;
             case GOOD_PLANT:
             case GOOD_BEAST:
                 moveDirection = new XY(-(master.getPosition().getX() - entities[index].getPosition().getX()), -(master.getPosition().getY() - entities[index].getPosition().getY()));
-                for(int t = 0; t < 15; t++){
-                	System.out.println(moveDirection.getX() + "/" +  moveDirection.getY());
-                    }
                 break;
         }
-        
         // GB move dir : entities[index].getPosition().getX() - master.getPosition().getX(), entities[index].getPosition().getY() - master.getPosition().getY()
 
         //move normalisieren
