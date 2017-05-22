@@ -4,6 +4,7 @@ import de.hsa.games.fatsquirrel.core.Entity;
 import de.hsa.games.fatsquirrel.core.EntityContext;
 import de.hsa.games.fatsquirrel.core.MasterSquirrelBot;
 import de.hsa.games.fatsquirrel.core.XY;
+
 import java.util.Random;
 
 import de.hsa.games.fatsquirrel.core.*;
@@ -13,24 +14,23 @@ import de.hsa.games.fatsquirrel.core.*;
  */
 public class BotControllerMaster implements BotController {
 
-    BotControllerMaster(){
+    BotControllerMaster() {
     }
 
     @Override
-    public void nextStep(ControllerContext view) throws Exception{
+    public void nextStep(ControllerContext view) throws Exception {
         EntityContext entityContext = view.getEntityContext();
 
         XY viewLowerLeft = view.getViewLowerLeft();
         XY viewUpperRight = view.getViewUpperRight();
         Entity[] entities = new Entity[999]; //puffer für pawel 1/2
         int counter = 0;
-        MasterSquirrelBot master = (MasterSquirrelBot) view.getEntity();
-        XY position = master.getPosition();
+        XY masterPosition = view.locate();
 
-        for(int i = viewLowerLeft.getX(); i <= viewUpperRight.getX(); i++){
-            for(int j = viewLowerLeft.getY(); j >= viewUpperRight.getY(); j--){
-                if(entityContext.getEntityType(new XY(i,j)) != null) {
-                    if(entityContext.getEntityType(new XY (i,j)).equals(master)){
+        for (int i = viewLowerLeft.getX(); i <= viewUpperRight.getX(); i++) {
+            for (int j = viewLowerLeft.getY(); j >= viewUpperRight.getY(); j--) {
+                if (entityContext.getEntityType(new XY(i, j)) != null) {
+                    if (new XY(i, j).equals(masterPosition)) {
                         continue;
                     }
                     entities[counter++] = entityContext.getEntityType(new XY(i, j));
@@ -38,12 +38,12 @@ public class BotControllerMaster implements BotController {
             }
         }
 
-        int distanceY = Math.abs(entities[0].getPosition().getY() - position.getY());
-        int distanceX = Math.abs(entities[0].getPosition().getX() - position.getX());
+        int distanceY = Math.abs(entities[0].getPosition().getY() - masterPosition.getY());
+        int distanceX = Math.abs(entities[0].getPosition().getX() - masterPosition.getX());
         int index = 0;
         for (int i = 1; i < counter; i++) {
-            int distanceX2 = Math.abs(entities[i].getPosition().getX() - position.getX());
-            int distanceY2 = Math.abs(entities[i].getPosition().getY() - position.getY());
+            int distanceX2 = Math.abs(entities[i].getPosition().getX() - masterPosition.getX());
+            int distanceY2 = Math.abs(entities[i].getPosition().getY() - masterPosition.getY());
             if (distanceX2 <= distanceX && distanceY2 <= distanceY) {
                 index = i;
                 distanceX = distanceX2;
@@ -51,14 +51,14 @@ public class BotControllerMaster implements BotController {
             }
         }
         //nearest Entity at entites[index]
-        XY moveDirection = new XY(0,0);
+        XY moveDirection = new XY(0, 0);
         // TODO botbrain
-        switch (view.getEntityAt(entities[index].getPosition())){
+        switch (view.getEntityAt(entities[index].getPosition())) {
             case WALL:
                 System.out.println("WALL");
-                moveDirection = new XY(master.getPosition().getX() - entities[index].getPosition().getX(), master.getPosition().getY() - entities[index].getPosition().getY());
-                for(int t = 0; t < 15; t++){
-                    System.out.println(moveDirection.getX() + "/" +  moveDirection.getY());
+                moveDirection = new XY(masterPosition.getX() - entities[index].getPosition().getX(), masterPosition.getY() - entities[index].getPosition().getY());
+                for (int t = 0; t < 15; t++) {
+                    System.out.println(moveDirection.getX() + "/" + moveDirection.getY());
                 }
                 break;
             case MASTER_SQUIRREL:
@@ -73,17 +73,17 @@ public class BotControllerMaster implements BotController {
             case BAD_PLANT:
             case BAD_BEAST:
                 System.out.println("BAD B");
-                moveDirection = new XY(master.getPosition().getX() - entities[index].getPosition().getX(), master.getPosition().getY() - entities[index].getPosition().getY());
-                for(int t = 0; t < 15; t++){
-                    System.out.println(moveDirection.getX() + "/" +  moveDirection.getY());
+                moveDirection = new XY(masterPosition.getX() - entities[index].getPosition().getX(), masterPosition.getY() - entities[index].getPosition().getY());
+                for (int t = 0; t < 15; t++) {
+                    System.out.println(moveDirection.getX() + "/" + moveDirection.getY());
                 }
                 break;
             case GOOD_PLANT:
             case GOOD_BEAST:
                 System.out.println("GOOD B");
-                moveDirection = new XY(-(master.getPosition().getX() - entities[index].getPosition().getX()), -(master.getPosition().getY() - entities[index].getPosition().getY()));
-                for(int t = 0; t < 15; t++){
-                    System.out.println(moveDirection.getX() + "/" +  moveDirection.getY());
+                moveDirection = new XY(-(masterPosition.getX() - entities[index].getPosition().getX()), -(masterPosition.getY() - entities[index].getPosition().getY()));
+                for (int t = 0; t < 15; t++) {
+                    System.out.println(moveDirection.getX() + "/" + moveDirection.getY());
                 }
                 break;
         }
@@ -93,21 +93,21 @@ public class BotControllerMaster implements BotController {
         //move normalisieren
         int x = 0;
         int y = 0;
-        if(moveDirection.getX() != 0){
-            if(moveDirection.getX() < 0){
+        if (moveDirection.getX() != 0) {
+            if (moveDirection.getX() < 0) {
                 x = -1;
-            }else{
+            } else {
                 x = 1;
             }
         }
-        if (moveDirection.getY() != 0){
+        if (moveDirection.getY() != 0) {
             if (moveDirection.getY() < 0) {
                 y = -1;
-            }else{
+            } else {
                 y = 1;
             }
         }
-        moveDirection = new XY(x,y);
+        moveDirection = new XY(x, y);
         view.move(moveDirection);
     }
 }

@@ -59,6 +59,11 @@ public class MiniSquirrelBot extends MiniSquirrel {
         }
 
         @Override
+        public XY locate() {
+            return mini.getPosition();
+        }
+
+        @Override
         public EntityType getEntityAt(XY xy) {
             if (context.getEntityType(xy) instanceof BadBeast) {
                 return EntityType.BAD_BEAST;
@@ -78,6 +83,11 @@ public class MiniSquirrelBot extends MiniSquirrel {
         }
 
         @Override
+        public boolean isMine(XY xy) {
+            return context.getEntityType(xy).getId() == mini.getParentId();
+        }
+
+        @Override
         public void move(XY direction) throws Exception {
             context.tryMove((MiniSquirrel) mini, direction);
         }
@@ -93,6 +103,27 @@ public class MiniSquirrelBot extends MiniSquirrel {
         }
 
         @Override
+        public XY directionOfMaster() {
+            for(int i = 0; i < context.getSize().getX();i++){
+                for(int j = 0; j < context.getSize().getY(); j++){
+                    if(context.getEntityType(new XY(i,j)) != null){
+                        if(context.getEntityType(new XY(i,j)) instanceof MasterSquirrel){
+                            if(context.getEntityType(new XY(i,j)).getId() == mini.getParentId()){
+                                return new XY(i - mini.getPosition().getX(),j - mini.getPosition().getY());
+                            }
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        @Override
+        public long getRemainingSteps() {
+            return 0;
+        }
+
+        @Override
         public Entity getEntity() {
             return mini;
         }
@@ -102,7 +133,7 @@ public class MiniSquirrelBot extends MiniSquirrel {
             return context;
         }
 
-        public void explode(int impactRadius) throws Exception { //double? & TODO fix this ugly child plz ....
+        public void implode (int impactRadius) throws Exception { //double? & TODO fix this ugly child plz ....
             double impactArea = impactRadius * impactRadius * 3.14;
             // anders 2 oder 10 bearbeiten
             int x = mini.getPosition().getX();

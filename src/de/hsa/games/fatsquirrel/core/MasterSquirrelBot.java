@@ -67,6 +67,11 @@ public class MasterSquirrelBot extends MasterSquirrel {
         }
 
         @Override
+        public XY locate() {
+            return master.getPosition();
+        }
+
+        @Override
         public EntityType getEntityAt(XY xy) {
             XY viewUpperRight = getViewUpperRight();
             XY viewLowerLeft = getViewLowerLeft();
@@ -96,6 +101,11 @@ public class MasterSquirrelBot extends MasterSquirrel {
         }
 
         @Override
+        public boolean isMine(XY xy) {
+            return master.checkIfChild(context.getEntityType(xy));
+        }
+
+        @Override
         public void move(XY direction) throws Exception {
             context.tryMove((MasterSquirrel) master, direction);
         }
@@ -108,7 +118,23 @@ public class MasterSquirrelBot extends MasterSquirrel {
         }
 
         @Override
+        public void implode(int impactRadius) {
+        //I can't, i'm too old for this
+        }
+
+        @Override
         public int getEnergy() {
+            return master.getEnergy();
+        }
+
+        @Override
+        public XY directionOfMaster() {
+            //i am the master...
+            return null;
+        }
+
+        @Override
+        public long getRemainingSteps() { //not implemented yet
             return 0;
         }
     }
