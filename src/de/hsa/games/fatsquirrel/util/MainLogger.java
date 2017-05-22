@@ -10,6 +10,10 @@ import java.util.logging.SimpleFormatter;
  * Created by Freya on 21.05.2017.
  */
 public class MainLogger {
+
+    //extra logger in klassen proxy?
+
+
         static Logger logger;
         public FileHandler fileHandler;
         SimpleFormatter formatter;
