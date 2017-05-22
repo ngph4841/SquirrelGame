@@ -24,20 +24,24 @@ public class Launcher extends Application {
         int mode = 2;
         Game game;
         switch(mode){
-            case 0:
+            case 0: //1frame pro eingabe
                 game = new GameImpl(state1, new ConsoleUI());
                 game.run();
                 break;
-            case 1:
+            case 1: //fps console
                 game = new GameImpl(state1, new ConsoleUI());
                 startGame(game);
                 while(true) {
                     game.bufferInput();
                 }
-            case 2:
+            case 2: //javafx singleplayer
                 game = new GameImpl(state1, FxUI.createInstance(settings.getSize()));
                 Application.launch(args);
                 game.bufferInput();
+                break;
+            case 3:
+                game = new GameImpl(state1, FxUI.createInstance(settings.getSize()));
+                Application.launch(args);
                 break;
         }
     }
