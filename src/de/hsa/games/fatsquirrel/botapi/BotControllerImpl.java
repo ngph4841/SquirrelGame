@@ -7,21 +7,19 @@ import de.hsa.games.fatsquirrel.core.*;
  */
 public class BotControllerImpl implements BotController {
 
-    private ControllerContext controllerContext;
-    private MasterSquirrelBot master;
-
-    BotControllerImpl(ControllerContext controllerContext){
-        this.controllerContext = controllerContext;
-        this.master = (MasterSquirrelBot) controllerContext.getEntity();
+    BotControllerImpl(){
     }
 
     @Override
     public void nextStep(ControllerContext view) throws Exception {
-        XY viewLowerLeft = controllerContext.getViewLowerLeft();
-        XY viewUpperRight = controllerContext.getViewUpperRight();
+        MasterSquirrelBot master = (MasterSquirrelBot) view.getEntity();
+
+
+        XY viewLowerLeft = view.getViewLowerLeft();
+        XY viewUpperRight = view.getViewUpperRight();
         Entity[] entities = new Entity[999]; //puffer für pawel 1/2
         int counter = 0;
-        EntityContext entityContext = controllerContext.getEntityContext();
+        EntityContext entityContext = view.getEntityContext();
 
         XY position = master.getPosition();
 
