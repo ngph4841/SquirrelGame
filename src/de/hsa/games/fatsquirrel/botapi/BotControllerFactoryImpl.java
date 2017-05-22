@@ -8,20 +8,18 @@ import de.hsa.games.fatsquirrel.core.EntityContext;
  */
 public class BotControllerFactoryImpl implements BotControllerFactory{ //in die Gameimpl zum erstellen der botcontroller
     private ControllerContext controllerContext;
-    private EntityContext entityContext;
 
-    public BotControllerFactoryImpl(ControllerContext controllerContext, EntityContext entityContext){
+    public BotControllerFactoryImpl(ControllerContext controllerContext){
         this.controllerContext = controllerContext;
-        this.entityContext = entityContext;
     }
 
     @Override
     public BotController createMasterBotController() {
-        return new BotControllerImpl(controllerContext,entityContext);
+        return new BotControllerImpl(controllerContext);
     }
 
     @Override
     public BotController createMiniBotController() {
-        return new BotControllerImpl(controllerContext, entityContext);
+        return new BotControllerImpl(controllerContext);
     }
 }
