@@ -18,13 +18,6 @@ public class BotControllerImpl implements BotController {
         this.entityContext = entityContext;
     }
 
-    // TODO: diff. constructor for mini & master
- //   BotControllerImpl(ControllerContext controllerContext, EntityContext entityContext){
- //       this.controllerContext = controllerContext;
- //       this.entityContext = entityContext;
- //   }
-
-
     @Override
     public void nextStep(ControllerContext view) throws Exception {
         XY viewLowerLeft = controllerContext.getViewLowerLeft();
@@ -36,10 +29,10 @@ public class BotControllerImpl implements BotController {
 
         for(int i = viewLowerLeft.getX(); i <= viewUpperRight.getX(); i++){
             for(int j = viewLowerLeft.getY(); j >= viewUpperRight.getY(); j--){
-                if(entityContext.getEntityType(new XY (i,j)) == master ){
-                    continue;
-                }
                 if(entityContext.getEntityType(new XY(i,j)) != null) {
+                    if(entityContext.getEntityType(new XY (i,j)).equals(master)){
+                        continue;
+                    }
                     entities[counter++] = entityContext.getEntityType(new XY(i, j));
                 }
             }
@@ -82,6 +75,25 @@ public class BotControllerImpl implements BotController {
                 moveDirection = new XY(entities[index].getPosition().getX() - master.getPosition().getX(), entities[index].getPosition().getY() - master.getPosition().getY());
                 break;
         }
+
+        //move normalisieren
+        int x = 0;
+        int y = 0;
+        if(moveDirection.getX() != 0){
+            if(moveDirection.getX() < 0){
+                x = -1;
+            }else{
+                x = 1;
+            }
+        }
+        if (moveDirection.getY() != 0){
+            if (moveDirection.getY() < 0) {
+                y = -1;
+            }else{
+                y = 1;
+            }
+        }
+        moveDirection = new XY(x,y);
         view.move(moveDirection);
     }
 }
