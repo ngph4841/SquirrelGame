@@ -14,9 +14,6 @@ public class MasterSquirrelBot extends MasterSquirrel {
     @Override
     public void nextStep(EntityContext context) throws Exception {
         ControllerContext controllerContext = new ControllerContextImpl(context, this);
-        BotControllerFactoryImpl botControllerFactory = new BotControllerFactoryImpl(controllerContext, context);
-        BotController botController = botControllerFactory.createMasterBotController();
-        botController.nextStep(controllerContext);
     }
 
     class ControllerContextImpl implements ControllerContext {
@@ -30,6 +27,11 @@ public class MasterSquirrelBot extends MasterSquirrel {
 
         public Entity getEntity() {
             return master;
+        }
+
+        @Override
+        public EntityContext getEntityContext() {
+            return context;
         }
 
         @Override
