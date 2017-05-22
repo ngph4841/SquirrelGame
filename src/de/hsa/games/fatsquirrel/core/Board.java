@@ -29,7 +29,7 @@ public class Board {
     }
 
     public void fillSet() {
-        list.add(new MasterSquirrelBot(2000,2000,new XY(settings.getSize().getX() / 2, settings.getSize().getY() / 2)));
+        list.add(new MasterSquirrel(2000,new XY(settings.getSize().getX() / 2, settings.getSize().getY() / 2)));
         fillOuterWalls();
         spawnBeastsPlants();
     }
