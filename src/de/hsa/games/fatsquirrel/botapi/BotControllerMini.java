@@ -24,13 +24,13 @@ public class BotControllerMini implements BotController {
         XY viewUpperRight = view.getViewUpperRight();
         Entity[] entities = new Entity[999]; //puffer für pawel 1/2
         int counter = 0;
-        MasterSquirrelBot master = (MasterSquirrelBot) view.getEntity();
-        XY position = master.getPosition();
+        MiniSquirrelBot mini = (MiniSquirrelBot) view.getEntity();
+        XY position = mini.getPosition();
 
         for(int i = viewLowerLeft.getX(); i <= viewUpperRight.getX(); i++){
             for(int j = viewLowerLeft.getY(); j >= viewUpperRight.getY(); j--){
                 if(entityContext.getEntityType(new XY(i,j)) != null) {
-                    if(entityContext.getEntityType(new XY (i,j)).equals(master)){
+                    if(entityContext.getEntityType(new XY (i,j)).equals(mini)){
                         continue;
                     }
                     entities[counter++] = entityContext.getEntityType(new XY(i, j));
@@ -55,36 +55,22 @@ public class BotControllerMini implements BotController {
         // TODO botbrain
         switch (view.getEntityAt(entities[index].getPosition())){
             case WALL:
-                System.out.println("WALL");
-                moveDirection = new XY(master.getPosition().getX() - entities[index].getPosition().getX(), master.getPosition().getY() - entities[index].getPosition().getY());
-                for(int t = 0; t < 15; t++){
-                    System.out.println(moveDirection.getX() + "/" +  moveDirection.getY());
-                }
+                moveDirection =  position.minus(entities[index].getPosition());
                 break;
             case MASTER_SQUIRREL:
-
                 //break;
             case MINI_SQUIRREL:
-                System.out.println("MINI");
                 // break;
             case NONE:
                 //sollte selten vorkommen aber RNG dann
                 break;
             case BAD_PLANT:
             case BAD_BEAST:
-                System.out.println("BAD B");
-                moveDirection = new XY(master.getPosition().getX() - entities[index].getPosition().getX(), master.getPosition().getY() - entities[index].getPosition().getY());
-                for(int t = 0; t < 15; t++){
-                    System.out.println(moveDirection.getX() + "/" +  moveDirection.getY());
-                }
+                moveDirection =  position.minus(entities[index].getPosition());;
                 break;
             case GOOD_PLANT:
             case GOOD_BEAST:
-                System.out.println("GOOD B");
-                moveDirection = new XY(-(master.getPosition().getX() - entities[index].getPosition().getX()), -(master.getPosition().getY() - entities[index].getPosition().getY()));
-                for(int t = 0; t < 15; t++){
-                    System.out.println(moveDirection.getX() + "/" +  moveDirection.getY());
-                }
+                moveDirection =  position.minus(entities[index].getPosition()).times(-1);
                 break;
         }
 

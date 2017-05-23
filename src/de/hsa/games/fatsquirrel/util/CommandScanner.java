@@ -44,16 +44,16 @@ public class CommandScanner {
                         } else if (c.equals(XY.class)){
                             switch(commandTypeInfos[i].getName()){
                                 case "1":
-                                    params[j] = new XY(-1,0);
+                                    params[j] = XY.LEFT;
                                     break;
                                 case "2":
-                                    params[j] = new XY(0, 1);
+                                    params[j] = XY.DOWN;
                                     break;
                                 case "3":
-                                    params[j] = new XY(1,0);
+                                    params[j] = XY.RIGHT;
                                     break;
                                 case "5":
-                                    params[j] = new XY(0,-1);
+                                    params[j] = XY.UP;
                                     break;
                             }
                         }

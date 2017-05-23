@@ -130,7 +130,7 @@ public class MasterSquirrelBot extends MasterSquirrel {
         @Override
         public XY directionOfMaster() {
             //i am the master...
-            return null;
+            return master.getPosition();
         }
 
         @Override

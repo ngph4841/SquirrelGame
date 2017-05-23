@@ -39,7 +39,8 @@ public class MasterSquirrel extends Squirrel {
         if (this.energy <= energy) {
             throw new NotEnoughEnergyException();
         }
-        XY childStartPos = new XY(position.getX() + 1, position.getY()); // spawn next to mother
+
+        XY childStartPos = position.plus(new XY(0,1)); // spawn next to mother
         childrenCounter++;                            // new child & id of child is mothersId + child#
         MiniSquirrel child = new MiniSquirrel(this.id + childrenCounter, energy, childStartPos, this.id);
         int[] temp = new int[childrenCounter];                            // new array for childrenId
