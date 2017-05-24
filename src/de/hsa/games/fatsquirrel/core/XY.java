@@ -57,7 +57,7 @@ public class XY { // immutable class
      * @return the euklidian distance (pythagoras)
      */
     public double distanceFrom(XY xy) {
-        return 0.0;
+        return Math.sqrt(Math.pow(x - xy.getX(), 2) + Math.pow(y -xy.getY(), 2));
     }
 
     public int hashCode() {
