@@ -27,8 +27,8 @@ public class XY { // immutable class
         return y;
     } //not in refacortin :(
 
-    public boolean euqals(XY o) {
-        return x == o.getX() && y == o.getY();
+    public boolean euqals(XY xy) {
+        return (x == xy.getX() && y == xy.getY());
     }
 
     public String toString() { // toString

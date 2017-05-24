@@ -30,13 +30,14 @@ public class BotControllerMaster implements BotController {
         for (int i = viewLowerLeft.getX(); i <= viewUpperRight.getX(); i++) {
             for (int j = viewLowerLeft.getY(); j >= viewUpperRight.getY(); j--) {
                 if (entityContext.getEntityType(new XY(i, j)) != null) {
-                    if (new XY(i, j).equals(masterPosition)) {
-                        continue;
+                    if (!masterPosition.euqals(new XY(i,j)) | !view.getEntityAt(new XY(i,j)).equals(EntityType.WALL)) {
+                        entities[counter++] = entityContext.getEntityType(new XY(i, j));
                     }
-                    entities[counter++] = entityContext.getEntityType(new XY(i, j));
                 }
             }
         }
+
+        //runs between the 2 walls on either side
 
         int distanceY = Math.abs(entities[0].getPosition().getY() - masterPosition.getY());
         int distanceX = Math.abs(entities[0].getPosition().getX() - masterPosition.getX());

@@ -17,7 +17,6 @@ public class MasterSquirrelBot extends MasterSquirrel {
         ControllerContext controllerContext = new ControllerContextImpl(context, this);
         BotController botController = botControllerFactory.createMasterBotController();
         botController.nextStep(controllerContext);
-
     }
 
     class ControllerContextImpl implements ControllerContext {
