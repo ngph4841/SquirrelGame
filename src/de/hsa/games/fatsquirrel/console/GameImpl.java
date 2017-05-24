@@ -21,12 +21,14 @@ public class GameImpl extends Game {
     private UI ui;
     private int FPS = 10;
     private String msg = "";
+    private MainLogger mainLogger;
 
     public GameImpl(State state, UI ui) throws Exception {
         this.state = state;
         this.player = (MasterSquirrel) state.getBoard().getEntitySet().getEntity(0);
         this.context = (FlattenedBoard) state.getBoardView();
         this.ui = ui;
+        this.mainLogger = new MainLogger(this.getClass().toString());
     }
 
     @Override
@@ -88,10 +90,10 @@ public class GameImpl extends Game {
                 processInput();
             } catch (ScanException e) {
                 msg = "wrong input, please try again";
-                MainLogger.log(Level.WARNING,"wrong user input");
+                mainLogger.log(Level.WARNING,msg);
             } catch (NotEnoughEnergyException f) {
                 msg = "Not enough energy to spawn a child";
-                MainLogger.log(Level.WARNING,"wrong user input");
+                mainLogger.log(Level.WARNING,msg);
             }
             update();
             render();
@@ -106,10 +108,9 @@ public class GameImpl extends Game {
                 processInput();
             } catch (ScanException e) {
                 msg = "wrong input, please try again";
+                mainLogger.log(Level.WARNING,"wrong user input");
             } catch (NotEnoughEnergyException f) {
                 msg = "Not enough energy to spawn a child";
-            } finally {
-                MainLogger.log(Level.WARNING,"wrong user input");
             }
             update();
             Thread.sleep(FPS * 10);

@@ -10,17 +10,14 @@ import java.util.logging.SimpleFormatter;
  * Created by Freya on 21.05.2017.
  */
 public class MainLogger {
-
     //extra logger in klassen proxy?
-
-
-        static Logger logger;
-        public FileHandler fileHandler;
+        private Logger logger;
+        private FileHandler fileHandler;
         SimpleFormatter formatter;
 
-        private MainLogger() throws IOException{
+        public MainLogger(String className) throws IOException{
             //instance the logger
-            logger = Logger.getLogger(MainLogger.class.getName());
+            logger = Logger.getLogger(className);
             //instance the filehandler
             fileHandler = new FileHandler("Log.txt",true);
             //instance formatter, set formatting, and handler
@@ -29,19 +26,8 @@ public class MainLogger {
             logger.addHandler(fileHandler);
         }
 
-    private static Logger getLogger(){
-        if(logger == null){
-            try {
-                new MainLogger();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return logger;
-    }
-
-    public static void log(Level level, String msg){
-        getLogger().log(level, msg);
+    public void log(Level level, String msg){
+        logger.log(level, msg);
     }
 
 }
