@@ -82,7 +82,6 @@ public class MasterSquirrelBot extends MasterSquirrel {
                 throw new OutOfViewException();
             }
 
-
             if (context.getEntityType(xy) instanceof BadBeast) {
                 return EntityType.BAD_BEAST;
             } else if (context.getEntityType(xy) instanceof GoodBeast) {
@@ -130,7 +129,7 @@ public class MasterSquirrelBot extends MasterSquirrel {
         @Override
         public XY directionOfMaster() {
             //i am the master...
-            return master.getPosition();
+            return new XY(0,0);
         }
 
         @Override
