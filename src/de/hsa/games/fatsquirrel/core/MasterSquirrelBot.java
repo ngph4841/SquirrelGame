@@ -2,6 +2,9 @@ package de.hsa.games.fatsquirrel.core;
 
 import de.hsa.games.fatsquirrel.botapi.*;
 import de.hsa.games.fatsquirrel.console.NotEnoughEnergyException;
+import de.hsa.games.fatsquirrel.util.LogAdvice;
+
+import java.lang.reflect.Proxy;
 
 /**
  * Created by Freya on 19.05.2017.
@@ -16,7 +19,8 @@ public class MasterSquirrelBot extends MasterSquirrel {
     public void nextStep(EntityContext context) throws Exception {
         ControllerContext controllerContext = new ControllerContextImpl(context, this);
         BotController botController = botControllerFactory.createMasterBotController();
-        botController.nextStep(controllerContext);
+        BotController proxiedBotController = (BotController) Proxy.newProxyInstance(this.getClass().getClassLoader(),new Class[] {BotController.class},new LogAdvice(botController));
+        proxiedBotController.nextStep(controllerContext);
     }
 
     class ControllerContextImpl implements ControllerContext {
