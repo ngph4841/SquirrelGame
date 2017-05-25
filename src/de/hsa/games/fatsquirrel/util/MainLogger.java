@@ -12,16 +12,13 @@ import java.util.logging.SimpleFormatter;
 public class MainLogger {
     //extra logger in klassen proxy?
         private Logger logger;
-        private FileHandler fileHandler;
-        SimpleFormatter formatter;
+        private final FileHandler fileHandler = new FileHandler("Log.txt");
+        private final SimpleFormatter formatter = new SimpleFormatter();
 
         public MainLogger(String className) throws IOException{
             //instance the logger
-            logger = Logger.getLogger(className);
-            //instance the filehandler
-            fileHandler = new FileHandler("Log.txt",true);
+            this.logger = Logger.getLogger(className);
             //instance formatter, set formatting, and handler
-            formatter = new SimpleFormatter();
             fileHandler.setFormatter(formatter);
             logger.addHandler(fileHandler);
         }
