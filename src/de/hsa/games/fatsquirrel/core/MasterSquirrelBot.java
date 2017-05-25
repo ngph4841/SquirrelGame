@@ -121,7 +121,7 @@ public class MasterSquirrelBot extends MasterSquirrel {
 
         @Override
         public void implode(int impactRadius) {
-        //I can't, i'm too old for this
+        System.out.println("I can't, i'm too old for this");
         }
 
         @Override
