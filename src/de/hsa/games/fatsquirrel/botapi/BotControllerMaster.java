@@ -28,9 +28,9 @@ public class BotControllerMaster implements BotController {
         XY masterPosition = view.locate();
 
         for (int i = viewLowerLeft.x; i <= viewUpperRight.x; i++) {
-            for (int j = viewLowerLeft.x; j >= viewUpperRight.x; j--) {
+            for (int j = viewLowerLeft.y; j >= viewUpperRight.y; j--) {
                 if (entityContext.getEntityType(new XY(i, j)) != null) {
-                    if (!masterPosition.euqals(new XY(i,j)) | !view.getEntityAt(new XY(i,j)).equals(EntityType.WALL)) {
+                    if (!masterPosition.euqals(new XY(i,j))) {
                         entities[counter++] = entityContext.getEntityType(new XY(i, j));
                     }
                 }
@@ -41,6 +41,7 @@ public class BotControllerMaster implements BotController {
 
         int distanceY = Math.abs(entities[0].getPosition().y - masterPosition.y);
         int distanceX = Math.abs(entities[0].getPosition().x - masterPosition.x);
+
         int index = 0;
         for (int i = 1; i < counter; i++) {
             int distanceX2 = Math.abs(entities[i].getPosition().x - masterPosition.x);
