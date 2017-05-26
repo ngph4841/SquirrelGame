@@ -31,8 +31,8 @@ public class ConsoleUI implements UI {
     }
 
     public void render(BoardView view) {
-        int boardHeight = view.getSize().getY();
-        int boardWidth = view.getSize().getX();
+        int boardHeight = view.getSize().y;
+        int boardWidth = view.getSize().x;
         int masterEnergy = 0;
         for (int j = 0; j < boardHeight; j++) {
             for (int i = 0; i < boardWidth; i++) {

@@ -26,9 +26,9 @@ public class BadBeast extends Character {
                 squirrelPosition = context.nearestPlayer(this.position).getPosition();
             }
             XY moveDirection = squirrelPosition.minus(position);
-            if (Math.abs(moveDirection.getX()) <= 6 && Math.abs(moveDirection.getY()) <= 6) {
-                int x = moveDirection.getX();
-                int y = moveDirection.getY();
+            if (Math.abs(moveDirection.x) <= 6 && Math.abs(moveDirection.y) <= 6) {
+                int x = moveDirection.x;
+                int y = moveDirection.y;
                 // vector calc.
                 if (x != 0) {
                     if (x > 0) {

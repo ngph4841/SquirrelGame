@@ -38,8 +38,8 @@ public abstract class Entity {// abstarct damits nur spezifische Entitys gib zb
 
     public String toString() {
         String s = "";
-        s += "Type: " + this.getClass() + "\nid: " + id + "\nenergy: " + energy + "\nposition: " + position.getX() + "|"
-                + position.getY() + "\n";
+        s += "Type: " + this.getClass() + "\nid: " + id + "\nenergy: " + energy + "\nposition: " + position.x + "|"
+                + position.y + "\n";
         return s;
     }
 

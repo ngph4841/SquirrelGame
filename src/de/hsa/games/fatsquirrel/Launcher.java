@@ -16,7 +16,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class Launcher extends Application {
-    public static BoardConfig settings = new BoardConfig(new XY(25, 25), 5, 5, 10, 10);
+    public static BoardConfig settings = new BoardConfig(new XY(50, 50), 5, 5, 10, 10);
 
     public static void main(String[] args) throws Exception {
         Board board1 = new Board(settings);

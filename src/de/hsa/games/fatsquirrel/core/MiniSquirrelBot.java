@@ -34,13 +34,13 @@ public class MiniSquirrelBot extends MiniSquirrel {
         @Override
         public XY getViewLowerLeft() {
             XY size = context.getSize();
-            int x = position.getX() - 10;
-            int y = position.getY() + 10;
+            int x = position.x - 10;
+            int y = position.y + 10;
             if (x < 0) { //links klein
                 x = 0;
             }
-            if (y > size.getY() - 1) { //unten groß
-                y = size.getY();
+            if (y > size.y - 1) { //unten groß
+                y = size.y;
             }
             return new XY(x, y);
         }
@@ -48,10 +48,10 @@ public class MiniSquirrelBot extends MiniSquirrel {
         @Override
         public XY getViewUpperRight() {
             XY size = context.getSize();
-            int x = position.getX() + 10;
-            int y = position.getY() - 10;
-            if (x > size.getX() - 1) { //rechts groß
-                x = size.getX();
+            int x = position.x + 10;
+            int y = position.y - 10;
+            if (x > size.x - 1) { //rechts groß
+                x = size.x;
             }
             if (y < 0) { //oben klein
                 y = 0;
@@ -105,12 +105,12 @@ public class MiniSquirrelBot extends MiniSquirrel {
 
         @Override
         public XY directionOfMaster() {
-            for (int i = 0; i < context.getSize().getX(); i++) {
-                for (int j = 0; j < context.getSize().getY(); j++) {
+            for (int i = 0; i < context.getSize().x; i++) {
+                for (int j = 0; j < context.getSize().y; j++) {
                     if (context.getEntityType(new XY(i, j)) != null) {
                         if (context.getEntityType(new XY(i, j)) instanceof MasterSquirrel) {
                             if (context.getEntityType(new XY(i, j)).getId() == mini.getParentId()) {
-                                return new XY(i - mini.getPosition().getX(), j - mini.getPosition().getY());
+                                return new XY(i - mini.getPosition().x, j - mini.getPosition().y);
                             }
                         }
                     }
@@ -138,8 +138,8 @@ public class MiniSquirrelBot extends MiniSquirrel {
             double impactArea = impactRadius * impactRadius * 3.14;
             // anders 2 oder 10 bearbeiten
 
-            int x = mini.getPosition().getX();
-            int y = mini.getPosition().getY();
+            int x = mini.getPosition().x;
+            int y = mini.getPosition().y;
             Entity[] entities = new Entity[(int) impactArea];
             int entitiesAmount = 0;
             int counter = (impactRadius - 1) * 2;
@@ -182,7 +182,7 @@ public class MiniSquirrelBot extends MiniSquirrel {
 
             int collectedEnergy = 0;
             for (int i = 0; i < entitiesAmount; i++) {
-                double distance = Math.sqrt(Math.pow(entities[i].getPosition().getX(), 2) + Math.pow(entities[i].getPosition().getY(), 2));
+                double distance = Math.sqrt(Math.pow(entities[i].getPosition().x, 2) + Math.pow(entities[i].getPosition().y, 2));
                 double energyLoss = 200 * (mini.getEnergy() / impactArea) * (1 - distance / impactRadius);
 
                 //id check of all squirrels so family doesnt get hurt
@@ -230,8 +230,8 @@ public class MiniSquirrelBot extends MiniSquirrel {
                 }
             }
             //find parent and give him energy
-            for (int i = 0; i < context.getSize().getX(); i++) {
-                for (int j = 0; j < context.getSize().getY(); j++) {
+            for (int i = 0; i < context.getSize().x; i++) {
+                for (int j = 0; j < context.getSize().y; j++) {
                     if (context.getEntityType(new XY(i, j)).getId() == mini.getParentId()) {
                         context.getEntityType(new XY(i, j)).updateEnergy(collectedEnergy);
                         context.kill(mini);

@@ -2,8 +2,8 @@ package de.hsa.games.fatsquirrel.core;
 
 
 public class XY { // immutable class
-    private final int x;
-    private final int y;
+    public final int x;
+    public final int y;
     public static final XY ZERO_ZERO = new XY(0, 0);
     public static final XY RIGHT = new XY(1, 0);
     public static final XY LEFT = new XY(-1, 0);
@@ -19,16 +19,8 @@ public class XY { // immutable class
         this.y = y;
     }
 
-    public int getX() {
-        return x;
-    } //can delete this 2 ?
-
-    public int getY() {
-        return y;
-    } //not in refacortin :(
-
     public boolean euqals(XY xy) {
-        return (x == xy.getX() && y == xy.getY());
+        return (x == xy.x && y == xy.y);
     }
 
     public String toString() { // toString
@@ -36,11 +28,11 @@ public class XY { // immutable class
     }
 
     public XY plus(XY xy) {
-        return new XY(this.x + xy.getX(), this.y + xy.getY());
+        return new XY(this.x + xy.x, this.y + xy.y);
     }
 
     public XY minus(XY xy) {
-        return new XY(this.x -xy.getX(),this.y - xy.getY());
+        return new XY(this.x -xy.x,this.y - xy.y);
     }
 
     public XY times(int factor) {
@@ -57,7 +49,7 @@ public class XY { // immutable class
      * @return the euklidian distance (pythagoras)
      */
     public double distanceFrom(XY xy) {
-        return Math.sqrt(Math.pow(x - xy.getX(), 2) + Math.pow(y -xy.getY(), 2));
+        return Math.sqrt(Math.pow(x - xy.x, 2) + Math.pow(y -xy.y, 2));
     }
 
     public int hashCode() {

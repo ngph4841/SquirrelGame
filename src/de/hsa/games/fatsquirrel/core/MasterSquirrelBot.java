@@ -44,13 +44,13 @@ public class MasterSquirrelBot extends MasterSquirrel {
         @Override
         public XY getViewLowerLeft() {
             XY size = context.getSize();
-            int x = position.getX() - 15;
-            int y = position.getY() + 15;
+            int x = position.x - 15;
+            int y = position.y + 15;
             if (x < 0) { //links klein
                 x = 0;
             }
-            if (y > size.getY()) { //unten groß
-                y = size.getY() - 1;
+            if (y > size.y) { //unten groß
+                y = size.y - 1;
             }
             return new XY(x, y);
         }
@@ -58,10 +58,10 @@ public class MasterSquirrelBot extends MasterSquirrel {
         @Override
         public XY getViewUpperRight() {
             XY size = context.getSize();
-            int x = position.getX() + 15;
-            int y = position.getY() - 15;
-            if (x > size.getX()) { //rechts groß
-                x = size.getX() - 1;
+            int x = position.x + 15;
+            int y = position.y - 15;
+            if (x > size.x) { //rechts groß
+                x = size.x - 1;
             }
             if (y < 0) { //oben klein
                 y = 0;
@@ -79,9 +79,9 @@ public class MasterSquirrelBot extends MasterSquirrel {
             XY viewUpperRight = getViewUpperRight();
             XY viewLowerLeft = getViewLowerLeft();
 
-            if (xy.getX() > viewUpperRight.getX() | xy.getX() < viewLowerLeft.getX()) {
+            if (xy.x > viewUpperRight.x | xy.x < viewLowerLeft.x) {
                 throw new OutOfViewException();
-            } else if (xy.getY() > viewLowerLeft.getY() | xy.getY() < viewUpperRight.getY()) {
+            } else if (xy.y > viewLowerLeft.y | xy.y < viewUpperRight.y) {
                 throw new OutOfViewException();
             }
 

@@ -16,10 +16,10 @@ public class GoodBeast extends Character {
                 squirrelPosition = context.nearestPlayer(this.position).getPosition();
             }
             XY playerPosition = context.nearestPlayer(this.position).getPosition();
-            XY moveDirection = new XY(position.getX() - playerPosition.getX(), position.getY() - playerPosition.getY());
-            if (Math.abs(moveDirection.getX()) <= 6 && Math.abs(moveDirection.getY()) <= 6) {
-                int x = moveDirection.getX();
-                int y = moveDirection.getY();
+            XY moveDirection = new XY(position.x - playerPosition.x, position.y - playerPosition.y);
+            if (Math.abs(moveDirection.x) <= 6 && Math.abs(moveDirection.y) <= 6) {
+                int x = moveDirection.x;
+                int y = moveDirection.y;
                 // vector calc.
                 if (x != 0) {
                     if (x > 0) {

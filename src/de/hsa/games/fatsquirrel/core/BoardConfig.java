@@ -17,7 +17,7 @@ public class BoardConfig { //konstruktor
         this.badPlant = badPlant;
         this.goodPlant = goodPlant;
         this.entity = badBeast + goodBeast + badPlant + goodPlant;
-        this.wallCount = (size.getX() * 2 + size.getY() * 2) - 4;
+        this.wallCount = (size.x * 2 + size.y * 2) - 4;
     }
 
     public XY getSize() {

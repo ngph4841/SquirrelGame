@@ -29,7 +29,7 @@ public class Board {
     }
 
     public void fillSet() {
-        list.add(new MasterSquirrelBot(2000,2000,new XY(settings.getSize().getX() / 2, settings.getSize().getY() / 2)));
+        list.add(new MasterSquirrelBot(2000,2000,new XY(settings.getSize().x, settings.getSize().y).times(1/2)));
         fillOuterWalls();
         spawnBeastsPlants();
     }
@@ -38,23 +38,23 @@ public class Board {
     private void fillOuterWalls() { // creats a border of walls on the field
         int wallCounter = -1; //negative ID for walls
 
-        for (int i = 0; i < settings.getSize().getX(); i++) {//toprow
+        for (int i = 0; i < settings.getSize().x; i++) {//toprow
             list.add(new Wall(wallCounter, new XY(i, 0)));
             wallCounter--;
         }
 
-        for (int i = 0; i < settings.getSize().getX(); i++) {//botrow
-            list.add(new Wall(wallCounter, new XY(i, settings.getSize().getY() - 1)));
+        for (int i = 0; i < settings.getSize().x; i++) {//botrow
+            list.add(new Wall(wallCounter, new XY(i, settings.getSize().y - 1)));
             wallCounter--;
         }
 
-        for (int i = 1; i < settings.getSize().getY(); i++) {    //doenst overlap existing walls
+        for (int i = 1; i < settings.getSize().y; i++) {    //doenst overlap existing walls
             list.add(new Wall(wallCounter, new XY(0, i)));
             wallCounter--;
         }
 
-        for (int i = 1; i < settings.getSize().getY(); i++) {
-            list.add(new Wall(wallCounter, new XY(settings.getSize().getX() - 1, i)));
+        for (int i = 1; i < settings.getSize().y; i++) {
+            list.add(new Wall(wallCounter, new XY(settings.getSize().y - 1, i)));
             wallCounter--;
         }
     }
@@ -76,8 +76,8 @@ public class Board {
             }
 //TODO refactor with switch case maybe ?
             for (int i = 0; i < z; i++) { // for all entities in settings
-                int randomX = 1 + (int) (Math.random() * (settings.getSize().getX() - 2));
-                int randomY = 1 + (int) (Math.random() * (settings.getSize().getY() - 2));
+                int randomX = 1 + (int) (Math.random() * (settings.getSize().x - 2));
+                int randomY = 1 + (int) (Math.random() * (settings.getSize().y - 2));
                 XY temp = new XY(randomX, randomY);
 
                 for (int a = settings.getWallCount(); a < list.length(); a++) {

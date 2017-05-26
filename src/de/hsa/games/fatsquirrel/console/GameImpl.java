@@ -55,8 +55,8 @@ public class GameImpl extends Game {
 
     public void spawn(int energy) throws Exception {
         MiniSquirrel temp = player.spawnChild(energy);
-        int x = temp.getPosition().getX();
-        int y = temp.getPosition().getY();
+        int x = temp.getPosition().x;
+        int y = temp.getPosition().y;
         if(state.getBoardView().getEntityType(x,y) != null) {
             state.getBoard().getEntitySet().plus(temp);
         }else{

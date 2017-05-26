@@ -41,6 +41,6 @@ public class HandOperatedMasterSquirrel extends MasterSquirrel {
                 y = -1;
                 break;
         }
-        position = new XY(position.getX() + x, position.getY() + y);
+        position = position.plus(new XY(x,y));
     }
 }
