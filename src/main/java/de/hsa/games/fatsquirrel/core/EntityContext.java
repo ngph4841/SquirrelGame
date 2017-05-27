@@ -18,4 +18,6 @@ public interface EntityContext {
     public void killAndReplace(Entity entity) throws Exception;
 
     public Entity getEntityType(XY xy);
+
+    public Board getBoard();
 }
