@@ -113,12 +113,12 @@ public class MasterSquirrelBot extends MasterSquirrel {
         }
 
         @Override
-        public void spawnMiniBot(XY direction, int energy) throws NotEnoughEnergyException,SpawnException {
+        public void spawnMiniBot(XY direction, int energy) throws Exception {
             int spaceCounter = 0;
             if(energy >= master.getEnergy()){
                 throw new NotEnoughEnergyException();
             }
-            for(int i = 0; i <= 8; i++){
+            for(int i = 0; i <= 8; i++){    //check space around master
                 switch (i){
                     case 0:
                         if(getEntityAt(position.plus(new XY(1,-1)))!= EntityType.NONE){
@@ -167,8 +167,7 @@ public class MasterSquirrelBot extends MasterSquirrel {
             }
             MiniSquirrelBot child = (MiniSquirrelBot) spawnChild(energy);
             child.setPosition(direction);
-
-            //TODO wohin mit dem KIND ?
+            context.getBoard().getEntitySet().plus(child); //save child
         }
 
         @Override
