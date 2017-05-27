@@ -52,6 +52,11 @@ public class FlattenedBoard implements BoardView, EntityContext {
         return flatBoard[xy.x][xy.y];
     }
 
+    @Override
+    public Board getBoard() {
+        return board;
+    }
+
     public void tryMove(MiniSquirrel mini, XY moveDirection) throws Exception {
         int x = mini.getPosition().x + moveDirection.x; // calc new
         // pos
