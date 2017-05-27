@@ -4,6 +4,7 @@ import de.hsa.games.fatsquirrel.console.ConsoleUI;
 import de.hsa.games.fatsquirrel.console.GameImpl;
 import de.hsa.games.fatsquirrel.core.Board;
 import de.hsa.games.fatsquirrel.core.BoardConfig;
+import de.hsa.games.fatsquirrel.core.MasterSquirrelBot;
 import de.hsa.games.fatsquirrel.core.XY;
 import de.hsa.games.fatsquirrel.gui.FxUI;
 import javafx.application.Application;
@@ -21,24 +22,32 @@ public class Launcher extends Application {
     public static void main(String[] args) throws Exception {
         Board board1 = new Board(settings);
         State state1 = new State(board1);
-        int mode = 2;
+        int mode = 3;
         Game game;
         switch(mode){
-            case 0:
+            case 0: //1frame per input
                 game = new GameImpl(state1, new ConsoleUI());
                 game.run();
                 break;
-            case 1:
+            case 1: //alot of frames
                 game = new GameImpl(state1, new ConsoleUI());
                 startGame(game);
                 while(true) {
                     game.bufferInput();
                 }
-            case 2:
+            case 2: //javafx
                 game = new GameImpl(state1, FxUI.createInstance(settings.getSize()));
                 Application.launch(args);
                 game.bufferInput();
                 break;
+            case 3:
+                Board board2 = board1;
+                board2.getEntitySet().add(new MasterSquirrelBot(3000,2000,new XY(40,40)));
+                State state2 = new State(board2);
+
+                game = new GameImpl(state2, FxUI.createInstance(settings.getSize()));
+                Application.launch(args);
+                game.bufferInput();
         }
     }
 
