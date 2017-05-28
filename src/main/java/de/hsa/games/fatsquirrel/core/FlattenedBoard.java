@@ -266,6 +266,9 @@ public class FlattenedBoard implements BoardView, EntityContext {
     }
 
     public void move(Entity entity, XY position) throws Exception {
+        if(position.x < 0 | position.y < 0){
+            return;
+        }
         mainLogger.log(Level.INFO, entity.getClass().toString() + " moved:" + entity.getPosition().toString() + "->"
                 + position.toString());
         entity.setPosition(position);

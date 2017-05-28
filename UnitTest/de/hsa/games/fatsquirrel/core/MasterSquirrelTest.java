@@ -41,6 +41,14 @@ public class MasterSquirrelTest {
     }
 
     @Test
+    public void updateEnergy(){
+        master.updateEnergy(100); //master has 1000energy start
+        assertEquals(1100, master.getEnergy());
+        master.updateEnergy(-100);
+        assertEquals(1000, master.getEnergy()); //neg also possible
+    }
+
+    @Test
     public void moveMaster() throws Exception {
     }
 
