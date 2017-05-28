@@ -29,7 +29,7 @@ public class Board {
     }
 
     public void fillSet() {
-        list.add(new MasterSquirrelBot(2000,2000,new XY(settings.getSize().x/2, settings.getSize().y/2)));
+        list.add(new MasterSquirrelBot(2000, 2000, new XY(settings.getSize().x / 2, settings.getSize().y / 2)));
         fillOuterWalls();
         spawnBeastsPlants();
     }
@@ -62,19 +62,21 @@ public class Board {
     private void spawnBeastsPlants() { // creates Entities
         int z = 0;
         for (int j = 0; j < 4; j++) {
-            if (j == 0) {
-                z = settings.getBadBeastAmount();
+            switch (j) {
+                case 0:
+                    z = settings.getBadBeastAmount();
+                    break;
+                case 1:
+                    z = settings.getGoodBeastAmount();
+                    break;
+                case 2:
+                    z = settings.getBadPlantAmount();
+                    break;
+                case 3:
+                    z = settings.getGoodPlantAmount();
+                    break;
             }
-            if (j == 1) {
-                z = settings.getGoodBeastAmount();
-            }
-            if (j == 2) {
-                z = settings.getBadPlantAmount();
-            }
-            if (j == 3) {
-                z = settings.getGoodPlantAmount();
-            }
-//TODO refactor with switch case maybe ?
+
             for (int i = 0; i < z; i++) { // for all entities in settings
                 int randomX = 1 + (int) (Math.random() * (settings.getSize().x - 2));
                 int randomY = 1 + (int) (Math.random() * (settings.getSize().y - 2));
@@ -86,25 +88,23 @@ public class Board {
                         continue;
                     }
                 }
-                if (j == 0) {
-                    list.add(new BadBeast(entityCounter, new XY(randomX, randomY)));
-                    entityCounter++;
-                    continue;
-                }
-                if (j == 1) {
-                    list.add(new GoodBeast(entityCounter, new XY(randomX, randomY)));
-                    entityCounter++;
-                    continue;
-                }
-                if (j == 2) {
-                    list.add(new BadPlant(entityCounter, new XY(randomX, randomY)));
-                    entityCounter++;
-                    continue;
-                }
-                if (j == 3) {
-                    list.add(new GoodPlant(entityCounter, new XY(randomX, randomY)));
-                    entityCounter++;
-                    continue;
+                switch (j) {
+                    case 0:
+                        list.add(new BadBeast(entityCounter, new XY(randomX, randomY)));
+                        entityCounter++;
+                        break;
+                    case 1:
+                        list.add(new GoodBeast(entityCounter, new XY(randomX, randomY)));
+                        entityCounter++;
+                        break;
+                    case 2:
+                        list.add(new BadPlant(entityCounter, new XY(randomX, randomY)));
+                        entityCounter++;
+                        break;
+                    case 3:
+                        list.add(new GoodPlant(entityCounter, new XY(randomX, randomY)));
+                        entityCounter++;
+                        break;
                 }
             }
         }
