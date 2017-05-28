@@ -47,6 +47,7 @@ public class FlattenedBoardTest {
     public void tryMove() throws Exception {
         setup();
         MasterSquirrel master = new MasterSquirrel(100,new XY(2,2));
+
         //fSpy.tryMove(master,new XY(1,1));
         //Mockito.verify(fSpy,Mockito.atLeastOnce()).move(master,new XY(2,2)); //same but diff.
 
@@ -58,8 +59,16 @@ public class FlattenedBoardTest {
         master.setPosition(new XY(1,1));
         assertFalse(master.getStun()); //before run into a wall
         fSpy.tryMove(master,new XY(-1,-1));
-        assertTrue(master.getStun());  //after
+        assertTrue(master.getStun());
+        //after
         assertTrue(new XY(1,1).equals(master.getPosition()));
+        fSpy.tryMove(master, new XY(1,1)); //1turn
+        assertTrue(master.getStun());
+        fSpy.tryMove(master, new XY(1,1));  //2turn
+        assertTrue(master.getStun());
+        fSpy.tryMove(master, new XY(1,1));  //3turn
+        assertTrue(master.getPosition().equals(new XY (1,1))); //didnt move
+        assertFalse(master.getStun()); //not stunned anymore
     }
 
 
@@ -95,9 +104,4 @@ public class FlattenedBoardTest {
         fSpy.move(master,new XY(-1,-1));
         assertFalse(new XY(-1,-1).equals(master.getPosition()));
     }
-
-    @Test
-    public void refresh() throws Exception {
-    }
-
 }
