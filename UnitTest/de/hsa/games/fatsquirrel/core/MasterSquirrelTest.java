@@ -49,13 +49,8 @@ public class MasterSquirrelTest {
     }
 
     @Test
-    public void moveMaster() throws Exception {
-    }
-
-    @Test
     public void spawnChild() throws Exception {
         MiniSquirrel child = master.spawnChild(100);
-
     }
 
 }

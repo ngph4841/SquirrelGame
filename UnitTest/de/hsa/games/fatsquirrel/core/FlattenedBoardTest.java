@@ -23,6 +23,8 @@ public class FlattenedBoardTest {
         Mockito.when(fSpy.getEntityType(0,0)).thenReturn(new Wall(0,new XY(0,0))); //mock method with spy
         Mockito.when(fSpy.getEntityType(1,1)).thenReturn(null);
         Mockito.when(fSpy.getEntityType(2,2)).thenReturn(null);
+
+        //refreshMethod
         Mockito.doNothing().when(fSpy).refresh();
 
         //checking if plant gets eaten
