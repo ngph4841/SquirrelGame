@@ -4,6 +4,8 @@ import de.hsa.games.fatsquirrel.core.Entity;
 import de.hsa.games.fatsquirrel.core.EntityContext;
 import de.hsa.games.fatsquirrel.core.XY;
 
+import java.util.Random;
+
 /**
  * Created by Freya on 19.05.2017.
  */
@@ -92,5 +94,10 @@ public class BotControllerMaster implements BotController {
         }
         moveDirection = new XY(x, y);
         view.move(moveDirection);
+
+        Random rn = new Random();
+        if(rn.nextInt(50) < 5) {
+            view.spawnMiniBot(new XY(1, 0), 100);
+        }
     }
 }

@@ -23,6 +23,23 @@ public class MasterSquirrelBot extends MasterSquirrel {
         proxiedBotController.nextStep(controllerContext);
     }
 
+    public MiniSquirrelBot spawnChild(int energy) throws NotEnoughEnergyException {
+        if (this.energy <= energy) {
+            throw new NotEnoughEnergyException();
+        }
+        XY childStartPos = position.plus(new XY(0,1)); // spawn next to mother
+        childrenCounter++;                            // new child & id of child is mothersId + child#
+        MiniSquirrelBot child = new MiniSquirrelBot(this.id + childrenCounter, energy, childStartPos, this.id);
+        int[] temp = new int[childrenCounter];                            // new array for childrenId
+        for (int i = 0; i < childrenCounter - 2; i++) {                // transfer id of children
+            temp[i] = childrenId[i];
+        }
+        temp[childrenCounter - 1] = child.getId();                        // save id of this new child
+        childrenId = temp;
+        updateEnergy(-energy);
+        return child;
+    }
+
     class ControllerContextImpl implements ControllerContext {
         EntityContext context;
         MasterSquirrelBot master;
@@ -165,8 +182,8 @@ public class MasterSquirrelBot extends MasterSquirrel {
             if(spaceCounter >= 8){
                 throw new SpawnException();
             }
-            MiniSquirrelBot child = (MiniSquirrelBot) spawnChild(energy);
-            child.setPosition(direction);
+            MiniSquirrelBot child = spawnChild(energy);
+            child.setPosition(position.plus(direction));
             context.getBoard().getEntitySet().plus(child); //save child
         }
 

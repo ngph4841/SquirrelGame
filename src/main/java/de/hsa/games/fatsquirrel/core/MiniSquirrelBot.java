@@ -1,23 +1,26 @@
 package de.hsa.games.fatsquirrel.core;
 
 import de.hsa.games.fatsquirrel.botapi.*;
+import de.hsa.games.fatsquirrel.util.LogAdvice;
+
+import java.lang.reflect.Proxy;
 
 /**
  * Created by Freya on 19.05.2017.
  */
 public class MiniSquirrelBot extends MiniSquirrel {
-    BotControllerFactory botControllerFactory;
 
     MiniSquirrelBot(int id, int energy, XY position, int parentId) {
         super(id, energy, position, parentId);
-        BotControllerFactory botControllerFactory = new BotControllerFactoryImpl();
     }
+    BotControllerFactory botControllerFactory = new BotControllerFactoryImpl();
 
     @Override
     public void nextStep(EntityContext context) throws Exception {
         ControllerContext controllerContext = new ControllerContextImpl(context, this);
         BotController botController = botControllerFactory.createMiniBotController();
-        botController.nextStep(controllerContext);
+        BotController proxiedBotController = (BotController) Proxy.newProxyInstance(this.getClass().getClassLoader(),new Class[]{BotController.class}, new LogAdvice(botController));
+        proxiedBotController.nextStep(controllerContext);
     }
 
     class ControllerContextImpl implements ControllerContext {
@@ -232,10 +235,12 @@ public class MiniSquirrelBot extends MiniSquirrel {
             //find parent and give him energy
             for (int i = 0; i < context.getSize().x; i++) {
                 for (int j = 0; j < context.getSize().y; j++) {
-                    if (context.getEntityType(new XY(i, j)).getId() == mini.getParentId()) {
-                        context.getEntityType(new XY(i, j)).updateEnergy(collectedEnergy);
-                        context.kill(mini);
-                        return;
+                    if(context.getEntityType(new XY(i,j)) != null) {
+                        if (context.getEntityType(new XY(i, j)).getId() == mini.getParentId()) {
+                            context.getEntityType(new XY(i, j)).updateEnergy(collectedEnergy);
+                            context.kill(mini);
+                            return;
+                        }
                     }
                 }
             }

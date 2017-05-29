@@ -5,9 +5,9 @@ import de.hsa.games.fatsquirrel.console.NotEnoughEnergyException;
 public class MasterSquirrel extends Squirrel {
 
     private static int startEnergy = 1000;
-    private int childrenCounter = 0;
+    protected int childrenCounter = 0;
     private XY childStartPos;
-    private int[] childrenId;
+    protected int[] childrenId;
 
     public MasterSquirrel(int id, int energy, XY position) {
         super(id, energy, position);

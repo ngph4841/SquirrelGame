@@ -95,5 +95,11 @@ public class BotControllerMini implements BotController {
         }
         moveDirection = new XY(x,y);
         view.move(moveDirection);
+
+        Random rn = new Random(); //random for now
+        if(rn.nextInt(50) < 5) {
+            int radius = rn.nextInt(9) + 1;
+            view.implode(radius);
+        }
     }
 }
