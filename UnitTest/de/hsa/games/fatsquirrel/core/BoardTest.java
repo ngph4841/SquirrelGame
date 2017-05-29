@@ -24,8 +24,8 @@ public class BoardTest {
 
     @Test
     public void getEntitySet() throws Exception {
+        board.fillSet();
         assertTrue(board.getEntitySet() instanceof EntitySet);
-
     }
 
     @Test
@@ -42,7 +42,6 @@ public class BoardTest {
         for(int i = 1; i < boardConfig.getWallCount(); i++){
             assertTrue(board.getEntitySet().getEntity(i) instanceof Wall);
         }
-
     }
 
 }

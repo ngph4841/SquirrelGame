@@ -30,7 +30,6 @@ public class LogAdvice implements InvocationHandler {
         Object result = method.invoke(target, args);
 
         //log method & result & args
-
         String resultString = "void";
         if(result != null){
             resultString = result.toString();

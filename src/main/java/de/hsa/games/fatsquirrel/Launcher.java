@@ -12,12 +12,23 @@ import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 public class Launcher extends Application {
     public static BoardConfig settings = new BoardConfig(new XY(50, 50), 5, 5, 10, 10);
+
+//    public static Logger logger = Logger.getLogger(Launcher.class.getSimpleName());
+//    private FileHandler fileHandler = new FileHandler("Log.txt");
+//    private SimpleFormatter formatter = new SimpleFormatter();
+
+    public Launcher() throws IOException {
+    }
 
     public static void main(String[] args) throws Exception {
         Board board1 = new Board(settings);

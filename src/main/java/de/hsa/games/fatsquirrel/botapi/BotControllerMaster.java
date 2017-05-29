@@ -96,7 +96,7 @@ public class BotControllerMaster implements BotController {
         view.move(moveDirection);
 
         Random rn = new Random();
-        if(rn.nextInt(50) < 5) {
+        if(rn.nextInt(50) < 10) {
             view.spawnMiniBot(new XY(1, 0), 100);
         }
     }

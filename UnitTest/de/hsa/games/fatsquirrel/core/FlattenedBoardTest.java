@@ -1,5 +1,6 @@
 package de.hsa.games.fatsquirrel.core;
 
+import de.hsa.games.fatsquirrel.util.MainLogger;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
