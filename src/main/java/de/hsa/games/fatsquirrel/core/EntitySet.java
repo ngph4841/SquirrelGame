@@ -5,7 +5,7 @@ public class EntitySet {
     private int counter = 0;
 
     public EntitySet() {
-        set = new Entity[50];
+        set = new Entity[150];
     }
 
     public EntitySet(int cap) {
@@ -20,16 +20,16 @@ public class EntitySet {
         return set.length;
     }
 
-    public void add(Entity o) {
+    public void add(Entity entity) {
         if (counter < set.length) {
             for (int i = 0; i < counter; i++) {
-                if (set[i].equals(o)) {
+                if (set[i].equals(entity)) {
                     return;
                 }
             }
-            set[counter++] = o;
+            set[counter++] = entity;
         }else{
-            plus(o);
+            plus(entity);
         }
     }
 
