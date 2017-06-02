@@ -35,7 +35,6 @@ public class BotControllerMaster implements BotController {
         }
 
         //runs between the 2 walls on either side
-
         int distanceY = Math.abs(entities[0].getPosition().y - masterPosition.y);
         int distanceX = Math.abs(entities[0].getPosition().x - masterPosition.x);
 
@@ -51,7 +50,7 @@ public class BotControllerMaster implements BotController {
         }
         //nearest Entity at entites[index]
         XY moveDirection = new XY(0, 0);
-        // TODO botbrain
+
         switch (view.getEntityAt(entities[index].getPosition())) {
             case WALL:
                 moveDirection =  masterPosition.minus(entities[index].getPosition());
@@ -61,8 +60,7 @@ public class BotControllerMaster implements BotController {
             case MINI_SQUIRREL:
                 // break;
             case NONE:
-                //sollte selten vorkommen aber RNG dann
-                break;
+                // break;
             case BAD_PLANT:
             case BAD_BEAST:
                 moveDirection =  masterPosition.minus(entities[index].getPosition());
