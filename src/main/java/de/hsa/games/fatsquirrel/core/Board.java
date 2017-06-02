@@ -8,8 +8,7 @@ public class Board {
     public Board(BoardConfig settings) {
         this.settings = settings;    //load Configs
         this.entityCounter = 0;
-        this.list = new EntitySet(settings.getEntityAmount() + settings.getWallCount());//EntitySetlength
-        fillSet();
+        this.list = new EntitySet(2 + settings.getEntityAmount() + settings.getWallCount());//EntitySetlength
     }
 
     public String toString() {
@@ -29,9 +28,12 @@ public class Board {
     }
 
     public void fillSet() {
-        list.add(new MasterSquirrelBot(2000, 2000, new XY(settings.getSize().x / 2, settings.getSize().y / 2)));
         fillOuterWalls();
         spawnBeastsPlants();
+    }
+
+    public void addPlayer(Entity entity){
+        list.add(entity);
     }
 
 
