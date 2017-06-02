@@ -1,9 +1,10 @@
 package de.hsa.games.fatsquirrel;
 
-import de.hsa.games.fatsquirrel.core.Board;
-import de.hsa.games.fatsquirrel.core.BoardView;
-import de.hsa.games.fatsquirrel.core.EntityContext;
-import de.hsa.games.fatsquirrel.core.FlattenedBoard;
+import de.hsa.games.fatsquirrel.core.*;
+import de.hsa.games.fatsquirrel.core.Character;
+
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class State {
     private int highscore;
@@ -24,7 +25,14 @@ public class State {
 
     public void update() throws Exception {
         EntityContext context = board.flatten();
-        this.board.getEntitySet().moveAll(context);        //call nextStep in all entities
-    }
+        //this.board.getList().moveAll(context);        //call nextStep in all entities
 
+        //loop nextStep call
+        for(int i = 0; i < board.getList().size(); i++){
+            if(board.getList().get(i) instanceof Character | board.getList().get(i) instanceof Squirrel){
+                board.getList().get(i).nextStep(context);
+            }
+        }
+
+    }
 }

@@ -69,6 +69,15 @@ public class MiniSquirrelBot extends MiniSquirrel {
 
         @Override
         public EntityType getEntityAt(XY xy) {
+            XY viewUpperRight = getViewUpperRight();
+            XY viewLowerLeft = getViewLowerLeft();
+
+            if (xy.x > viewUpperRight.x | xy.x < viewLowerLeft.x) {
+                throw new OutOfViewException();
+            } else if (xy.y > viewLowerLeft.y | xy.y < viewUpperRight.y) {
+                throw new OutOfViewException();
+            }
+
             if (context.getEntityType(xy) instanceof BadBeast) {
                 return EntityType.BAD_BEAST;
             } else if (context.getEntityType(xy) instanceof GoodBeast) {

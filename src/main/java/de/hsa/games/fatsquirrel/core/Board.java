@@ -1,14 +1,18 @@
 package de.hsa.games.fatsquirrel.core;
 
+import java.util.ArrayList;
+
 public class Board {
     private BoardConfig settings;
-    private EntitySet list;
+    //private EntitySet list;
+    private ArrayList<Entity> list;
     private int entityCounter;
 
     public Board(BoardConfig settings) {
         this.settings = settings;    //load Configs
         this.entityCounter = 0;
-        this.list = new EntitySet(2 + settings.getEntityAmount() + settings.getWallCount());//EntitySetlength
+        //this.list = new EntitySet(2 + settings.getEntityAmount() + settings.getWallCount());
+        this.list = new ArrayList<>(2 + settings.getWallCount() + settings.getEntityAmount());
     }
 
     public String toString() {
@@ -23,7 +27,7 @@ public class Board {
         return new FlattenedBoard(this);
     }
 
-    public EntitySet getEntitySet() throws Exception {
+    public ArrayList<Entity> getList() throws Exception { //return EntitySet
         return list;
     }
 
@@ -56,6 +60,7 @@ public class Board {
         }
 
         for (int i = 1; i < settings.getSize().y; i++) {
+            //list.add(new Wall(wallCounter, new XY(settings.getSize().y - 1, i)));
             list.add(new Wall(wallCounter, new XY(settings.getSize().y - 1, i)));
             wallCounter--;
         }
@@ -84,8 +89,8 @@ public class Board {
                 int randomY = 1 + (int) (Math.random() * (settings.getSize().y - 2));
                 XY temp = new XY(randomX, randomY);
 
-                for (int a = settings.getWallCount(); a < list.length(); a++) {
-                    if (temp.equals(list.getEntity(a))) { // repeats if there is already an Ent.
+                for (int a = settings.getWallCount(); a < list.size(); a++) {
+                    if (temp.equals(list.get(a))) { // repeats if there is already an Ent.
                         i--;
                         continue;
                     }

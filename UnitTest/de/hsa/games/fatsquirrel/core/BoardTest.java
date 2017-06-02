@@ -25,22 +25,22 @@ public class BoardTest {
     @Test
     public void getEntitySet() throws Exception {
         board.fillSet();
-        assertTrue(board.getEntitySet() instanceof EntitySet);
+        //assertTrue(board.getList() instanceof EntitySet);
     }
 
     @Test
     public void fillSet() throws Exception {
         board.fillSet(); //full list of entities
-        for(int i = 0; i < board.getEntitySet().length(); i++) {
-            assertTrue(board.getEntitySet().getEntity(i) instanceof Entity);
+        for(int i = 0; i < board.getList().size(); i++) {
+            assertTrue(board.getList().get(i) instanceof Entity);
         }
 
         //1 stellesquirrel
-        assertTrue(board.getEntitySet().getEntity(0) instanceof Squirrel);
+        assertTrue(board.getList().get(0) instanceof Squirrel);
 
         //fills out the outer walls
         for(int i = 1; i < boardConfig.getWallCount(); i++){
-            assertTrue(board.getEntitySet().getEntity(i) instanceof Wall);
+            assertTrue(board.getList().get(i) instanceof Wall);
         }
     }
 

@@ -1,7 +1,7 @@
 package de.hsa.games.fatsquirrel.core;
 
 public class BoardConfig { //konstruktor
-    private final XY size;//width, length
+    private final XY size;//width, size
     //	private final int wall = 20;
     private final int badBeast;
     private final int goodBeast;

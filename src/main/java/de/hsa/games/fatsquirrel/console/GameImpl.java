@@ -1,7 +1,6 @@
 package de.hsa.games.fatsquirrel.console;
 
 import de.hsa.games.fatsquirrel.core.MiniSquirrel;
-import de.hsa.games.fatsquirrel.gui.FxUI;
 import de.hsa.games.fatsquirrel.util.Command;
 import de.hsa.games.fatsquirrel.Game;
 import de.hsa.games.fatsquirrel.State;
@@ -12,7 +11,6 @@ import de.hsa.games.fatsquirrel.core.XY;
 import de.hsa.games.fatsquirrel.util.MainLogger;
 
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class GameImpl extends Game {
     private State state;;
@@ -25,7 +23,7 @@ public class GameImpl extends Game {
 
     public GameImpl(State state, UI ui) throws Exception {
         this.state = state;
-        this.player = (MasterSquirrel) state.getBoard().getEntitySet().getEntity(0);
+        this.player = (MasterSquirrel) state.getBoard().getList().get(0);
         this.context = (FlattenedBoard) state.getBoardView();
         this.ui = ui;
     }
@@ -57,7 +55,7 @@ public class GameImpl extends Game {
         int x = temp.getPosition().x;
         int y = temp.getPosition().y;
         if(state.getBoardView().getEntityType(x,y) != null) {
-            state.getBoard().getEntitySet().plus(temp);
+            state.getBoard().getList().add(temp);
         }else{
             msg = "not enough space for birth";
         }

@@ -184,7 +184,7 @@ public class MasterSquirrelBot extends MasterSquirrel {
             }
             MiniSquirrelBot child = spawnChild(energy);
             child.setPosition(position.plus(direction));
-            context.getBoard().getEntitySet().plus(child); //save child
+            context.getBoard().getList().add(child); //save child
         }
 
         @Override

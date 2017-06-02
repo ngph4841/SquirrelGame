@@ -12,11 +12,11 @@ public class EntitySet {
         set = new Entity[cap];
     }
 
-    public Entity getEntity(int index) {
+    public Entity get(int index) {
         return set[index];
     }
 
-    public int length() {
+    public int size() {
         return set.length;
     }
 

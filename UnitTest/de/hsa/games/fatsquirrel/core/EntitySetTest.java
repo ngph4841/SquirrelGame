@@ -15,15 +15,15 @@ public class EntitySetTest {
         entitySet = new EntitySet(2);
         MasterSquirrel masterSquirrel = new MasterSquirrel(10, new XY(0, 0));
         entitySet.add(masterSquirrel);
-        assertEquals(masterSquirrel, entitySet.getEntity(0));
+        assertEquals(masterSquirrel, entitySet.get(0));
     }
 
     @Test
     public void length() throws Exception {
         entitySet = new EntitySet(10);
-        //length
-        assertEquals(10, entitySet.length());
-        assertFalse(entitySet.length() == 8);
+        //size
+        assertEquals(10, entitySet.size());
+        assertFalse(entitySet.size() == 8);
     }
 
     @Test
@@ -32,11 +32,11 @@ public class EntitySetTest {
         //entity is added into the list
         Wall wall = new Wall(-1, new XY(0, 0));
         entitySet.add(wall);
-        assertEquals(entitySet.getEntity(0), wall);
+        assertEquals(entitySet.get(0), wall);
 
         //can't add same entity twice
         entitySet.add(wall);
-        assertTrue(entitySet.getEntity(1) == null);
+        assertTrue(entitySet.get(1) == null);
     }
 
     @Test
@@ -49,7 +49,7 @@ public class EntitySetTest {
 
         //remove goodplant 2 -> 1
         entitySet.remove(goodPlant);
-        assertEquals(1, entitySet.length());
+        assertEquals(1, entitySet.size());
     }
 
 }

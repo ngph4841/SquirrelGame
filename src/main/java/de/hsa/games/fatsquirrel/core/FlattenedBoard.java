@@ -1,8 +1,8 @@
 package de.hsa.games.fatsquirrel.core;
 
-import de.hsa.games.fatsquirrel.Launcher;
 import de.hsa.games.fatsquirrel.util.MainLogger;
 
+import java.util.ArrayList;
 import java.util.logging.Level;
 
 public class FlattenedBoard implements BoardView, EntityContext {
@@ -15,18 +15,18 @@ public class FlattenedBoard implements BoardView, EntityContext {
         this.settings = board.getConfig();
         this.flatBoard = new Entity[settings.getSize().x][settings.getSize().y];
 
-        EntitySet list = board.getEntitySet();
+        ArrayList<Entity> list = board.getList(); //EntitySet
         int x;
         int y;
-        for (int i = 0; i < list.length(); i++) { // check all entities in the
+        for (int i = 0; i < list.size(); i++) { // check all entities in the
             // EntitySet
-            if (list.getEntity(i) == null) {
+            if (list.get(i) == null) {
                 break;
             }
-            x = list.getEntity(i).getPosition().x; // get coordinates from
+            x = list.get(i).getPosition().x; // get coordinates from
             // the entity
-            y = list.getEntity(i).getPosition().y;
-            flatBoard[x][y] = list.getEntity(i); // add Entities from EntitySet
+            y = list.get(i).getPosition().y;
+            flatBoard[x][y] = list.get(i); // add Entities from EntitySet
             // to flatBoard
         }
     }
@@ -237,16 +237,16 @@ public class FlattenedBoard implements BoardView, EntityContext {
             XY temp = new XY(randomX, randomY);
             if (entity instanceof BadBeast) {
                 BadBeast bad = new BadBeast(entity.getId(), temp);
-                board.getEntitySet().plus(bad);
+                board.getList().add(bad);
             } else if (entity instanceof GoodBeast) {
                 GoodBeast good = new GoodBeast(entity.getId(), temp);
-                board.getEntitySet().plus(good);
+                board.getList().add(good);
             } else if (entity instanceof BadPlant) {
                 BadPlant bad = new BadPlant(entity.getId(), temp);
-                board.getEntitySet().plus(bad);
+                board.getList().add(bad);
             } else if (entity instanceof GoodPlant) {
                 GoodPlant good = new GoodPlant(entity.getId(), temp);
-                board.getEntitySet().plus(good);
+                board.getList().add(good);
             }
             kill(entity); // kill & update flatboard
             MainLogger.log(Level.INFO,
@@ -258,7 +258,7 @@ public class FlattenedBoard implements BoardView, EntityContext {
         if (!(entity instanceof Wall)) {
             MainLogger.log(Level.INFO,
                     entity.getClass().toString() + " at: " + entity.getPosition().toString() + " has just died");
-            board.getEntitySet().remove(entity);
+            board.getList().remove(entity);
             refresh();
         }
     }
@@ -274,18 +274,27 @@ public class FlattenedBoard implements BoardView, EntityContext {
     }
 
     public void refresh() throws Exception {
-        EntitySet list = board.getEntitySet();
+//        EntitySet list = board.getList();
         Entity[][] temp = new Entity[settings.getSize().x][settings.getSize().y];
         int x;
         int y;
-        for (int i = 0; i < list.length(); i++) { // refresh the flatboard
-            if (list.getEntity(i) == null) {
-                break;
-            }
-            x = list.getEntity(i).getPosition().x;
-            y = list.getEntity(i).getPosition().y;
-            temp[x][y] = list.getEntity(i);
+
+        //foreach loop refreshing the grid
+        for (Entity entity : board.getList()) {
+            x = entity.getPosition().x;
+            y = entity.getPosition().y;
+            temp[x][y] = entity;
         }
+
+        //EntitySet loop
+//        for (int i = 0; i < list.size(); i++) { // refresh the flatboard
+//            if (list.get(i) == null) {
+//                break;
+//            }
+//            x = list.get(i).getPosition().x;
+//            y = list.get(i).getPosition().y;
+//            temp[x][y] = list.get(i);
+//        }
         this.flatBoard = temp;
     }
 
