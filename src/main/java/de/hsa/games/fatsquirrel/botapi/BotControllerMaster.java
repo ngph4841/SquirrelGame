@@ -33,7 +33,10 @@ public class BotControllerMaster implements BotController {
                 }
             }
         }
-
+        if(entities[0] == null){
+            System.out.println("no entity found? ");
+            return;
+        }
         //runs between the 2 walls on either side
         int distanceY = Math.abs(entities[0].getPosition().y - masterPosition.y);
         int distanceX = Math.abs(entities[0].getPosition().x - masterPosition.x);
@@ -93,9 +96,9 @@ public class BotControllerMaster implements BotController {
         moveDirection = new XY(x, y);
         view.move(moveDirection);
 
-        Random rn = new Random();
-        if(rn.nextInt(50) < 10) {
-            view.spawnMiniBot(new XY(1, 0), 100);
-        }
+//        Random rn = new Random();
+//        if(rn.nextInt(50) < 10) {
+//            view.spawnMiniBot(new XY(1, 0), 100);
+//        }
     }
 }

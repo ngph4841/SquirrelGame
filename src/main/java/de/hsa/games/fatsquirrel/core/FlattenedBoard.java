@@ -3,6 +3,7 @@ package de.hsa.games.fatsquirrel.core;
 import de.hsa.games.fatsquirrel.util.MainLogger;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.logging.Level;
 
 public class FlattenedBoard implements BoardView, EntityContext {
@@ -23,16 +24,10 @@ public class FlattenedBoard implements BoardView, EntityContext {
             if (list.get(i) == null) {
                 break;
             }
-            x = list.get(i).getPosition().x; // get coordinates from
-            // the entity
+            x = list.get(i).getPosition().x;
             y = list.get(i).getPosition().y;
             flatBoard[x][y] = list.get(i); // add Entities from EntitySet
-            // to flatBoard
         }
-    }
-
-    public Entity[][] getFlattenedBoard() {
-        return flatBoard;
     }
 
     public Entity getEntityType(int x, int y) {
