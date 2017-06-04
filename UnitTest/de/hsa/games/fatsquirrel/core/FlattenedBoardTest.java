@@ -16,7 +16,8 @@ public class FlattenedBoardTest {
 
     @Before
     public void setup() throws Exception {
-        board = new Board(new BoardConfig(new XY(10,10),1,1,1,1,"de.hsa.games.fatsquirrel.botimpls.BotControllerMaster","de.hsa.fatsquirrel.botimpls.BotControllerMini"),0);
+        board = new Board(new BoardConfig(new XY(10,10),1,1,1,1,1000,
+                "de.hsa.games.fatsquirrel.botimpls.BotControllerMaster","de.hsa.fatsquirrel.botimpls.BotControllerMini"),0);
         FlattenedBoard flattenedBoard = new FlattenedBoard(board);
         fSpy = Mockito.spy(flattenedBoard); //Mockito fSpy returning specific cases
 

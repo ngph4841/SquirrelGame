@@ -20,11 +20,11 @@ public class LogAdvice implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         //create logger here
-        Logger logger = Logger.getLogger(target.toString());
-        FileHandler fileHandler = new FileHandler("Log.txt");
-        SimpleFormatter formatter = new SimpleFormatter();
-        fileHandler.setFormatter(formatter);
-        logger.addHandler(fileHandler);
+        Logger logger = Logger.getLogger("launcherLogger");
+//        FileHandler fileHandler = new FileHandler("Log.txt");
+//        SimpleFormatter formatter = new SimpleFormatter();
+//        fileHandler.setFormatter(formatter);
+//        logger.addHandler(fileHandler);
 
         //invoke method
         Object result = method.invoke(target, args);

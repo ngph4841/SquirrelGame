@@ -5,16 +5,19 @@ import de.hsa.games.fatsquirrel.util.MainLogger;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class FlattenedBoard implements BoardView, EntityContext {
     private Board board;
     private Entity[][] flatBoard;
     private BoardConfig settings;
+    private Logger logger;
 
     public FlattenedBoard(Board board) throws Exception { // 2dim.array
         this.board = board;
         this.settings = board.getConfig();
         this.flatBoard = new Entity[settings.getSize().x][settings.getSize().y];
+        this.logger = Logger.getLogger("launcherLogger");
 
         ArrayList<Entity> list = board.getList(); //EntitySet
         int x;
@@ -54,36 +57,36 @@ public class FlattenedBoard implements BoardView, EntityContext {
         int x = mini.getPosition().x + moveDirection.x; // calc new
         // pos
         int y = mini.getPosition().y + moveDirection.y;
-        if (getEntityType(x,y) != null) { // if null no check
-            int deltaEnergy = getEntityType(x,y).getEnergy();
-            if (getEntityType(x,y) instanceof Wall) {
+        if (getEntityType(x, y) != null) { // if null no check
+            int deltaEnergy = getEntityType(x, y).getEnergy();
+            if (getEntityType(x, y) instanceof Wall) {
                 mini.updateEnergy(deltaEnergy);
                 mini.stun();
-                MainLogger.log(Level.INFO, "MiniSquirrel at: " + mini.getPosition().toString() + "just got stunned!");
+                logger.log(Level.INFO, "MiniSquirrel at: " + mini.getPosition().toString() + "just got stunned!");
                 return;
-            } else if (getEntityType(x,y) instanceof MasterSquirrel) {
-                MasterSquirrel temp = (MasterSquirrel) getEntityType(x,y);
+            } else if (getEntityType(x, y) instanceof MasterSquirrel) {
+                MasterSquirrel temp = (MasterSquirrel) getEntityType(x, y);
                 if (temp.checkIfChild(mini)) {
-                    getEntityType(x,y).updateEnergy(mini.getEnergy());
+                    getEntityType(x, y).updateEnergy(mini.getEnergy());
                     kill(mini);
                     return;
                 } else {
-                    getEntityType(x,y).updateEnergy(150);
+                    getEntityType(x, y).updateEnergy(150);
                     kill(mini);
                     return;
                 }
-            } else if (getEntityType(x,y) instanceof MiniSquirrel) {
-                MiniSquirrel temp = (MiniSquirrel) getEntityType(x,y);
+            } else if (getEntityType(x, y) instanceof MiniSquirrel) {
+                MiniSquirrel temp = (MiniSquirrel) getEntityType(x, y);
                 if (mini.getParentId() != temp.getParentId()) {
                     kill(mini);
-                    kill(getEntityType(x,y));
+                    kill(getEntityType(x, y));
                     return;
                 }
-            } else if (getEntityType(x,y) instanceof BadBeast) {
+            } else if (getEntityType(x, y) instanceof BadBeast) {
                 mini.updateEnergy(deltaEnergy);
-                BadBeast temp = (BadBeast) getEntityType(x,y);
+                BadBeast temp = (BadBeast) getEntityType(x, y);
                 temp.bite();
-                MainLogger.log(Level.INFO, "BadBeast at: " + temp.getPosition().toString() + " attacked a Squirrel at: "
+                logger.log(Level.INFO, "BadBeast at: " + temp.getPosition().toString() + " attacked a Squirrel at: "
                         + mini.getPosition().toString());
                 if (temp.getBite() <= 0) {
                     killAndReplace(temp);
@@ -93,7 +96,7 @@ public class FlattenedBoard implements BoardView, EntityContext {
                     return;
                 }
             } else {
-                killAndReplace(getEntityType(x,y));
+                killAndReplace(getEntityType(x, y));
             }
             mini.updateEnergy(deltaEnergy);
         }
@@ -108,7 +111,7 @@ public class FlattenedBoard implements BoardView, EntityContext {
     public void tryMove(GoodBeast good, XY moveDirection) throws Exception {
         int x = good.getPosition().x + moveDirection.x;
         int y = good.getPosition().y + moveDirection.y;
-        if (getEntityType(x,y) != null) {
+        if (getEntityType(x, y) != null) {
             return;
         }
         move(good, new XY(x, y));
@@ -117,15 +120,15 @@ public class FlattenedBoard implements BoardView, EntityContext {
     public void tryMove(BadBeast bad, XY moveDirection) throws Exception {
         int x = bad.getPosition().x + moveDirection.x;
         int y = bad.getPosition().y + moveDirection.y;
-        if (getEntityType(x,y) != null) {
-            if (getEntityType(x,y) instanceof Squirrel) {
+        if (getEntityType(x, y) != null) {
+            if (getEntityType(x, y) instanceof Squirrel) {
                 bad.bite();
-                MainLogger.log(Level.INFO,
+                logger.log(Level.INFO,
                         "BadBeast at: " + bad.getPosition().toString() + " attacked a Squirrel at: " + x + "/" + y);
-                getEntityType(x,y).updateEnergy(bad.getEnergy());
-                if (getEntityType(x,y) instanceof MiniSquirrel) {
-                    if (getEntityType(x,y).getEnergy() <= 0) {
-                        kill(getEntityType(x,y));
+                getEntityType(x, y).updateEnergy(bad.getEnergy());
+                if (getEntityType(x, y) instanceof MiniSquirrel) {
+                    if (getEntityType(x, y).getEnergy() <= 0) {
+                        kill(getEntityType(x, y));
                     }
                 }
                 if (bad.getBite() <= 0) {
@@ -141,41 +144,41 @@ public class FlattenedBoard implements BoardView, EntityContext {
     public void tryMove(MasterSquirrel master, XY moveDirection) throws Exception {
 
         if (!master.getStun()) {
-            int x = master.getPosition().x+ moveDirection.x;
+            int x = master.getPosition().x + moveDirection.x;
             int y = master.getPosition().y + moveDirection.y;
-            if (getEntityType(x,y) == null) {
+            if (getEntityType(x, y) == null) {
                 move(master, new XY(x, y));
             } else {
-                int deltaEnergy = getEntityType(x,y).getEnergy(); // how much eng
-                if (getEntityType(x,y) instanceof Wall) { // wall stun
+                int deltaEnergy = getEntityType(x, y).getEnergy(); // how much eng
+                if (getEntityType(x, y) instanceof Wall) { // wall stun
                     master.stun();
                     master.updateEnergy(deltaEnergy);
-                    MainLogger.log(Level.INFO,
+                    logger.log(Level.INFO,
                             "MasterSquirrel at: " + master.getPosition().toString() + "just got stunned!");
-                } else if (getEntityType(x,y) instanceof MasterSquirrel) { // nothing
+                } else if (getEntityType(x, y) instanceof MasterSquirrel) { // nothing
                     return;
-                } else if (getEntityType(x,y) instanceof MiniSquirrel) {
-                    if (master.checkIfChild(getEntityType(x,y))) {
+                } else if (getEntityType(x, y) instanceof MiniSquirrel) {
+                    if (master.checkIfChild(getEntityType(x, y))) {
                         master.updateEnergy(deltaEnergy); // child gives mama
                         // gift
                     } else {
                         master.updateEnergy(150); // takes eng from rndm child
                     }
-                    kill(getEntityType(x,y)); // child dies :(
-                } else if (getEntityType(x,y) instanceof BadBeast) {
+                    kill(getEntityType(x, y)); // child dies :(
+                } else if (getEntityType(x, y) instanceof BadBeast) {
                     master.updateEnergy(deltaEnergy);
-                    BadBeast temp = (BadBeast) getEntityType(x,y);
+                    BadBeast temp = (BadBeast) getEntityType(x, y);
                     temp.bite();
-                    MainLogger.log(Level.INFO, "BadBeast at: " + temp.getPosition().toString()
+                    logger.log(Level.INFO, "BadBeast at: " + temp.getPosition().toString()
                             + " attacked a Squirrel at: " + master.getPosition().toString());
                     if (temp.getBite() <= 0) {
                         killAndReplace(temp);
                     }
                     return;
-                } else if (getEntityType(x,y) instanceof GoodBeast | getEntityType(x,y) instanceof GoodPlant
-                        | getEntityType(x,y) instanceof BadPlant) {
+                } else if (getEntityType(x, y) instanceof GoodBeast | getEntityType(x, y) instanceof GoodPlant
+                        | getEntityType(x, y) instanceof BadPlant) {
                     master.updateEnergy(deltaEnergy); // plants&goodbeast
-                    killAndReplace(getEntityType(x,y));
+                    killAndReplace(getEntityType(x, y));
                     move(master, new XY(x, y));
                 }
             }
@@ -199,8 +202,8 @@ public class FlattenedBoard implements BoardView, EntityContext {
         int boardWidth = settings.getSize().x;
         for (int j = 0; j < boardHeight; j++) { // find all squirrels
             for (int i = 0; i < boardWidth; i++) {
-                if (getEntityType(i,j) instanceof Squirrel) {
-                    squirrelPosition[counter++] = getEntityType(i,j);
+                if (getEntityType(i, j) instanceof Squirrel) {
+                    squirrelPosition[counter++] = getEntityType(i, j);
                 }
             }
         }
@@ -224,7 +227,7 @@ public class FlattenedBoard implements BoardView, EntityContext {
         if (!(entity instanceof Wall)) {
             int randomX = 0;
             int randomY = 0;
-            while (getEntityType(randomX,randomY) != null) { // as long as the
+            while (getEntityType(randomX, randomY) != null) { // as long as the
                 // field isnt null
                 randomX = 1 + (int) (Math.random() * (settings.getSize().x - 2));
                 randomY = 1 + (int) (Math.random() * (settings.getSize().y - 2));
@@ -244,14 +247,14 @@ public class FlattenedBoard implements BoardView, EntityContext {
                 board.getList().add(good);
             }
             kill(entity); // kill & update flatboard
-            MainLogger.log(Level.INFO,
+            logger.log(Level.INFO,
                     "a new " + entity.getClass().toString() + " at: " + temp.toString() + " has just appeared");
         }
     }
 
     public void kill(Entity entity) throws Exception {
         if (!(entity instanceof Wall)) {
-            MainLogger.log(Level.INFO,
+            logger.log(Level.INFO,
                     entity.getClass().toString() + " at: " + entity.getPosition().toString() + " has just died");
             board.getList().remove(entity);
             refresh();
@@ -259,10 +262,10 @@ public class FlattenedBoard implements BoardView, EntityContext {
     }
 
     public void move(Entity entity, XY position) throws Exception {
-        if(position.x < 0 | position.y < 0){
+        if (position.x < 0 | position.y < 0) {
             return;
         }
-        MainLogger.log(Level.INFO, entity.getClass().toString() + " moved:" + entity.getPosition().toString() + "->"
+        logger.log(Level.INFO, entity.getClass().toString() + " moved:" + entity.getPosition().toString() + "->"
                 + position.toString());
         entity.setPosition(position);
         refresh();

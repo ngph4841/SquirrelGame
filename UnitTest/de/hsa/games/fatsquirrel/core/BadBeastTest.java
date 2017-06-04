@@ -14,7 +14,7 @@ public class BadBeastTest {
     EntityContext eSpy;
     @Before
     public void setUp() throws Exception {
-        BoardConfig boardConfig = new BoardConfig(new XY (10,10),1,1,1,1,"abc","abc");
+        BoardConfig boardConfig = new BoardConfig(new XY (10,10),1,1,1,1,100,"abc","abc");
         Board board = new Board(boardConfig,0);
         FlattenedBoard flattenedBoard = new FlattenedBoard(board);
         eSpy = Mockito.spy(flattenedBoard);

@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
  * Created by Freya on 28.05.2017.
  */
 public class BoardTest {
-    BoardConfig boardConfig = new BoardConfig(new XY(10,10),1,1,1,1,"abc", "abc");
+    BoardConfig boardConfig = new BoardConfig(new XY(10,10),1,1,1,1,1000,"abc", "abc");
     Board board = new Board(boardConfig,0);
 
     @Test
