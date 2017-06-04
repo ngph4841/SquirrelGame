@@ -1,5 +1,7 @@
-package de.hsa.games.fatsquirrel.botapi;
+package de.hsa.games.fatsquirrel.botimpls;
 
+import de.hsa.games.fatsquirrel.botapi.BotController;
+import de.hsa.games.fatsquirrel.botapi.ControllerContext;
 import de.hsa.games.fatsquirrel.core.Entity;
 import de.hsa.games.fatsquirrel.core.EntityContext;
 import de.hsa.games.fatsquirrel.core.MasterSquirrelBot;
@@ -13,7 +15,7 @@ import de.hsa.games.fatsquirrel.core.*;
  */
 public class BotControllerMini implements BotController {
 
-    BotControllerMini(){
+    public BotControllerMini(){
     }
 
     @Override
@@ -52,7 +54,6 @@ public class BotControllerMini implements BotController {
         }
         //nearest Entity at entites[index]
         XY moveDirection = new XY(0,0);
-        // TODO botbrain
         switch (view.getEntityAt(entities[index].getPosition())){
             case WALL:
                 moveDirection =  position.minus(entities[index].getPosition());
