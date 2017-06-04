@@ -18,7 +18,8 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 public class Launcher extends Application {
-    public static BoardConfig settings = new BoardConfig(new XY(50, 50), 5, 5, 10, 10);
+    public static BoardConfig settings = new BoardConfig(new XY(50, 50), 5, 5, 10, 10,
+            "de.hsa.games.fatsquirrel.botimpls.BotControllerMaster","de.hsa.fatsquirrel.botimpls.BotControllerMini");
     public static int mode = 3;
 
 
@@ -29,20 +30,16 @@ public class Launcher extends Application {
     }
 
     public static void main(String[] args) throws Exception {
-        Board board = new Board(settings);
+        Board board = new Board(settings,mode);
         State state;
         Game game;
 
         switch (mode) {
             case 0: //1frame per input
-                board.addPlayer(new MasterSquirrel(1000, new XY(settings.getSize().x / 2, settings.getSize().y / 2)));
-                board.fillSet();
                 state = new State(board);
                 game = new GameImpl(state, new ConsoleUI());
                 game.run();
             case 1: //alot of frames
-                board.addPlayer(new MasterSquirrel(1000, new XY(settings.getSize().x / 2, settings.getSize().y / 2)));
-                board.fillSet();
                 state = new State(board);
                 game = new GameImpl(state, new ConsoleUI());
                 startGame(game);
@@ -59,24 +56,7 @@ public class Launcher extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         FxUI fxUI = FxUI.createInstance(settings.getSize());
-        Board board = new Board(settings);
-
-        switch(mode){
-            case 2:
-                //singlePlayer
-                board.addPlayer(new MasterSquirrel(2000, 2000, new XY(settings.getSize().x / 2, settings.getSize().y / 2)));
-                break;
-            case 3:
-                //1bot
-                //board.addPlayer(new MasterSquirrelBot(2000, 2000, new XY(settings.getSize().x / 2, settings.getSize().y / 2)));
-
-                //2bot
-                board.addPlayer(new MasterSquirrelBot(2000, 2000, new XY(settings.getSize().x - 2, settings.getSize().y - 2)));
-                board.addPlayer(new MasterSquirrelBot(3000, 2000, new XY(2, 2)));
-                break;
-        }
-
-        board.fillSet();
+        Board board = new Board(settings,mode);
         State state = new State(board);
         final Game game = new GameImpl(state, fxUI);
 

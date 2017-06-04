@@ -10,15 +10,22 @@ import java.lang.reflect.Proxy;
  * Created by Freya on 19.05.2017.
  */
 public class MasterSquirrelBot extends MasterSquirrel {
-    public MasterSquirrelBot(int id, int energy, XY position) {
+    BotControllerFactory botControllerFactory;
+    String classPath;
+    String miniBot;
+
+    public MasterSquirrelBot(int id, int energy, XY position,String classPath, String miniBot) {
         super(id, energy, position);
+        this.botControllerFactory  = new BotControllerFactoryImpl();
+        this.classPath = classPath;
+        this.miniBot = miniBot;
     }
-    BotControllerFactory botControllerFactory = new BotControllerFactoryImpl();
+
 
     @Override
     public void nextStep(EntityContext context) throws Exception {
         ControllerContext controllerContext = new ControllerContextImpl(context, this);
-        BotController botController = botControllerFactory.createMasterBotController();
+        BotController botController = botControllerFactory.createMasterBotController(classPath);
         BotController proxiedBotController = (BotController) Proxy.newProxyInstance(this.getClass().getClassLoader(),new Class[] {BotController.class},new LogAdvice(botController));
         proxiedBotController.nextStep(controllerContext);
     }
@@ -29,7 +36,7 @@ public class MasterSquirrelBot extends MasterSquirrel {
         }
         XY childStartPos = position.plus(new XY(0,1)); // spawn next to mother
         childrenCounter++;                            // new child & id of child is mothersId + child#
-        MiniSquirrelBot child = new MiniSquirrelBot(this.id + childrenCounter, energy, childStartPos, this.id);
+        MiniSquirrelBot child = new MiniSquirrelBot(this.id + childrenCounter, energy, childStartPos, this.id, miniBot);
         int[] temp = new int[childrenCounter];                            // new array for childrenId
         for (int i = 0; i < childrenCounter - 2; i++) {                // transfer id of children
             temp[i] = childrenId[i];

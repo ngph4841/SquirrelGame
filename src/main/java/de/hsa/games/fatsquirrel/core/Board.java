@@ -8,11 +8,29 @@ public class Board {
     private ArrayList<Entity> list;
     private int entityCounter;
 
-    public Board(BoardConfig settings) {
+    public Board(BoardConfig settings, int mode) {
         this.settings = settings;    //load Configs
         this.entityCounter = 0;
         //this.list = new EntitySet(2 + settings.getEntityAmount() + settings.getWallCount());
         this.list = new ArrayList<>(2 + settings.getWallCount() + settings.getEntityAmount());
+
+        switch (mode) {
+            case 0:
+            case 1:
+            case 2:
+                //singlePlayer
+                addPlayer(new MasterSquirrel(2000, 2000, new XY(settings.getSize().x / 2, settings.getSize().y / 2)));
+                break;
+            case 3:
+                //1bot
+                //addPlayer(new MasterSquirrelBot(2000, 2000, new XY(settings.getSize().x / 2, settings.getSize().y / 2)));
+
+                //2bot
+                addPlayer(new MasterSquirrelBot(2000, 2000, new XY(settings.getSize().x - 2, settings.getSize().y - 2),settings.getMasterBotPath(), settings.getMiniBotPath()));
+                addPlayer(new MasterSquirrelBot(3000, 2000, new XY(2, 2),settings.getMasterBotPath() ,settings.getMiniBotPath()));
+                break;
+        }
+        fillSet();
     }
 
     public String toString() {
@@ -36,7 +54,7 @@ public class Board {
         spawnBeastsPlants();
     }
 
-    public void addPlayer(Entity entity){
+    public void addPlayer(Entity entity) {
         list.add(entity);
     }
 

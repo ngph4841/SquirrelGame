@@ -95,7 +95,7 @@ public class FxUI extends Scene implements UI {
         VBox top = new VBox();
         top.getChildren().add(boardCanvas);
         top.getChildren().add(statusLabel);
-        statusLabel.setText("Hallo Welt");
+        statusLabel.setText("W:UP  A:Left  S:Down  D:Right  J:spawn Mini  M:Health");
         final FxUI fxUI = new FxUI(top, boardCanvas, statusLabel);
         fxUI.setOnKeyPressed(
                 new EventHandler<KeyEvent>() {

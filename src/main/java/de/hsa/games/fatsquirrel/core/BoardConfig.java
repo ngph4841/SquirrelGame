@@ -9,8 +9,10 @@ public class BoardConfig { //konstruktor
     private final int goodPlant;
     private final int entity;
     private final int wallCount; //rand - 4ecken sonst doppelt
+    private String masterBotPath;
+    private String miniBotPath;
 
-    public BoardConfig(XY size, int badBeast, int goodBeast, int badPlant, int goodPlant) {
+    public BoardConfig(XY size, int badBeast, int goodBeast, int badPlant, int goodPlant, String masterBotPath, String miniBotPath) {
         this.size = size;
         this.badBeast = badBeast;
         this.goodBeast = goodBeast;
@@ -18,6 +20,8 @@ public class BoardConfig { //konstruktor
         this.goodPlant = goodPlant;
         this.entity = badBeast + goodBeast + badPlant + goodPlant;
         this.wallCount = (size.x * 2 + size.y * 2) - 4;
+        this.masterBotPath = masterBotPath;
+        this.miniBotPath = miniBotPath;
     }
 
     public XY getSize() {
@@ -47,5 +51,9 @@ public class BoardConfig { //konstruktor
     public int getEntityAmount() {
         return entity;
     }
+
+    public String getMasterBotPath() {return masterBotPath; }
+
+    public String getMiniBotPath() {return miniBotPath; }
 
 }

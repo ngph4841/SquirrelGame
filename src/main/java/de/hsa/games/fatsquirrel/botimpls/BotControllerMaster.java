@@ -1,5 +1,7 @@
-package de.hsa.games.fatsquirrel.botapi;
+package de.hsa.games.fatsquirrel.botimpls;
 
+import de.hsa.games.fatsquirrel.botapi.BotController;
+import de.hsa.games.fatsquirrel.botapi.ControllerContext;
 import de.hsa.games.fatsquirrel.core.Entity;
 import de.hsa.games.fatsquirrel.core.EntityContext;
 import de.hsa.games.fatsquirrel.core.XY;
@@ -11,7 +13,7 @@ import java.util.Random;
  */
 public class BotControllerMaster implements BotController {
 
-    BotControllerMaster() {
+    public BotControllerMaster() {
     }
 
     @Override

@@ -9,16 +9,20 @@ import java.lang.reflect.Proxy;
  * Created by Freya on 19.05.2017.
  */
 public class MiniSquirrelBot extends MiniSquirrel {
+    BotControllerFactory botControllerFactory;
+    String classPath;
 
-    MiniSquirrelBot(int id, int energy, XY position, int parentId) {
+    MiniSquirrelBot(int id, int energy, XY position, int parentId, String classPath) {
         super(id, energy, position, parentId);
+        this.botControllerFactory = new BotControllerFactoryImpl();
+        this.classPath = classPath;
     }
-    BotControllerFactory botControllerFactory = new BotControllerFactoryImpl();
+
 
     @Override
     public void nextStep(EntityContext context) throws Exception {
         ControllerContext controllerContext = new ControllerContextImpl(context, this);
-        BotController botController = botControllerFactory.createMiniBotController();
+        BotController botController = botControllerFactory.createMiniBotController(classPath);
         BotController proxiedBotController = (BotController) Proxy.newProxyInstance(this.getClass().getClassLoader(),new Class[]{BotController.class}, new LogAdvice(botController));
         proxiedBotController.nextStep(controllerContext);
     }
