@@ -11,9 +11,9 @@ public class BoardConfig {
     private final int wallCount; //rand - 4ecken sonst doppelt
     private final String masterBotPath;
     private final String miniBotPath;
-    private final int stepCounter;
+    private final int turnCounter;
 
-    public BoardConfig(XY size, int badBeast, int goodBeast, int badPlant, int goodPlant,int stepCounter, String masterBotPath, String miniBotPath) {
+    public BoardConfig(XY size, int badBeast, int goodBeast, int badPlant, int goodPlant,int turnCounter, String masterBotPath, String miniBotPath) {
         this.size = size;
         this.badBeast = badBeast;
         this.goodBeast = goodBeast;
@@ -23,7 +23,7 @@ public class BoardConfig {
         this.wallCount = (size.x * 2 + size.y * 2) - 4;
         this.masterBotPath = masterBotPath;
         this.miniBotPath = miniBotPath;
-        this.stepCounter = stepCounter;
+        this.turnCounter = turnCounter;
     }
 
     public XY getSize() {
@@ -62,8 +62,8 @@ public class BoardConfig {
         return miniBotPath;
     }
 
-    public int getStepCounter() {
-        return stepCounter;
+    public int getTurnCounter() {
+        return turnCounter;
     }
 
 }

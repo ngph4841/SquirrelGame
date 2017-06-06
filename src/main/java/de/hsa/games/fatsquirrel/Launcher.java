@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 public class Launcher extends Application {
-    public static BoardConfig settings = new BoardConfig(new XY(50, 50), 5, 5, 10, 10, 1000,
+    public static BoardConfig settings = new BoardConfig(new XY(50, 50), 5, 5, 10, 10, 50,
             "de.hsa.games.fatsquirrel.botimpls.BotControllerMaster", "de.hsa.fatsquirrel.botimpls.BotControllerMini");
     public static int mode = 3;
 

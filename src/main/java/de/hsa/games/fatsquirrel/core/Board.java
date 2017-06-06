@@ -7,12 +7,14 @@ public class Board {
     //private EntitySet list;
     private ArrayList<Entity> list;
     private int entityCounter;
+    private int mode;
 
     public Board(BoardConfig settings, int mode) {
         this.settings = settings;    //load Configs
         this.entityCounter = 0;
         //this.list = new EntitySet(2 + settings.getEntityAmount() + settings.getWallCount());
         this.list = new ArrayList<>(2 + settings.getWallCount() + settings.getEntityAmount());
+        this.mode = mode;
 
         switch (mode) {
             case 0:
@@ -31,6 +33,10 @@ public class Board {
                 break;
         }
         fillSet();
+    }
+
+    public int getMode(){
+        return mode;
     }
 
     public String toString() {
