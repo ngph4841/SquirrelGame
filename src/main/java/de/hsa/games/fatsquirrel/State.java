@@ -4,6 +4,9 @@ import de.hsa.games.fatsquirrel.core.*;
 import de.hsa.games.fatsquirrel.core.Character;
 import sun.util.resources.cldr.ebu.LocaleNames_ebu;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -13,12 +16,15 @@ public class State {
     private int turnCounter;
     private Map<String, List<Integer>> highScore;
     private Logger logger;
+    private File highScores = new File("Highscore.txt");
 
     public State(Board board) throws Exception {
         this.board = board;
         this.turnCounter = board.getConfig().getTurnCounter();
         this.highScore = new HashMap<String,List<Integer>>();
         this.logger = Logger.getLogger("");
+
+        loadHighScore();
     }
 
     public Board getBoard() {
@@ -50,6 +56,7 @@ public class State {
     }
 
     private void updateHighScore() throws Exception {
+        FileWriter fileWriter = new FileWriter(highScores);
         String key = "";
         for (int i = 0; i < board.getList().size(); ++i) {
             if (board.getList().get(i) instanceof MasterSquirrelBot) {
@@ -75,6 +82,7 @@ public class State {
             loggerString += key2 + ": " +highScore.get(key2) + "\n";
             System.out.println();
         }
+        fileWriter.write(loggerString + "\n");
         logger.log(Level.WARNING, "HighScores:"+ "\n" + loggerString);
     }
 
@@ -104,6 +112,21 @@ public class State {
             if (i == intList.size() - 1) {
                 System.out.println("averageScore:" + averageScore / (i + 1));
             }
+        }
+
+    }
+
+    private void loadHighScore(){
+        Scanner scanner = null;
+
+        try {
+            scanner = new Scanner(highScores);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            logger.log(Level.WARNING,"File 'Highscore.txt' was not found.");
+        }
+        while(scanner.hasNextLine()){
+            scanner.nextLine();
         }
 
     }

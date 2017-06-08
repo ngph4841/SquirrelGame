@@ -1,0 +1,8 @@
+Size: 50 50
+BadBeast: 5
+GoodBeast: 5
+BadPlant: 10
+GoodPlant: 10
+TurnCounter: 50
+MasterBotPath: de.hsa.games.fatsquirrel.botimpls.BotControllerMaster
+MiniBotPath: de.hsa.fatsquirrel.botimpls.BotControllerMini

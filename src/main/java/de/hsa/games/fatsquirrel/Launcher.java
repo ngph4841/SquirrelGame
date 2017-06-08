@@ -8,7 +8,10 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.logging.FileHandler;
@@ -65,6 +68,9 @@ public class Launcher extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+        loadSettings(); //<---loadingScreen
+
         FxUI fxUI = FxUI.createInstance(settings.getSize());
         Board board = new Board(settings, mode);
         State state = new State(board);
@@ -100,6 +106,44 @@ public class Launcher extends Application {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void loadSettings(){
+        Scanner scanner = null;
+        boolean XYNotLoadedYet = true;
+        String settingsLoader = "";
+        String[] settingsValues = new String[9];
+        String[] temp = new String[2];
+        int values = 2;
+
+        try { //load settings.txt
+            scanner = new Scanner(new File("Settings.txt"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            launcherLogger.log(Level.WARNING,"File 'Settings.txt' was not found.");
+        }
+
+        //read each line which has 1 setting
+        while(scanner.hasNextLine()){
+            //XY extra since it has 2 int
+            if(XYNotLoadedYet){
+                temp = new String[3];
+                settingsLoader = scanner.nextLine();
+                temp = settingsLoader.split(" ");
+                settingsValues[0] = temp[1];
+                settingsValues[1] = temp[2];
+                XYNotLoadedYet = false;
+            } else {
+                settingsLoader = scanner.nextLine();
+                temp = settingsLoader.split(" ");
+                settingsValues[values++] = temp[1];
+            }
+        }
+
+        //parse strings from settings into BoardConfig except botPaths
+        XY size = new XY(Integer.parseInt(settingsValues[0]),Integer.parseInt(settingsValues[1]));
+        settings = new BoardConfig(size,Integer.parseInt(settingsValues[2]),Integer.parseInt(settingsValues[3]),Integer.parseInt(settingsValues[4]),
+                Integer.parseInt(settingsValues[5]),Integer.parseInt(settingsValues[6]),settingsValues[7],settingsValues[8]);
     }
 
 }
