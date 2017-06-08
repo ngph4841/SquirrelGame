@@ -23,7 +23,7 @@ public class Launcher extends Application {
 
     private static Logger launcherLogger;
     static {
-        launcherLogger = Logger.getLogger(Launcher.class.getSimpleName());
+        launcherLogger = Logger.getLogger("");
         FileHandler fileHandler = null;
         try {
             fileHandler = new FileHandler("Log.txt");

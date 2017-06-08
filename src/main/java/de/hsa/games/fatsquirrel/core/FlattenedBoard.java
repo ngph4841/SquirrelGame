@@ -17,7 +17,8 @@ public class FlattenedBoard implements BoardView, EntityContext {
         this.board = board;
         this.settings = board.getConfig();
         this.flatBoard = new Entity[settings.getSize().x][settings.getSize().y];
-        this.logger = Logger.getLogger("launcherLogger");
+        this.logger = Logger.getLogger("");
+        logger.setLevel(Level.WARNING);
 
         ArrayList<Entity> list = board.getList(); //EntitySet
         int x;
@@ -51,6 +52,11 @@ public class FlattenedBoard implements BoardView, EntityContext {
     @Override
     public Board getBoard() {
         return board;
+    }
+
+    @Override
+    public int getStepCounter() {
+        return settings.getTurnCounter();
     }
 
     public void tryMove(MiniSquirrel mini, XY moveDirection) throws Exception {

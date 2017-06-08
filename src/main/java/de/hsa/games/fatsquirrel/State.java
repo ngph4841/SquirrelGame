@@ -2,18 +2,23 @@ package de.hsa.games.fatsquirrel;
 
 import de.hsa.games.fatsquirrel.core.*;
 import de.hsa.games.fatsquirrel.core.Character;
+import sun.util.resources.cldr.ebu.LocaleNames_ebu;
 
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class State {
     private Board board;
     private int turnCounter;
     private Map<String, List<Integer>> highScore;
+    private Logger logger;
 
     public State(Board board) throws Exception {
         this.board = board;
         this.turnCounter = board.getConfig().getTurnCounter();
         this.highScore = new HashMap<String,List<Integer>>();
+        this.logger = Logger.getLogger("");
     }
 
     public Board getBoard() {
@@ -60,14 +65,17 @@ public class State {
         }
         // Handle high score
         System.out.printf("HighScores:");
+        String loggerString = "";
         for (String key2 : highScore.keySet()) {
             // Sort
             sortHighScore(highScore.get(key2));
             // Print
             System.out.println(key2 + ":");
             printHighScore(highScore.get(key2));
+            loggerString += key2 + ": " +highScore.get(key2) + "\n";
             System.out.println();
         }
+        logger.log(Level.WARNING, "HighScores:"+ "\n" + loggerString);
     }
 
     private void sortHighScore(List<Integer> intList) {
@@ -97,5 +105,6 @@ public class State {
                 System.out.println("averageScore:" + averageScore / (i + 1));
             }
         }
+
     }
 }

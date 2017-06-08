@@ -10,9 +10,10 @@ import java.lang.reflect.Proxy;
  * Created by Freya on 19.05.2017.
  */
 public class MasterSquirrelBot extends MasterSquirrel {
-    BotControllerFactory botControllerFactory;
-    String classPath;
-    String miniBot;
+    private final BotControllerFactory botControllerFactory;
+    private final String classPath;
+    private String miniBot;
+    private int steps;
 
     public MasterSquirrelBot(int id, int energy, XY position,String classPath, String miniBot) {
         super(id, energy, position);
@@ -24,6 +25,7 @@ public class MasterSquirrelBot extends MasterSquirrel {
 
     @Override
     public void nextStep(EntityContext context) throws Exception {
+        steps++;
         ControllerContext controllerContext = new ControllerContextImpl(context, this);
         BotController botController = botControllerFactory.createMasterBotController(classPath);
         BotController proxiedBotController = (BotController) Proxy.newProxyInstance(this.getClass().getClassLoader(),new Class[] {BotController.class},new LogAdvice(botController));
@@ -211,8 +213,8 @@ public class MasterSquirrelBot extends MasterSquirrel {
         }
 
         @Override
-        public long getRemainingSteps() { //not implemented yet
-            return 0;
+        public int getRemainingSteps() { //not implemented yet
+            return context.getStepCounter() - steps;
         }
     }
 }

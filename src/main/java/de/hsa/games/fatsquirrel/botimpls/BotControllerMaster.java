@@ -103,4 +103,9 @@ public class BotControllerMaster implements BotController {
 //            view.spawnMiniBot(new XY(1, 0), 100);
 //        }
     }
+
+    @Override
+    public int getRemainingSteps(ControllerContext view) throws Exception {
+        return view.getRemainingSteps();
+    }
 }

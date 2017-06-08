@@ -9,8 +9,9 @@ import java.lang.reflect.Proxy;
  * Created by Freya on 19.05.2017.
  */
 public class MiniSquirrelBot extends MiniSquirrel {
-    BotControllerFactory botControllerFactory;
-    String classPath;
+    private final BotControllerFactory botControllerFactory;
+    private final String classPath;
+    private int steps = 0;
 
     MiniSquirrelBot(int id, int energy, XY position, int parentId, String classPath) {
         super(id, energy, position, parentId);
@@ -21,10 +22,12 @@ public class MiniSquirrelBot extends MiniSquirrel {
 
     @Override
     public void nextStep(EntityContext context) throws Exception {
+        steps++;
         ControllerContext controllerContext = new ControllerContextImpl(context, this);
         BotController botController = botControllerFactory.createMiniBotController(classPath);
         BotController proxiedBotController = (BotController) Proxy.newProxyInstance(this.getClass().getClassLoader(),new Class[]{BotController.class}, new LogAdvice(botController));
         proxiedBotController.nextStep(controllerContext);
+
     }
 
     class ControllerContextImpl implements ControllerContext {
@@ -136,8 +139,8 @@ public class MiniSquirrelBot extends MiniSquirrel {
         }
 
         @Override
-        public long getRemainingSteps() {
-            return 0;
+        public int getRemainingSteps() {
+            return context.getStepCounter() - steps;
         }
 
         @Override

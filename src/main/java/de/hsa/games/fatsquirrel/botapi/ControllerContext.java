@@ -65,7 +65,7 @@ public interface ControllerContext {
     XY directionOfMaster();
 
     // @return how many steps are left until the end of the current round
-    long getRemainingSteps();
+    int getRemainingSteps();
 
     // implementation is optional
     // @param text : the comment of the bot during fighting, e. g. ouch

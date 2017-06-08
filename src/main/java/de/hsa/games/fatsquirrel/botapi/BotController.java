@@ -5,4 +5,6 @@ package de.hsa.games.fatsquirrel.botapi;
  */
 public interface BotController {
     public void nextStep(ControllerContext view) throws Exception;
+
+    public int getRemainingSteps(ControllerContext view) throws Exception;
 }

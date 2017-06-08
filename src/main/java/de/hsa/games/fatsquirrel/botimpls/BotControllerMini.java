@@ -103,4 +103,9 @@ public class BotControllerMini implements BotController {
             view.implode(radius);
         }
     }
+
+    @Override
+    public int getRemainingSteps(ControllerContext view) throws Exception {
+        return view.getRemainingSteps();
+    }
 }

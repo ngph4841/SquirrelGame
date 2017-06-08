@@ -8,24 +8,25 @@ import de.hsa.games.fatsquirrel.UI;
 import de.hsa.games.fatsquirrel.core.FlattenedBoard;
 import de.hsa.games.fatsquirrel.core.MasterSquirrel;
 import de.hsa.games.fatsquirrel.core.XY;
-import de.hsa.games.fatsquirrel.util.MainLogger;
 
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class GameImpl extends Game {
-    private State state;;
+    private State state;
     private MasterSquirrel player;
     private FlattenedBoard context;
     private UI ui;
     private int FPS = 10;
     private String msg = "";
-    private MainLogger mainLogger;
+    private Logger logger;
 
     public GameImpl(State state, UI ui) throws Exception {
         this.state = state;
         this.player = (MasterSquirrel) state.getBoard().getList().get(0);
         this.context = (FlattenedBoard) state.getBoardView();
         this.ui = ui;
+        this.logger = Logger.getLogger("");
     }
 
     @Override
@@ -87,10 +88,10 @@ public class GameImpl extends Game {
                 processInput();
             } catch (ScanException e) {
                 msg = "wrong input, please try again";
-                mainLogger.log(Level.WARNING,msg);
+                logger.log(Level.WARNING,msg);
             } catch (NotEnoughEnergyException f) {
                 msg = "Not enough energy to spawn a child";
-                mainLogger.log(Level.WARNING,msg);
+               logger.log(Level.WARNING,msg);
             }
             update();
             render();
@@ -105,9 +106,10 @@ public class GameImpl extends Game {
                 processInput();
             } catch (ScanException e) {
                 msg = "wrong input, please try again";
-                mainLogger.log(Level.WARNING,"wrong user input");
+                logger.log(Level.WARNING,"wrong user input");
             } catch (NotEnoughEnergyException f) {
                 msg = "Not enough energy to spawn a child";
+                logger.log(Level.WARNING, msg);
             }
             update();
             Thread.sleep(FPS * 10);

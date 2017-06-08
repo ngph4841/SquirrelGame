@@ -20,4 +20,6 @@ public interface EntityContext {
     public Entity getEntityType(XY xy);
 
     public Board getBoard();
+
+    public int getStepCounter();
 }
