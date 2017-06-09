@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 public class Launcher extends Application {
-    public static BoardConfig settings = new BoardConfig(new XY(40, 40), 5, 5, 10, 10, 50,
+    public static BoardConfig settings = new BoardConfig(new XY(30, 30), 1, 1, 1, 1, 10,
             "de.hsa.games.fatsquirrel.botimpls.BotControllerMaster", "de.hsa.fatsquirrel.botimpls.BotControllerMini");
     public static int mode = 3;
 
@@ -61,7 +61,7 @@ public class Launcher extends Application {
                 }
             case 2: //javafx SinglePlayer and Bots
             case 3:
-                launcherLogger.log(Level.INFO, "Game started in javaFx!");
+                launcherLogger.log(Level.WARNING, "Game started in javaFx!");
                 Application.launch(args);
                 break;
         }

@@ -17,8 +17,7 @@ public class FlattenedBoard implements BoardView, EntityContext {
         this.board = board;
         this.settings = board.getConfig();
         this.flatBoard = new Entity[settings.getSize().x][settings.getSize().y];
-        this.logger = Logger.getLogger("");
-        logger.setLevel(Level.WARNING);
+        this.logger = Logger.getLogger("launcherLogger");
 
         ArrayList<Entity> list = board.getList(); //EntitySet
         int x;
@@ -253,14 +252,14 @@ public class FlattenedBoard implements BoardView, EntityContext {
                 board.getList().add(good);
             }
             kill(entity); // kill & update flatboard
-            logger.log(Level.INFO,
+            logger.log(Level.WARNING,
                     "a new " + entity.getClass().toString() + " at: " + temp.toString() + " has just appeared");
         }
     }
 
     public void kill(Entity entity) throws Exception {
         if (!(entity instanceof Wall)) {
-            logger.log(Level.INFO,
+            logger.log(Level.WARNING,
                     entity.getClass().toString() + " at: " + entity.getPosition().toString() + " has just died");
             board.getList().remove(entity);
             refresh();
