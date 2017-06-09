@@ -1,5 +1,6 @@
 package de.hsa.games.fatsquirrel;
 
+import com.sun.glass.ui.Size;
 import de.hsa.games.fatsquirrel.console.ConsoleUI;
 import de.hsa.games.fatsquirrel.console.GameImpl;
 import de.hsa.games.fatsquirrel.core.*;
@@ -8,9 +9,8 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
+import java.util.Properties;
 import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -20,11 +20,12 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 public class Launcher extends Application {
-    public static BoardConfig settings = new BoardConfig(new XY(50, 50), 5, 5, 10, 10, 50,
+    public static BoardConfig settings = new BoardConfig(new XY(40, 40), 5, 5, 10, 10, 50,
             "de.hsa.games.fatsquirrel.botimpls.BotControllerMaster", "de.hsa.fatsquirrel.botimpls.BotControllerMini");
     public static int mode = 3;
 
     private static Logger launcherLogger;
+
     static {
         launcherLogger = Logger.getLogger("");
         FileHandler fileHandler = null;
@@ -60,7 +61,7 @@ public class Launcher extends Application {
                 }
             case 2: //javafx SinglePlayer and Bots
             case 3:
-                launcherLogger.log(Level.INFO,"Game started in javaFx!");
+                launcherLogger.log(Level.INFO, "Game started in javaFx!");
                 Application.launch(args);
                 break;
         }
@@ -108,42 +109,29 @@ public class Launcher extends Application {
         }
     }
 
-    public void loadSettings(){
-        Scanner scanner = null;
-        boolean XYNotLoadedYet = true;
-        String settingsLoader = "";
-        String[] settingsValues = new String[9];
-        String[] temp = new String[2];
-        int values = 2;
+    public void loadSettings() {
+        try {
+            //load settings.properties
+            Properties properties = new Properties();
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream("Settings.properties"));
+            properties.load(bufferedInputStream);
+            bufferedInputStream.close();
 
-        try { //load settings.txt
-            scanner = new Scanner(new File("Settings.txt"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            launcherLogger.log(Level.WARNING,"File 'Settings.txt' was not found.");
+            //load values out of the propertiesFile
+            XY Size = new XY(Integer.parseInt(properties.getProperty("X")), Integer.parseInt(properties.getProperty("Y")));
+            int turnCounter = Integer.parseInt(properties.getProperty("TurnCounter"));
+            int badBeast = Integer.parseInt(properties.getProperty("BadBeast"));
+            int goodBeast = Integer.parseInt(properties.getProperty("GoodBeast"));
+            int badPlant = Integer.parseInt(properties.getProperty("BadPlant"));
+            int goodPlant = Integer.parseInt(properties.getProperty("GoodPlant"));
+            String masterBotPath = properties.getProperty("MasterBotPath");
+            String miniBotPath = properties.getProperty("MiniBotPath");
+
+            //replace existing settings file
+            settings = new BoardConfig(Size, badBeast, goodBeast, badPlant, goodPlant, turnCounter, masterBotPath, miniBotPath);
+        } catch (IOException e) {
+            launcherLogger.log(Level.WARNING, e.getMessage());
         }
-
-        //read each line which has 1 setting
-        while(scanner.hasNextLine()){
-            //XY extra since it has 2 int
-            if(XYNotLoadedYet){
-                temp = new String[3];
-                settingsLoader = scanner.nextLine();
-                temp = settingsLoader.split(" ");
-                settingsValues[0] = temp[1];
-                settingsValues[1] = temp[2];
-                XYNotLoadedYet = false;
-            } else {
-                settingsLoader = scanner.nextLine();
-                temp = settingsLoader.split(" ");
-                settingsValues[values++] = temp[1];
-            }
-        }
-
-        //parse strings from settings into BoardConfig except botPaths
-        XY size = new XY(Integer.parseInt(settingsValues[0]),Integer.parseInt(settingsValues[1]));
-        settings = new BoardConfig(size,Integer.parseInt(settingsValues[2]),Integer.parseInt(settingsValues[3]),Integer.parseInt(settingsValues[4]),
-                Integer.parseInt(settingsValues[5]),Integer.parseInt(settingsValues[6]),settingsValues[7],settingsValues[8]);
     }
 
 }

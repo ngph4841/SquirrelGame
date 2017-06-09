@@ -16,7 +16,7 @@ public class State {
     private int turnCounter;
     private Map<String, List<Integer>> highScore;
     private Logger logger;
-    private File highScores = new File("Highscore.txt");
+    private File highScores = new File("Highscore.properties");
 
     public State(Board board) throws Exception {
         this.board = board;
@@ -123,7 +123,7 @@ public class State {
             scanner = new Scanner(highScores);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            logger.log(Level.WARNING,"File 'Highscore.txt' was not found.");
+            logger.log(Level.WARNING,"File 'Highscore.properties' was not found.");
         }
         while(scanner.hasNextLine()){
             scanner.nextLine();
