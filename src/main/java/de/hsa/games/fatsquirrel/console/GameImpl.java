@@ -26,7 +26,7 @@ public class GameImpl extends Game {
         this.player = (MasterSquirrel) state.getBoard().getList().get(0);
         this.context = (FlattenedBoard) state.getBoardView();
         this.ui = ui;
-        this.logger = Logger.getLogger("");
+        this.logger = Logger.getLogger("launcherLogger");
     }
 
     @Override
