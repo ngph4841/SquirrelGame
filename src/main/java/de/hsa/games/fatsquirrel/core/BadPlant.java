@@ -8,6 +8,5 @@ public class BadPlant extends Entity {
     }
 
     public void nextStep(EntityContext context) {
-
     }
 }

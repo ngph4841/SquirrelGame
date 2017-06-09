@@ -52,18 +52,15 @@ public class BotControllerMini implements BotController {
                 distanceY = distanceY2;
             }
         }
-        //nearest Entity at entites[index]
+
         XY moveDirection = new XY(0,0);
         switch (view.getEntityAt(entities[index].getPosition())){
             case WALL:
                 moveDirection =  position.minus(entities[index].getPosition());
                 break;
             case MASTER_SQUIRREL:
-                //break;
             case MINI_SQUIRREL:
-                // break;
             case NONE:
-                //sollte selten vorkommen aber RNG dann
                 break;
             case BAD_PLANT:
             case BAD_BEAST:
@@ -75,9 +72,7 @@ public class BotControllerMini implements BotController {
                 break;
         }
 
-        // GB move dir : entities[index].getPosition().getX() - master.getPosition().getX(), entities[index].getPosition().getY() - master.getPosition().getY()
-
-        //move normalisieren
+        //normalise move
         int x = 0;
         int y = 0;
         if(moveDirection.x != 0){

@@ -4,6 +4,8 @@ package de.hsa.games.fatsquirrel.core;
 public class XY { // immutable class
     public final int x;
     public final int y;
+
+    //static constants
     public static final XY ZERO_ZERO = new XY(0, 0);
     public static final XY RIGHT = new XY(1, 0);
     public static final XY LEFT = new XY(-1, 0);

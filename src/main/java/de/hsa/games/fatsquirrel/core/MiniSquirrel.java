@@ -2,8 +2,8 @@ package de.hsa.games.fatsquirrel.core;
 
 import java.util.Random;
 
-public class MiniSquirrel extends Squirrel { // extends squirrel like
-    // mastersquirrel
+public class MiniSquirrel extends Squirrel {
+    // extends squirrel like mastersquirrel
     private int parentId;
     private int tempo;
 

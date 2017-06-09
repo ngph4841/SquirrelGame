@@ -1,12 +1,10 @@
 package de.hsa.games.fatsquirrel.core;
 
-public abstract class Entity {// abstarct damits nur spezifische Entitys gib zb
-    // MasterSquireel
+public abstract class Entity {// abstarct damits nur spezifische Entitys gibt
     protected int id;
     protected int startEnergy;
     protected int energy;
     protected XY position;
-
 
     Entity(int id, int energy, XY position) {
         this.id = id;

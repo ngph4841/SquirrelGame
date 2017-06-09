@@ -9,7 +9,6 @@ public abstract class Character extends Entity {
     }
 
     public void nextStep(EntityContext context) throws Exception {
-
     }
 }
 

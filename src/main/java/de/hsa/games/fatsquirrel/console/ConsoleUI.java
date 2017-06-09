@@ -13,7 +13,6 @@ public class ConsoleUI implements UI {
     private Command buffer;
     private String msg;
 
-
     public void commandBuffer() throws Exception{
         CommandScanner scanner = new CommandScanner(GameCommandType.values(), input);
         buffer = scanner.next();
@@ -42,6 +41,7 @@ public class ConsoleUI implements UI {
                 }
                 if (view.getEntityType(i, j) instanceof MasterSquirrel) {
                     System.out.print("M");
+                    masterEnergy = view.getEntityType(i,j).getEnergy();
                     continue;
                 }
                 if (view.getEntityType(i, j) instanceof MiniSquirrel) {
@@ -71,6 +71,7 @@ public class ConsoleUI implements UI {
             }
             System.out.println();
         }
+        System.out.println("HP:" + masterEnergy);
         System.out.println(msg);
     }
 }

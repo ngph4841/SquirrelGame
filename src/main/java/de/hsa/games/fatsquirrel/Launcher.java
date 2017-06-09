@@ -23,7 +23,6 @@ public class Launcher extends Application {
     public static BoardConfig settings = new BoardConfig(new XY(30, 30), 1, 1, 1, 1, 10,
             "de.hsa.games.fatsquirrel.botimpls.BotControllerMaster", "de.hsa.fatsquirrel.botimpls.BotControllerMini");
     public static int mode = 3;
-
     private static Logger launcherLogger;
 
     static {

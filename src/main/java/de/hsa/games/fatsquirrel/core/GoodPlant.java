@@ -6,7 +6,6 @@ public class GoodPlant extends Entity {
 
     GoodPlant(int id, XY position) {
         super(id, energy, position);
-
     }
 
     public void nextStep(EntityContext context) throws Exception {

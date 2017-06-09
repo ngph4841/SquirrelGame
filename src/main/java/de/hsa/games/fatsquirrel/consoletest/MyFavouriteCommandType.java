@@ -5,7 +5,6 @@ import de.hsa.games.fatsquirrel.console.CommandTypeInfo;
 
 public enum MyFavouriteCommandType implements CommandTypeInfo {
 
-
     HELP("help", "  * list all commands"),
     EXIT("exit", "  * exit program"),
     ADDI("addi", "<param1>  <param2>   * simple integer add ", int.class, int.class),
@@ -16,11 +15,9 @@ public enum MyFavouriteCommandType implements CommandTypeInfo {
     LEFT("1", "  * move left"),
     RIGHT("3", "  * move right");
 
-
     private String name = "";
     private String info = "";
     private Class<?>[] paramsClasses = new Class[0];
-
 
     private MyFavouriteCommandType(String name, String info) {
         this.name = name;

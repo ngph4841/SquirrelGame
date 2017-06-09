@@ -3,8 +3,8 @@ package de.hsa.games.fatsquirrel.util;
 import de.hsa.games.fatsquirrel.console.CommandTypeInfo;
 
 public class Command {
-	CommandTypeInfo commandType;
-	Object[] params;
+	private final CommandTypeInfo commandType;
+	private final Object[] params;
 	
 	public Command(CommandTypeInfo commandType, Object[] params){
 		this.commandType = commandType;

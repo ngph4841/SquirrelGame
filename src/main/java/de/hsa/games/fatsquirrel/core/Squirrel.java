@@ -1,7 +1,7 @@
 package de.hsa.games.fatsquirrel.core;
 
-public abstract class Squirrel extends Entity { // class Squirrel so Master&Mini are
-    // next to eachother
+public abstract class Squirrel extends Entity {
+    // class Squirrel so Master&Mini are next to eachother
     protected boolean stun;
     protected int stunCounter;
 
@@ -31,7 +31,9 @@ public abstract class Squirrel extends Entity { // class Squirrel so Master&Mini
         stunCounter++;
     }
 
-    public void resetStunCounter(){stunCounter = 0;}
+    public void resetStunCounter(){
+        stunCounter = 0;
+    }
 
     public void nextStep(EntityContext context) throws Exception {
     }

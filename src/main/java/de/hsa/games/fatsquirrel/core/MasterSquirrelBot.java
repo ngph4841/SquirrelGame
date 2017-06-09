@@ -216,6 +216,11 @@ public class MasterSquirrelBot extends MasterSquirrel {
         public int getRemainingSteps() { //not implemented yet
             return context.getStepCounter() - steps;
         }
+
+        @Override
+        public void shout(String text) {
+            System.out.println(text);
+        }
     }
 }
 

@@ -12,9 +12,9 @@ import java.util.logging.SimpleFormatter;
 public class MainLogger {
         private static Logger logger;
         static{
-            //instance the logger
+            //int the logger
             logger = Logger.getLogger(MainLogger.class.getSimpleName());
-            //instance formatter, set formatting, and handler
+            //int formatter, set formatting, and handler
             FileHandler fileHandler = null;
             try {
                 fileHandler = new FileHandler("Log.txt");

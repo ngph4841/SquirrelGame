@@ -21,8 +21,8 @@ public class MasterSquirrel extends Squirrel {
             context.tryMove(this, new XY(0, 0));
     }
 
-    public boolean checkIfChild(Entity entity) { // checks in childrenId array for
-        // the correct Id
+    public boolean checkIfChild(Entity entity) {
+        // checks in childrenId array for the correct Id
         for (int i = 0; i < childrenId.length; i++) {
             if (childrenId[i] == entity.getId()) {
                 return true;

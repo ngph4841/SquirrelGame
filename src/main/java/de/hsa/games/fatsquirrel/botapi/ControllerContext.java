@@ -9,12 +9,6 @@ import de.hsa.games.fatsquirrel.core.XY;
  * Created by Freya on 19.05.2017.
  */
 public interface ControllerContext {
-    //    public XY getViewLowerLeft();
-//    public XY getViewUpperRight();
-//    public EntityType getEntityAt(XY xy);
-//    public void move(XY direction) throws Exception;
-//    public void spawnMiniBot(XY direction, int energy) throws NotEnoughEnergyException;
-//    public int getEnergy();
     public Entity getEntity();
     public EntityContext getEntityContext();
 
@@ -69,6 +63,5 @@ public interface ControllerContext {
 
     // implementation is optional
     // @param text : the comment of the bot during fighting, e. g. ouch
-    default void shout(String text) {
-    }
+    void shout(String text);
 }

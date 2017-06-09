@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Board {
     private BoardConfig settings;
-    //private EntitySet list;
     private ArrayList<Entity> list;
     private int entityCounter;
     private int mode;
@@ -12,10 +11,9 @@ public class Board {
     public Board(BoardConfig settings, int mode) {
         this.settings = settings;    //load Configs
         this.entityCounter = 0;
-        //this.list = new EntitySet(2 + settings.getEntityAmount() + settings.getWallCount());
         this.list = new ArrayList<>(2 + settings.getWallCount() + settings.getEntityAmount());
         this.mode = mode;
-
+        //choosing gameMode
         switch (mode) {
             case 0:
             case 1:
@@ -63,7 +61,6 @@ public class Board {
     public void addPlayer(Entity entity) {
         list.add(entity);
     }
-
 
     private void fillOuterWalls() { // creats a border of walls on the field
         int wallCounter = -1; //negative ID for walls

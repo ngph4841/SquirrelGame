@@ -8,7 +8,6 @@ public class BadBeast extends Character {
 
     BadBeast(int id, XY position) {
         super(id, startEnergy, position);
-
     }
 
     public int getBite() {
@@ -56,14 +55,14 @@ public class BadBeast extends Character {
         }
     }
 
-    public static XY moveBeast() { // returns moveDircetion Vector
+    public static XY moveBeast() { // returns rnd moveDircetion Vector
         Random rn = new Random();
         int x = 0;
         int y = 0;
         int range = 3;
         x = rn.nextInt(range) + (-1);
         y = rn.nextInt(range) + (-1);
-
         return new XY(x, y);
     }
+
 }

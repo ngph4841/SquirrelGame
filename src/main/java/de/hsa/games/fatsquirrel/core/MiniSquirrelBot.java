@@ -144,6 +144,11 @@ public class MiniSquirrelBot extends MiniSquirrel {
         }
 
         @Override
+        public void shout(String text) {
+            System.out.println(text);
+        }
+
+        @Override
         public Entity getEntity() {
             return mini;
         }
@@ -261,7 +266,6 @@ public class MiniSquirrelBot extends MiniSquirrel {
                 }
             }
         }
-
 
     }
 

@@ -22,14 +22,13 @@ public class FlattenedBoard implements BoardView, EntityContext {
         ArrayList<Entity> list = board.getList(); //EntitySet
         int x;
         int y;
-        for (int i = 0; i < list.size(); i++) { // check all entities in the
-            // EntitySet
+        for (int i = 0; i < list.size(); i++) { // check all entities
             if (list.get(i) == null) {
                 break;
             }
             x = list.get(i).getPosition().x;
             y = list.get(i).getPosition().y;
-            flatBoard[x][y] = list.get(i); // add Entities from EntitySet
+            flatBoard[x][y] = list.get(i); // add Entities from the list
         }
     }
 
@@ -59,9 +58,9 @@ public class FlattenedBoard implements BoardView, EntityContext {
     }
 
     public void tryMove(MiniSquirrel mini, XY moveDirection) throws Exception {
-        int x = mini.getPosition().x + moveDirection.x; // calc new
-        // pos
+        int x = mini.getPosition().x + moveDirection.x; // calc new pos
         int y = mini.getPosition().y + moveDirection.y;
+
         if (getEntityType(x, y) != null) { // if null no check
             int deltaEnergy = getEntityType(x, y).getEnergy();
             if (getEntityType(x, y) instanceof Wall) {
@@ -147,7 +146,6 @@ public class FlattenedBoard implements BoardView, EntityContext {
     }
 
     public void tryMove(MasterSquirrel master, XY moveDirection) throws Exception {
-
         if (!master.getStun()) {
             int x = master.getPosition().x + moveDirection.x;
             int y = master.getPosition().y + moveDirection.y;
@@ -190,7 +188,6 @@ public class FlattenedBoard implements BoardView, EntityContext {
             if (master.getEnergy() < 0) {
                 master.updateEnergy(Math.abs(master.getEnergy()));
             }
-
         } else { // stun impl
             master.increaseStunCounter();
             if (master.getStunCounter() >= 3) {
@@ -232,8 +229,8 @@ public class FlattenedBoard implements BoardView, EntityContext {
         if (!(entity instanceof Wall)) {
             int randomX = 0;
             int randomY = 0;
-            while (getEntityType(randomX, randomY) != null) { // as long as the
-                // field isnt null
+            while (getEntityType(randomX, randomY) != null) {
+                //as long as field is not null
                 randomX = 1 + (int) (Math.random() * (settings.getSize().x - 2));
                 randomY = 1 + (int) (Math.random() * (settings.getSize().y - 2));
             }
@@ -277,7 +274,6 @@ public class FlattenedBoard implements BoardView, EntityContext {
     }
 
     public void refresh() throws Exception {
-//        EntitySet list = board.getList();
         Entity[][] temp = new Entity[settings.getSize().x][settings.getSize().y];
         int x;
         int y;

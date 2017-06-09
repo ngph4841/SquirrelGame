@@ -4,7 +4,6 @@ import de.hsa.games.fatsquirrel.core.XY;
 
 public enum GameCommandType implements CommandTypeInfo {
 
-
     HELP("help", "  * list all commands", "help"),
     EXIT("exit", "  * exit program", "exit"),
     ALL("all", " * all", "all"),
@@ -15,20 +14,17 @@ public enum GameCommandType implements CommandTypeInfo {
     LEFT("1", "  * move left", XY.class, "move"),
     RIGHT("3", "  * move right", XY.class, "move");
 
-
-
     private String name;
     private String info;
     private String method;
     private Class<?>[] paramsClasses = new Class[0];
 
-
     private GameCommandType(String name, String info, Class<?> a, String method) {
         this.name = name;
         this.info = info;
         this.method = method;
-        paramsClasses = new Class[1];
-        paramsClasses[0] = a;
+        this.paramsClasses = new Class[1];
+        this.paramsClasses[0] = a;
     }
 
     GameCommandType(String name, String info, String method) {

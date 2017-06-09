@@ -47,7 +47,7 @@ public class GameImpl extends Game {
         }
     }
 
-    public void update() throws Exception {// ver�ndert akt. Spielzustand
+    public void update() throws Exception {// verandert akt. Spielzustand
         state.update();
     }
 

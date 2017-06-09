@@ -29,7 +29,6 @@ public class FxUI extends Scene implements UI {
     private Label msgLabel;
     private int playerEnergy;
 
-
     public FxUI(Parent parent, Canvas boardCanvas, Label msgLabel) {
         super(parent);
         this.boardCanvas = boardCanvas;
@@ -88,7 +87,6 @@ public class FxUI extends Scene implements UI {
         }
     }
 
-
     public static FxUI createInstance(XY boardSize) {
         Canvas boardCanvas = new Canvas(boardSize.x*CELL_SIZE, boardSize.y*CELL_SIZE);
         Label statusLabel = new Label();
@@ -107,7 +105,6 @@ public class FxUI extends Scene implements UI {
         return fxUI;
     }
 
-
     @Override
     public void render(final BoardView view) {
         Platform.runLater(new Runnable() {
@@ -124,6 +121,7 @@ public class FxUI extends Scene implements UI {
         int boardWidth = view.getSize().x;
         int boardHeight = view.getSize().y;
 
+        //design for each EntityType
         for (int j = 0; j < boardHeight; j++) {
             for (int i = 0; i < boardWidth; i++) {
                 if (view.getEntityType(i, j) instanceof Wall) {

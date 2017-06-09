@@ -9,16 +9,15 @@ import java.io.IOException;
 import java.io.PrintStream;
 
 public class CommandScanner {
-    CommandTypeInfo[] commandTypeInfos;
-    BufferedReader inputReader;
-    PrintStream outputStream;
+    private CommandTypeInfo[] commandTypeInfos;
+    private BufferedReader inputReader;
+    private PrintStream outputStream;
     //CommandTypeInfo command = new MyFavouriteCommandType();
 
     public CommandScanner(CommandTypeInfo[] commandTypeInfos, BufferedReader inputReader) {
         this.commandTypeInfos = commandTypeInfos;
         this.inputReader = inputReader;
     }
-
 
     public Command next() throws IOException, ScanException {
         String line = inputReader.readLine();

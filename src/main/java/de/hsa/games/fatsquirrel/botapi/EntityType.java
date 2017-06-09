@@ -4,7 +4,6 @@ package de.hsa.games.fatsquirrel.botapi;
  * Created by Freya on 19.05.2017.
  */
 public enum EntityType {
-
     BAD_BEAST,
     GOOD_BEAST,
     BAD_PLANT,
@@ -13,5 +12,4 @@ public enum EntityType {
     MINI_SQUIRREL,
     WALL,
     NONE
-
 }
