@@ -7,12 +7,22 @@ import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * The FlattenedBoard class implements 2 Interfaces, the BoardView and EntityContext.
+ * This class is a 2-dimensional visualisation of the board(BoardView) and also the class
+ * that contains the logic of entity collisions.
+ */
 public class FlattenedBoard implements BoardView, EntityContext {
     private Board board;
     private Entity[][] flatBoard;
     private BoardConfig settings;
     private Logger logger;
 
+    /**
+     * Constructor which creates a 2-dimensional board with entities.
+     * @param board Board that contains the information
+     * @throws Exception
+     */
     public FlattenedBoard(Board board) throws Exception { // 2dim.array
         this.board = board;
         this.settings = board.getConfig();
@@ -32,14 +42,29 @@ public class FlattenedBoard implements BoardView, EntityContext {
         }
     }
 
+    /**
+     * This method returns the Entity that is at the position: x/y.
+     * @param x x-coordinate
+     * @param y y-coordinate
+     * @return
+     */
     public Entity getEntityType(int x, int y) {
         return flatBoard[x][y];
     }
 
+    /**
+     * This method returns the size of the board.
+     * @return size of the board XY(width,height)
+     */
     public XY getSize() {
         return settings.getSize();
     }
 
+    /**
+     * This method returns the Entity which is at the position XY
+     * @param xy position in the board which is desired
+     * @return
+     */
     public Entity getEntityType(XY xy) {
         if (xy.x >= settings.getSize().x || xy.y >= settings.getSize().y) {            //  A U F P A S S E N (grose gleich zu groser)
             return null;
@@ -47,16 +72,31 @@ public class FlattenedBoard implements BoardView, EntityContext {
         return flatBoard[xy.x][xy.y];
     }
 
+    /**
+     * This method returns the current board.
+     * @return
+     */
     @Override
     public Board getBoard() {
         return board;
     }
 
+    /**
+     * This method returns the amount of turns a round consists of.
+     * @return amount of turns a round consists of
+     */
     @Override
     public int getStepCounter() {
         return settings.getTurnCounter();
     }
 
+    /**
+     * This method tries to move the MiniSquirrel with the moveDirection XY and
+     * checks if the move is valid.
+     * @param mini MiniSquirrel
+     * @param moveDirection Direction of the desired move
+     * @throws Exception OutOfBoundsException if the move would move the entity out of the board
+     */
     public void tryMove(MiniSquirrel mini, XY moveDirection) throws Exception {
         int x = mini.getPosition().x + moveDirection.x; // calc new pos
         int y = mini.getPosition().y + moveDirection.y;
@@ -112,6 +152,13 @@ public class FlattenedBoard implements BoardView, EntityContext {
         move(mini, new XY(x, y));
     }
 
+    /**
+     * This method tries to move the GoodBeast with the moveDirection XY and
+     * checks if the move is valid.
+     * @param good GoodBeast
+     * @param moveDirection Direction of the desired move
+     * @throws Exception OutOfBoundsException if the move would move the entity out of the board
+     */
     public void tryMove(GoodBeast good, XY moveDirection) throws Exception {
         int x = good.getPosition().x + moveDirection.x;
         int y = good.getPosition().y + moveDirection.y;
@@ -121,6 +168,13 @@ public class FlattenedBoard implements BoardView, EntityContext {
         move(good, new XY(x, y));
     }
 
+    /**
+     * This method tries to move the BadBeast with the moveDirection XY and
+     * checks if the move is valid.
+     * @param bad BadBeast
+     * @param moveDirection Direction of the desired move
+     * @throws Exception OutOfBoundsException if the move would move the entity out of the board
+     */
     public void tryMove(BadBeast bad, XY moveDirection) throws Exception {
         int x = bad.getPosition().x + moveDirection.x;
         int y = bad.getPosition().y + moveDirection.y;
@@ -145,6 +199,13 @@ public class FlattenedBoard implements BoardView, EntityContext {
         move(bad, new XY(x, y));
     }
 
+    /**
+     * This method tries to move the MasterSquirrel with the moveDirection XY and
+     * checks if the move is valid.
+     * @param master MasterSquirrel
+     * @param moveDirection Direction of the desired move
+     * @throws Exception OutOfBoundsException if the move would move the entity out of the board
+     */
     public void tryMove(MasterSquirrel master, XY moveDirection) throws Exception {
         if (!master.getStun()) {
             int x = master.getPosition().x + moveDirection.x;
@@ -197,6 +258,11 @@ public class FlattenedBoard implements BoardView, EntityContext {
         }
     }
 
+    /**
+     * This method returns the nearest Squirrel in the area from the entity that calls this method.
+     * @param position position of the entity that calls this method
+     * @return nearest Squirrel
+     */
     public Squirrel nearestPlayer(XY position) {
         Entity[] squirrelPosition = new Entity[100];
         int counter = 0; // for squirrels
@@ -225,6 +291,13 @@ public class FlattenedBoard implements BoardView, EntityContext {
         return (Squirrel) squirrelPosition[index];
     }
 
+    /**
+     * This method kills and replaces a entity from the game.
+     * The entity gets deleted from the game and a new entity of the
+     * same class gets initialised with the same id and a new random position.
+     * @param entity which should be deleted and added
+     * @throws Exception
+     */
     public void killAndReplace(Entity entity) throws Exception {
         if (!(entity instanceof Wall)) {
             int randomX = 0;
@@ -254,6 +327,11 @@ public class FlattenedBoard implements BoardView, EntityContext {
         }
     }
 
+    /**
+     * This method kills a entity by deleting it out of the game.
+     * @param entity which should be deleted
+     * @throws Exception
+     */
     public void kill(Entity entity) throws Exception {
         if (!(entity instanceof Wall)) {
             logger.log(Level.WARNING,
@@ -263,8 +341,15 @@ public class FlattenedBoard implements BoardView, EntityContext {
         }
     }
 
+    /**
+     * This method moves the entity to the new position.
+     * Positions which are outside of the board are ignored.
+     * @param entity entity that is tired of its position
+     * @param position desired position of the entity
+     * @throws Exception
+     */
     public void move(Entity entity, XY position) throws Exception {
-        if (position.x < 0 | position.y < 0) {
+        if (position.x < 0 | position.y < 0 | position.x > settings.getSize().x | position.y > settings.getSize().y) {
             return;
         }
         logger.log(Level.INFO, entity.getClass().toString() + " moved:" + entity.getPosition().toString() + "->"
@@ -273,6 +358,10 @@ public class FlattenedBoard implements BoardView, EntityContext {
         refresh();
     }
 
+    /**
+     * This method refreshes the 2-dimensional board visualisation after the movement of an entity.
+     * @throws Exception
+     */
     public void refresh() throws Exception {
         Entity[][] temp = new Entity[settings.getSize().x][settings.getSize().y];
         int x;
