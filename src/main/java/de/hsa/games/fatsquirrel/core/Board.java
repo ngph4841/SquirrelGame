@@ -2,12 +2,22 @@ package de.hsa.games.fatsquirrel.core;
 
 import java.util.ArrayList;
 
+/**
+ * The Board class contains all the information of the game board.
+ *(Entities, BoardConfig)
+ */
 public class Board {
     private BoardConfig settings;
     private ArrayList<Entity> list;
     private int entityCounter;
     private int mode;
 
+    /**
+     * The settings are used for the initial filling of entities in the board.
+     * The mode is used to determine if the game mode is single player or bots.(1-3)
+     * @param settings game settings
+     * @param mode game mode
+     */
     public Board(BoardConfig settings, int mode) {
         this.settings = settings;    //load Configs
         this.entityCounter = 0;
@@ -33,35 +43,69 @@ public class Board {
         fillSet();
     }
 
+    /**
+     * This method returns the current game mode.
+     * @return the current game mode
+     */
     public int getMode(){
         return mode;
     }
 
+    /**
+     * This method returns all the entities that are in the board object in a a String format.
+     * @return all the entities in a String format
+     */
     public String toString() {
         return list.toString();
     }
 
+    /**
+     * This method returns the BoardConfig of the board.
+     * @return
+     */
     public BoardConfig getConfig() {
         return settings;
     }
 
+    /**
+     * This method returns a 2- dimensional version of the board for easier visualisation.
+     * @return This Board as a FlattenedBoard
+     * @throws Exception
+     */
     public FlattenedBoard flatten() throws Exception {
         return new FlattenedBoard(this);
     }
 
+    /**
+     * This method returns a List of all the Entities in the board.
+     * @return List of all the Entities
+     * @throws Exception
+     */
     public ArrayList<Entity> getList() throws Exception { //return EntitySet
         return list;
     }
 
+    /**
+     * This method fills the Board with the amount of entities
+     * which are specified in the BoardConfig.
+     * The method uses the private methods fillOuterWalls() and spawnBeastsPlants().
+     */
     public void fillSet() {
         fillOuterWalls();
         spawnBeastsPlants();
     }
 
+    /**
+     * This method is used to add the player entity into the board.
+     * @param entity player entity
+     */
     public void addPlayer(Entity entity) {
         list.add(entity);
     }
 
+    /**
+     * This method fills the border of the board with walls.
+     */
     private void fillOuterWalls() { // creats a border of walls on the field
         int wallCounter = -1; //negative ID for walls
 
@@ -87,6 +131,10 @@ public class Board {
         }
     }
 
+    /**
+     * This method initialises the amount of Beast and Plants which
+     * are specified in the BoardConfig, at random Positions.
+     */
     private void spawnBeastsPlants() { // creates Entities
         int z = 0;
         for (int j = 0; j < 4; j++) {

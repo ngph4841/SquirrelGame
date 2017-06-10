@@ -124,7 +124,6 @@ public class State {
             properties.load(bufferedInputStream);
             bufferedInputStream.close();
         } catch (IOException e) {
-            e.printStackTrace();
             logger.log(Level.WARNING,e.getMessage());
         }
     }

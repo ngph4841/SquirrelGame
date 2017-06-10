@@ -19,6 +19,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+/**
+ * The Launcher is the main. Here the BoardConfig is loaded from the Settings.properties file.
+ * The Mode Integer (1-3) decides if the game is running in (0) a 1 frame per input via console, (1) a 60 frames
+ * per seconds on the console, (2) a single player in a javafx application in 60fps or (3) a bot in javafx application in 60 fps mode.
+ */
 public class Launcher extends Application {
     public static BoardConfig settings = new BoardConfig(new XY(30, 30), 1, 1, 1, 1, 10,
             "de.hsa.games.fatsquirrel.botimpls.BotControllerMaster", "de.hsa.fatsquirrel.botimpls.BotControllerMini");
