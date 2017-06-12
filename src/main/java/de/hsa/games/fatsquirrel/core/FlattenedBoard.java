@@ -10,7 +10,8 @@ import java.util.logging.Logger;
 /**
  * The FlattenedBoard class implements 2 Interfaces, the BoardView and EntityContext.
  * This class is a 2-dimensional visualisation of the board(BoardView) and also the class
- * that contains the logic of entity collisions.
+ * that contains the logic of entity collisions. The tryMove() method has different Entity classes
+ * as parameters and executes different unit collisions depending on the Entity type that is to be moved.
  */
 public class FlattenedBoard implements BoardView, EntityContext {
     private Board board;
