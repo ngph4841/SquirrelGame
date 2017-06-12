@@ -67,10 +67,10 @@ public class BotControllerMaster implements BotController {
                 // break;
             case NONE:
                 // break;
-            case BAD_PLANT:
             case BAD_BEAST:
                 moveDirection =  masterPosition.minus(entities[index].getPosition());
                 break;
+            case BAD_PLANT:
             case GOOD_PLANT:
             case GOOD_BEAST:
                 moveDirection =  masterPosition.minus(entities[index].getPosition()).times(-1);
